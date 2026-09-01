@@ -1,0 +1,160 @@
+---
+import { scans, site } from '../data/site';
+---
+
+<section class="scans" id="scans">
+  <span class="kicker">The scans</span>
+
+  {/* Populated by the finder script; empty and inert until a filter runs. */}
+  <div class="filter-bar" id="filter-bar" hidden>
+    <span class="mark"></span>
+    <p class="filter-summary" id="filter-summary" role="status" aria-live="polite"></p>
+    <button type="button" class="btn btn-ghost filter-reset" id="filter-reset">
+      Show all {scans.length} scans
+    </button>
+  </div>
+
+  <div class="scan-grid" id="scan-grid">
+    {
+      scans.map((scan) => (
+        <article class="scan-card" data-scan={scan.num}>
+          <div class="scan-head">
+            <p class="scan-num tnum">{scan.num}</p>
+            <span class="mark" />
+          </div>
+          <h2 class="scan-title">{scan.title}</h2>
+          {site.showPricing && (
+            <>
+              <p class="scan-price tnum">{scan.price}</p>
+              <p class="scan-avg tnum">
+                Est. national average <s>{scan.avg}</s>
+              </p>
+            </>
+          )}
+          <p class="scan-copy">{scan.copy}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .scans {
+    padding: 84px 0 70px;
+  }
+
+  .scans .kicker {
+    font-feature-settings: 'tnum' 1;
+  }
+
+  /* — filter bar — */
+
+  .filter-bar {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin: 0 0 24px;
+  }
+  .filter-bar[hidden] {
+    display: none;
+  }
+  .filter-bar .mark {
+    transform: translateY(-1px);
+  }
+  .filter-summary {
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 26px;
+    margin-right: auto;
+  }
+  .filter-summary strong {
+    font-family: var(--font-heading);
+    font-weight: 800;
+  }
+  .filter-reset {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent-700);
+  }
+
+  /* — grid —
+     The 2px gap over a divider-colored ground draws the rules between cells;
+     the cards themselves paint the page ground back in. */
+
+  .scan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--rule);
+    background: var(--color-divider);
+    border: var(--rule) solid var(--color-divider);
+  }
+
+  /* Filtered to a single scan: the shared ground would show as a slab of
+     grey across the empty cells, so the lone card carries its own rule. */
+  .scan-grid.is-filtered {
+    grid-template-columns: minmax(300px, 520px);
+    background: transparent;
+    border: 0;
+  }
+  .scan-grid.is-filtered .scan-card {
+    border: var(--rule) solid var(--color-divider);
+  }
+
+  .scan-card {
+    background: var(--color-bg);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .scan-card[hidden] {
+    display: none;
+  }
+
+  .scan-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  .scan-num {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  .scan-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  .scan-price {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-accent-700);
+    margin: 0;
+  }
+
+  .scan-avg {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--ink-64);
+    margin: 0;
+  }
+
+  .scan-copy {
+    font-size: 15px;
+    line-height: 24px;
+    margin: 0;
+    color: var(--ink-78);
+  }
+</style>

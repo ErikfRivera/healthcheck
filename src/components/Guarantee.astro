@@ -1,0 +1,50 @@
+---
+import { guarantees } from '../data/site';
+---
+
+<section class="guarantee" aria-label="Our guarantee">
+  {
+    guarantees.map((item) => (
+      <div class="guarantee-item">
+        <span class="mark guarantee-mark" />
+        <p class="guarantee-copy">
+          <strong>{item.title}</strong> <span>{item.copy}</span>
+        </p>
+      </div>
+    ))
+  }
+</section>
+
+<style>
+  .guarantee {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px clamp(24px, 4vw, 64px);
+    padding: 56px 0;
+  }
+
+  .guarantee-item {
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+  }
+
+  .guarantee-mark {
+    transform: translateY(-1px);
+  }
+
+  .guarantee-copy {
+    font-size: 15.5px;
+    line-height: 26px;
+    margin: 0;
+  }
+
+  .guarantee-copy strong {
+    font-family: var(--font-heading);
+    font-weight: 800;
+  }
+
+  .guarantee-copy span {
+    color: var(--ink-78);
+  }
+</style>

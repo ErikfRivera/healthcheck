@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import ScanGrid from '../components/ScanGrid.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import WhyProactive from '../components/WhyProactive.astro';
+import Guarantee from '../components/Guarantee.astro';
+import Testimonial from '../components/Testimonial.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<Base
+  title="HealthCheck.org — Find it early. Or rule it out."
+  description="Compare upfront prices on full-body MRI, heart CT, DEXA and other preventive scans at trusted imaging centers near you. No referral needed, results read by a board-certified radiologist."
+>
+  <Nav />
+
+  <main id="main">
+    <div class="page">
+      <Hero />
+      <hr class="rule" />
+      <Stats />
+      <hr class="rule" />
+      <ScanGrid />
+      <hr class="rule" />
+      <HowItWorks />
+      <WhyProactive />
+      <hr class="rule" />
+      <Guarantee />
+      <Testimonial />
+      <hr class="rule" />
+      <Faq />
+    </div>
+
+    <CtaBand />
+
+    <div class="page">
+      <SiteFooter />
+    </div>
+  </main>
+</Base>
+
+<script>
+  import '../scripts/finder';
+</script>

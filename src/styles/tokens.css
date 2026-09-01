@@ -1,0 +1,79 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   HealthCheck.org — design tokens
+
+   Ported from the Modernist design system, with the accent role retuned to
+   the brand crimson (#c8102e). Modernist's own accent (#ec3013) and its
+   secondary accent are not used here — the accent ramp below IS the brand.
+
+   This file is the single source of truth for color, type, space and
+   elevation. See BRAND.md for the rules that govern how they're combined.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* — ground & ink — */
+  --color-bg: #f3f2f2;
+  --color-surface: #eae9e9;
+  --color-text: #201e1d;
+  --color-divider: color-mix(in srgb, #201e1d 40%, transparent);
+
+  /* — brand accent: crimson — */
+  --color-accent: #c8102e;
+  --color-accent-100: #fce9ec;
+  --color-accent-200: #f6ccd3;
+  --color-accent-300: #eda3af;
+  --color-accent-400: #dd4a5f;
+  --color-accent-500: #c8102e;
+  --color-accent-600: #a60d26;
+  --color-accent-700: #8a0b20;
+  --color-accent-800: #690818;
+  --color-accent-900: #4c0611;
+
+  /* — neutrals — one shared lightness scale with the accent ramp, so the
+     same step of either role matches the other in visual value. — */
+  --color-neutral-100: #f8f4f4;
+  --color-neutral-200: #eae7e7;
+  --color-neutral-300: #d7d3d3;
+  --color-neutral-400: #bab6b6;
+  --color-neutral-500: #9b9797;
+  --color-neutral-600: #7d7979;
+  --color-neutral-700: #605d5d;
+  --color-neutral-800: #444141;
+  --color-neutral-900: #2d2b2b;
+
+  /* — ink at reduced weight — the three steps used for body copy hierarchy.
+     Expressed as tokens so a section never invents its own percentage.
+     All three clear WCAG AA (4.5:1) on --color-bg; 64% is the floor, since
+     anything lighter than 63% drops below it. Do not add a quieter step. — */
+  --ink-78: color-mix(in srgb, var(--color-text) 78%, transparent); /* 7.55:1 */
+  --ink-70: color-mix(in srgb, var(--color-text) 70%, transparent); /* 5.79:1 */
+  --ink-64: color-mix(in srgb, var(--color-text) 64%, transparent); /* 4.81:1 */
+
+  /* — type — */
+  --font-heading: 'Archivo', system-ui, sans-serif;
+  --font-heading-weight: 800;
+  --font-body: 'Archivo', system-ui, sans-serif;
+
+  /* — space — */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* — radius — the system is square. These exist so component CSS can name
+     the intent; the value stays 0. — */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+
+  /* — elevation — soft ink-tinted shadows on the light ground. — */
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2d2b2b 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2d2b2b 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2d2b2b 22%, transparent);
+
+  /* — layout — */
+  --page-max: 1200px;
+  --page-gutter: clamp(20px, 5vw, 72px);
+  --rule: 2px;
+}

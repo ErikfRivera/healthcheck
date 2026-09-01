@@ -1,0 +1,33 @@
+---
+import { testimonial } from '../data/site';
+---
+
+<section class="testimonial">
+  <figure>
+    <blockquote class="quote">&ldquo;{testimonial.quote}&rdquo;</blockquote>
+    <figcaption class="attribution">&mdash; {testimonial.attribution}</figcaption>
+  </figure>
+</section>
+
+<style>
+  .testimonial {
+    padding: 70px 0 98px;
+  }
+
+  .quote {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: clamp(24px, 2.6vw, 34px);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    max-width: 32ch;
+    margin: 0;
+  }
+
+  .attribution {
+    font-size: 15.5px;
+    line-height: 28px;
+    color: var(--ink-70);
+    margin: 42px 0 0;
+  }
+</style>

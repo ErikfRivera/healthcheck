@@ -1,0 +1,109 @@
+---
+import { hero, scans } from '../data/site';
+---
+
+<section class="hero">
+  <h1 class="hero-headline">
+    {hero.headline.map((line) => <span>{line}</span>)}
+  </h1>
+
+  <p class="hero-body">{hero.body}</p>
+
+  {/* Without JS the form still submits and jumps to the scan grid; the
+      client script upgrades it to an in-page filter. */}
+  <form class="finder" id="scan-finder" action="#scans" method="get">
+    <select class="finder-field" id="finder-scan" name="scan" aria-label="Choose a scan">
+      <option value="">Choose a scan…</option>
+      {scans.map((scan) => <option value={scan.num}>{scan.title}</option>)}
+    </select>
+    {/* Deliberately no `pattern` on the ZIP: it is optional, and a native
+        validation failure would block the whole form — including filtering
+        by scan alone. The script sanitizes the value to digits instead. */}
+    <input
+      class="finder-field finder-zip"
+      id="finder-zip"
+      name="zip"
+      type="text"
+      aria-label="ZIP code"
+      placeholder="ZIP code"
+      inputmode="numeric"
+      autocomplete="postal-code"
+      maxlength="5"
+    />
+    <button type="submit" class="btn btn-primary finder-submit">{hero.searchCta}</button>
+  </form>
+
+  <p class="hero-reassurance">{hero.reassurance}</p>
+</section>
+
+<style>
+  .hero {
+    padding: 112px 0 84px;
+  }
+
+  .hero-headline {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: clamp(42px, 6.2vw, 84px);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    /* Optical alignment: pull the cap edge back to the gutter. */
+    margin: 0 0 0 -0.058em;
+  }
+  .hero-headline span {
+    display: block;
+  }
+
+  .hero-body {
+    font-size: 17px;
+    line-height: 28px;
+    max-width: 58ch;
+    margin: 36px 0 0;
+  }
+
+  /* The 2px background shows through the 2px gap, so the three controls read
+     as one ruled unit rather than three boxes. */
+  .finder {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--rule);
+    margin-top: 36px;
+    max-width: 720px;
+    border: var(--rule) solid var(--color-divider);
+    background: var(--color-divider);
+  }
+
+  .finder-field {
+    height: 52px;
+    border: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 15px;
+    padding: 0 16px;
+    outline-offset: -2px;
+    border-radius: 0;
+  }
+
+  #finder-scan {
+    flex: 2 1 220px;
+    min-width: 180px;
+  }
+
+  .finder-zip {
+    flex: 1 1 120px;
+    min-width: 100px;
+  }
+
+  .finder-submit {
+    flex: 1 0 auto;
+    height: 52px;
+  }
+
+  .hero-reassurance {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 14px 0 0;
+    color: var(--ink-70);
+  }
+</style>

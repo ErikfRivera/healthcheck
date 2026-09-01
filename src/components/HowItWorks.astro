@@ -1,0 +1,51 @@
+---
+import { steps } from '../data/site';
+---
+
+<section class="how" id="how">
+  <span class="kicker kicker--spaced">How it works</span>
+  <div class="how-grid">
+    {
+      steps.map((step) => (
+        <div>
+          <span class="mark step-mark" />
+          <h3 class="step-title">{step.title}</h3>
+          <p class="step-copy">{step.copy}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .how {
+    padding: 84px 0;
+  }
+
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 42px clamp(24px, 4vw, 64px);
+  }
+
+  .step-mark {
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  .step-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: normal;
+    margin: 0;
+  }
+
+  .step-copy {
+    font-size: 15.5px;
+    line-height: 28px;
+    margin: 10px 0 0;
+    color: var(--ink-78);
+  }
+</style>

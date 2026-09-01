@@ -1,0 +1,11 @@
+---
+import { site, nav } from '../data/site';
+---
+
+<nav class="nav">
+  <a class="nav-brand" href="/">{site.name}</a>
+  <span class="nav-links">
+    {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+  </span>
+  <a class="btn btn-primary" href={site.ctaHref}>{site.ctaLabel}</a>
+</nav>

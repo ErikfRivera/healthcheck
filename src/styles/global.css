@@ -1,0 +1,221 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   HealthCheck.org — base elements and shared component classes.
+
+   Built entirely from the tokens in tokens.css. Plain CSS on plain HTML:
+   the page ships no framework and no runtime styling.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 400;
+  text-wrap: pretty;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 0 0 var(--space-2);
+}
+
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 25px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+p { margin: 0 0 var(--space-3); }
+
+a {
+  color: var(--color-accent-700);
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--color-accent); }
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+figure { margin: 0; }
+
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* Skip link — visible only on keyboard focus. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 14px;
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 0;
+  color: var(--color-bg);
+}
+
+/* — layout ───────────────────────────────────────────────────────────── */
+
+.page {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+}
+
+/* The system's structural line. Sections are separated by rules, not by
+   cards or shadows. */
+.rule {
+  height: var(--rule);
+  border: 0;
+  margin: 0;
+  background: var(--color-divider);
+}
+
+/* Section label. Uppercase, tracked, crimson — the one place the accent is
+   used on type. */
+.kicker {
+  display: block;
+  font-size: 13px;
+  line-height: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+  margin: 0 0 14px;
+}
+.kicker--spaced { margin-bottom: 42px; }
+
+/* The 10px accent square — the system's only ornament. */
+.mark {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  flex: none;
+  background: var(--color-accent);
+}
+
+.tnum { font-feature-settings: 'tnum' 1; }
+
+/* — buttons ──────────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid transparent;
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  border-radius: var(--radius-md);
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+.btn-primary:hover { background: var(--color-accent-600); color: var(--color-bg); }
+.btn-primary:active { background: var(--color-accent-700); }
+
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+
+.btn-ghost {
+  color: var(--color-accent);
+  padding-inline: var(--space-1);
+}
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+
+/* Inverted ghost — the outlined button that sits on the crimson band. */
+.btn-ghost--invert {
+  color: var(--color-bg);
+  border-color: var(--color-bg);
+}
+.btn-ghost--invert:hover {
+  background: var(--color-bg);
+  color: var(--color-accent);
+}
+.btn-ghost--invert:focus-visible {
+  outline-color: var(--color-bg);
+}
+
+/* — navigation ───────────────────────────────────────────────────────── */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  padding-inline: max(24px, calc((100% - var(--page-max)) / 2 + 48px));
+  border-bottom: var(--rule) solid var(--color-divider);
+}
+.nav-brand {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 18px;
+  margin-right: auto;
+  color: inherit;
+  text-decoration: none;
+}
+.nav-brand:hover { color: inherit; }
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+}
+.nav-links a:hover,
+.nav a[aria-current='page'] { color: var(--color-accent); }
+
+.nav-links {
+  display: contents;
+}
+
+/* The prototype's nav is a single row of brand + three links + CTA. Below
+   the point where that row stops fitting, the links fold away and the CTA
+   carries the nav — the section anchors stay reachable from the page body. */
+@media (max-width: 720px) {
+  .nav-links {
+    display: none;
+  }
+}

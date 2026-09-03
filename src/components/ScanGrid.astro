@@ -22,7 +22,9 @@ import { scans, site } from '../data/site';
             <p class="scan-num tnum">{scan.num}</p>
             <span class="mark" />
           </div>
-          <h2 class="scan-title">{scan.title}</h2>
+          <h2 class="scan-title">
+            <a href={`/scans/${scan.slug}/`}>{scan.title}</a>
+          </h2>
           {site.showPricing && (
             <>
               <p class="scan-price tnum">{scan.price}</p>
@@ -135,6 +137,13 @@ import { scans, site } from '../data/site';
     line-height: 26px;
     letter-spacing: -0.01em;
     margin: 0;
+  }
+  .scan-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .scan-title a:hover {
+    color: var(--color-accent);
   }
 
   .scan-price {

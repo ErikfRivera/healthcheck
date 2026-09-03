@@ -10,16 +10,18 @@ export const site = {
   name: 'HealthCheck.org',
   /** The single call to action, used in the nav and the closing band. */
   ctaLabel: 'Book a scan',
-  /** Where the CTA points. A booking flow does not exist yet. */
-  ctaHref: '#scans',
+  /** Where the CTA points. A booking flow does not exist yet. Root-relative
+   *  so it also works from subpages like /scans/<slug>. */
+  ctaHref: '/#scans',
   /** Show per-scan pricing. Prices are placeholders while this is true. */
   showPricing: true,
 } as const;
 
+/** Root-relative anchors so the nav works from subpages too. */
 export const nav = [
-  { label: 'Scans', href: '#scans' },
-  { label: 'How it works', href: '#how' },
-  { label: 'Why proactive', href: '#why' },
+  { label: 'Scans', href: '/#scans' },
+  { label: 'How it works', href: '/#how' },
+  { label: 'Why proactive', href: '/#why' },
 ] as const;
 
 export const hero = {
@@ -41,6 +43,8 @@ export const stats = [
 export interface Scan {
   /** Two-digit index, shown on the card and used as the filter key. */
   num: string;
+  /** URL segment for the scan's page (`/scans/<slug>`). Stable — do not rename. */
+  slug: string;
   title: string;
   /** PLACEHOLDER price and duration. */
   price: string;
@@ -52,6 +56,7 @@ export interface Scan {
 export const scans: Scan[] = [
   {
     num: '01',
+    slug: 'full-body-mri',
     title: 'Full-body MRI',
     price: 'From $1,950 · 60 minutes',
     avg: '$3,200',
@@ -59,6 +64,7 @@ export const scans: Scan[] = [
   },
   {
     num: '02',
+    slug: 'brain-mri',
     title: 'Brain MRI',
     price: 'From $650 · 30 minutes',
     avg: '$1,600',
@@ -66,6 +72,7 @@ export const scans: Scan[] = [
   },
   {
     num: '03',
+    slug: 'coronary-calcium-ct',
     title: 'Coronary calcium CT',
     price: 'From $149 · 15 minutes',
     avg: '$450',
@@ -73,6 +80,7 @@ export const scans: Scan[] = [
   },
   {
     num: '04',
+    slug: 'low-dose-lung-ct',
     title: 'Low-dose lung CT',
     price: 'From $299 · 15 minutes',
     avg: '$650',
@@ -80,6 +88,7 @@ export const scans: Scan[] = [
   },
   {
     num: '05',
+    slug: 'cardiac-mri',
     title: 'Cardiac MRI',
     price: 'From $850 · 45 minutes',
     avg: '$2,100',
@@ -87,6 +96,7 @@ export const scans: Scan[] = [
   },
   {
     num: '06',
+    slug: 'ct-angiography',
     title: 'CT angiography',
     price: 'From $750 · 30 minutes',
     avg: '$1,800',
@@ -94,6 +104,7 @@ export const scans: Scan[] = [
   },
   {
     num: '07',
+    slug: 'dexa-scan',
     title: 'DEXA scan',
     price: 'From $99 · 20 minutes',
     avg: '$225',
@@ -101,6 +112,7 @@ export const scans: Scan[] = [
   },
   {
     num: '08',
+    slug: 'abdominal-ultrasound',
     title: 'Abdominal ultrasound',
     price: 'From $199 · 30 minutes',
     avg: '$400',
@@ -108,6 +120,7 @@ export const scans: Scan[] = [
   },
   {
     num: '09',
+    slug: 'thyroid-ultrasound',
     title: 'Thyroid ultrasound',
     price: 'From $149 · 20 minutes',
     avg: '$375',
@@ -115,6 +128,7 @@ export const scans: Scan[] = [
   },
   {
     num: '10',
+    slug: 'skin-cancer-screening',
     title: 'Skin cancer screening',
     price: 'From $129 · 20 minutes',
     avg: '$240',
@@ -122,6 +136,7 @@ export const scans: Scan[] = [
   },
   {
     num: '11',
+    slug: 'comprehensive-blood-panel',
     title: 'Comprehensive blood panel',
     price: 'From $199 · Results in 3 days',
     avg: '$460',
@@ -129,6 +144,7 @@ export const scans: Scan[] = [
   },
   {
     num: '12',
+    slug: 'multi-cancer-blood-test',
     title: 'Multi-cancer blood test',
     price: 'From $749 · Results in 2 weeks',
     avg: '$949',

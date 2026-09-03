@@ -1,0 +1,187 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { scans, site, steps, guarantees } from '../../data/site';
+
+export const getStaticPaths = (() =>
+  scans.map((scan) => ({
+    params: { slug: scan.slug },
+    props: { scan },
+  }))) satisfies GetStaticPaths;
+
+const { scan } = Astro.props;
+const others = scans.filter((s) => s.slug !== scan.slug);
+
+/* Deep link into the homepage scan finder, pre-filtered to this scan. */
+const findHref = `/?scan=${scan.num}#scans`;
+---
+
+<Base
+  title={`${scan.title} — ${site.name}`}
+  description={scan.copy}
+  mdPath={`/scans/${scan.slug}.md`}
+>
+  <Nav />
+
+  <main id="main">
+    <div class="page">
+      <article class="scan-page">
+        <span class="kicker">Preventive scan · {scan.num}</span>
+        <h1 class="scan-headline">{scan.title}</h1>
+
+        {
+          site.showPricing && (
+            <>
+              <p class="scan-price tnum">{scan.price}</p>
+              <p class="scan-avg tnum">
+                Est. national average <s>{scan.avg}</s>
+              </p>
+            </>
+          )
+        }
+
+        <p class="scan-copy">{scan.copy}</p>
+
+        <div class="scan-actions">
+          <a class="btn btn-primary" href={findHref}>Compare prices near you</a>
+        </div>
+      </article>
+
+      <hr class="rule" />
+
+      <section class="scan-section">
+        <span class="kicker">How it works</span>
+        <ol class="steps">
+          {
+            steps.map((step) => (
+              <li>
+                <strong>{step.title}.</strong> {step.copy}
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="scan-section">
+        <span class="kicker">Guarantees</span>
+        <ul class="guarantee-list">
+          {
+            guarantees.map((g) => (
+              <li>
+                <strong>{g.title}</strong> {g.copy}
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="scan-section">
+        <span class="kicker">More scans</span>
+        <ul class="more-scans">
+          {
+            others.map((s) => (
+              <li>
+                <a href={`/scans/${s.slug}/`}>{s.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <SiteFooter />
+    </div>
+  </main>
+</Base>
+
+<style>
+  .scan-page {
+    padding: 96px 0 70px;
+  }
+
+  .scan-headline {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: clamp(38px, 5.4vw, 72px);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    margin: 12px 0 0 -0.058em;
+  }
+
+  .scan-price {
+    font-size: 17px;
+    line-height: 26px;
+    color: var(--color-accent-700);
+    margin: 24px 0 0;
+  }
+
+  .scan-avg {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--ink-64);
+    margin: 4px 0 0;
+  }
+
+  .scan-copy {
+    font-size: 17px;
+    line-height: 28px;
+    max-width: 58ch;
+    margin: 24px 0 0;
+    color: var(--ink-78);
+  }
+
+  .scan-actions {
+    margin-top: 36px;
+  }
+
+  .scan-section {
+    padding: 56px 0;
+  }
+
+  .steps,
+  .guarantee-list,
+  .more-scans {
+    margin: 20px 0 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 12px;
+    max-width: 68ch;
+  }
+
+  /* The step titles carry their own numbers ("1 — …"), so no list markers. */
+  .steps {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .steps li,
+  .guarantee-list li {
+    font-size: 15.5px;
+    line-height: 26px;
+    color: var(--ink-78);
+  }
+
+  .steps strong,
+  .guarantee-list strong {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: inherit;
+  }
+
+  .more-scans {
+    list-style: none;
+    padding-left: 0;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 8px 24px;
+  }
+
+  .more-scans a {
+    font-size: 15.5px;
+    line-height: 26px;
+  }
+</style>

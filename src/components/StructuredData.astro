@@ -1,0 +1,47 @@
+---
+/**
+ * JSON-LD for the homepage: Organization, WebSite and FAQPage, all built from
+ * src/data/site.ts so the markup can never drift from the visible content.
+ *
+ * TODO(launch): no Offer/Product/price markup until the PLACEHOLDER prices
+ * and stats in site.ts are replaced with real network numbers (see the
+ * before-launch checklist in the README). Emitting structured pricing on
+ * placeholder data risks indexing misinformation.
+ */
+import { site, faqs, footer } from '../data/site';
+import { siteSummary } from '../utils/markdown';
+
+const origin = Astro.site?.href ?? '/';
+
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': new URL('#organization', origin).href,
+      name: site.name,
+      url: origin,
+      logo: new URL('/favicon.svg', origin).href,
+      description: siteSummary,
+      disambiguatingDescription: footer.disclaimer,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': new URL('#website', origin).href,
+      name: site.name,
+      url: origin,
+      publisher: { '@id': new URL('#organization', origin).href },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: { '@type': 'Answer', text: faq.a },
+      })),
+    },
+  ],
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(graph)} />

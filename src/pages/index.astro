@@ -11,12 +11,15 @@ import Testimonial from '../components/Testimonial.astro';
 import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import StructuredData from '../components/StructuredData.astro';
 ---
 
 <Base
   title="HealthCheck.org — Find it early. Or rule it out."
   description="Compare upfront prices on full-body MRI, heart CT, DEXA and other preventive scans at trusted imaging centers near you. No referral needed, results read by a board-certified radiologist."
+  mdPath="/index.md"
 >
+  <StructuredData slot="head" />
   <Nav />
 
   <main id="main">

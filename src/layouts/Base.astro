@@ -1,13 +1,19 @@
 ---
 import '../styles/tokens.css';
 import '../styles/global.css';
+import { site } from '../data/site';
 
 interface Props {
   title: string;
   description: string;
+  /** Site-relative path to this page's Markdown twin, e.g. `/index.md`. */
+  mdPath?: string;
+  /** Site-relative path to the social share image. */
+  ogImage?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, mdPath, ogImage = '/og.png' } = Astro.props;
+const ogImageUrl = new URL(ogImage, Astro.site).href;
 ---
 
 <!doctype html>
@@ -23,8 +29,19 @@ const { title, description } = Astro.props;
     <meta name="theme-color" content="#c8102e" />
 
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    {mdPath && <link rel="alternate" type="text/markdown" href={mdPath} title="Markdown version" />}
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,6 +49,8 @@ const { title, description } = Astro.props;
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap"
     />
+
+    <slot name="head" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>

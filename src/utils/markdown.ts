@@ -6,6 +6,8 @@
  */
 
 import {
+  archive,
+  legacyNotice,
   site,
   hero,
   stats,
@@ -17,17 +19,31 @@ import {
   footer,
   type Scan,
 } from '../data/site';
+import {
+  getLegacyEntries,
+  legacyHref,
+  legacyMdPath,
+  legacyMeta,
+  sectionLabel,
+  type LegacyEntry,
+} from './legacy';
 
 /** One-sentence summary of the site, reused by llms.txt and page intros. */
 export const siteSummary =
   'HealthCheck.org connects people with trusted imaging centers for preventive scans — full-body MRI, coronary calcium CT, DEXA and more — at upfront, comparable prices. No referral needed; results are read by board-certified radiologists.';
 
+interface Page {
+  path: string;
+  mdPath: string;
+  title: string;
+  blurb: string;
+}
+
 /**
- * Every page on the site with its Markdown twin, in one place so llms.txt and
- * the endpoints can't drift. Paths are site-relative; make them absolute with
- * `new URL(path, site)` at the call site.
+ * The marketplace's own pages with their Markdown twins. Paths are
+ * site-relative; make them absolute with `new URL(path, site)` at the call site.
  */
-export const pages = [
+export const pages: readonly Page[] = [
   {
     path: '/',
     mdPath: '/index.md',
@@ -40,7 +56,25 @@ export const pages = [
     title: scan.title,
     blurb: scan.copy,
   })),
-] as const;
+];
+
+/** The restored legacy pages (src/content/legacy), as `pages` entries. */
+export async function getLegacyPages(): Promise<Page[]> {
+  return (await getLegacyEntries()).map((entry) => ({
+    path: legacyHref(entry.data.path),
+    mdPath: legacyHref(legacyMdPath(entry)),
+    title: entry.data.heading,
+    blurb: entry.data.description,
+  }));
+}
+
+/**
+ * Every page on the site with its Markdown twin, in one place so llms.txt and
+ * the endpoints can't drift: the marketplace pages, then the legacy archive.
+ */
+export async function getPages(): Promise<Page[]> {
+  return [...pages, ...(await getLegacyPages())];
+}
 
 function scanBody(scan: Scan): string {
   const lines: string[] = [];
@@ -124,8 +158,26 @@ export function renderScanMarkdown(scan: Scan): string {
   ].join('\n');
 }
 
-export function renderLlmsTxt(origin: URL | undefined): string {
+export function renderLegacyMarkdown(entry: LegacyEntry): string {
+  const meta = legacyMeta(entry);
+  return [
+    `# ${entry.data.heading}`,
+    '',
+    `*${sectionLabel(entry.data.section)}.* ${legacyNotice}`,
+    '',
+    ...(meta ? [meta, ''] : []),
+    (entry.body ?? '').trim(),
+    '',
+    '---',
+    '',
+    footer.disclaimer,
+    '',
+  ].join('\n');
+}
+
+export async function renderLlmsTxt(origin: URL | undefined): Promise<string> {
   const abs = (path: string) => (origin ? new URL(path, origin).href : path);
+  const legacy = await getLegacyPages();
   return [
     `# ${site.name}`,
     '',
@@ -134,6 +186,12 @@ export function renderLlmsTxt(origin: URL | undefined): string {
     '## Pages',
     '',
     pages.map((p) => `- [${p.title}](${abs(p.mdPath)}): ${p.blurb}`).join('\n'),
+    '',
+    `## ${archive.index.headline}`,
+    '',
+    `> ${legacyNotice}`,
+    '',
+    legacy.map((p) => `- [${p.title}](${abs(p.mdPath)}): ${p.blurb}`).join('\n'),
     '',
     '## Notes',
     '',

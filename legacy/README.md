@@ -61,3 +61,24 @@ transplant: the old pages come back as a lightly framed archive, not as marketpl
 
 After deploy, request every `path` in `targets.csv` on https://www.healthcheck.org and confirm a
 200, or a single 301 that lands on a 200. Anything else is a bug.
+
+## Pipeline (implemented)
+
+The restore is scripted so it can be re-run end to end:
+
+| Step | Command | Output |
+| --- | --- | --- |
+| 2. Wayback recovery | `python3 legacy/scripts/wayback.py` | `legacy/wayback/pages/*.html`, PDFs/images under `public/`, log in `wayback-recovery.md` |
+| 1. Extraction | `python3 legacy/scripts/extract.py` (`--top 10` for a spot check) | `src/content/legacy/*.md`, images under `public/sites/…`, log in `extract-log.md` |
+| 4. Redirects | `python3 legacy/scripts/redirects.py` | `vercel.json` |
+| 5. Verify | `npm run build && node legacy/scripts/serve-dist.mjs` then `legacy/scripts/verify.sh [base-url]` | status + final URL for every target |
+
+Run Wayback before extraction (recovered pages go through the same extractor) and redirects
+last (anything not restored or recovered gets a 301). Python needs `beautifulsoup4 lxml
+markdownify pyyaml`. `astro preview` ignores `vercel.json`; `serve-dist.mjs` applies its
+redirects so `verify.sh` can check them locally.
+
+Rendering: `src/content.config.ts` (collection `legacy`), `src/pages/[...slug].astro` (page),
+`src/pages/[...slug].md.ts` (Markdown twin at `<path>.md`), `src/pages/archive.astro` (index,
+linked from the footer only), `src/utils/legacy.ts` (routing helpers and the reserved-route guard).
+Archive copy, including `legacyNotice`, lives in `src/data/site.ts`.

@@ -230,3 +230,50 @@ export const footer = {
     'HealthCheck.org is not a medical provider and does not diagnose or treat conditions. Scans are performed by licensed imaging centers and read by board-certified radiologists. Screening is not a substitute for care from your physician.',
   copyright: `© ${new Date().getFullYear()} HealthCheck.org`,
 } as const;
+
+/**
+ * The archive of pages restored from the former Health Check nutrition
+ * program site (Heart & Stroke Foundation of Canada, 1999–2014). They live at
+ * their original URLs because other sites still link to them. Content is in
+ * src/content/legacy/; see legacy/README.md.
+ */
+export const legacyNotice =
+  "An archived page from the former Health Check nutrition program site. Kept because other sites still link here. Not part of HealthCheck.org's imaging services.";
+
+export const archive = {
+  kicker: 'Archive',
+  /** Appended to each archived page's <title>. */
+  titleSuffix: `Archive — ${site.name}`,
+  /** Kicker label per section of the old site, e.g. "Archive · Press release". */
+  sectionLabels: {
+    page: 'Nutrition',
+    story: 'Press release',
+    content: 'Blog post',
+    blog: 'Blog',
+    faq: 'FAQ',
+    recipe: 'Recipe',
+    other: 'Program',
+  },
+  /** Section order and headings on the /archive index. */
+  sectionHeadings: {
+    page: 'Nutrition and program pages',
+    story: 'Press releases',
+    content: 'Blog posts',
+    blog: 'Blog indexes',
+    faq: 'FAQ',
+    recipe: 'Recipes',
+    other: 'Program listings',
+  },
+  index: {
+    path: '/archive',
+    title: 'Archive',
+    headline: 'Archived pages',
+    body: 'Pages from the former Health Check nutrition program site, restored at their original addresses because other sites still link to them. They are kept as they were and are not part of HealthCheck.org’s imaging services.',
+  },
+  /** Prefix for a press release's date line, e.g. "Released 06-18-2014". */
+  releasedLabel: 'Released',
+  /** Label for the footer link to the archive index. */
+  footerLink: 'Archive',
+} as const;
+
+export type LegacySection = keyof typeof archive.sectionLabels;

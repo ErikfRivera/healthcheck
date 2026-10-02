@@ -1,0 +1,1564 @@
+# invoke rewrite engine
+RewriteEngine On
+RewriteBase /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry
+
+Options -Indexes
+
+# redirect all extension to html
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.shtml$ $1.html [L,NC,R=301]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.phtml$ $1.html [L,NC,R=301]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.htm$ $1.html [L,NC,R=301]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.php$ $1.html [L,NC,R=301]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.aspx$ $1.html [L,NC,R=301]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.asp$ $1.html [L,NC,R=301]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)\.jsp$ $1.html [L,NC,R=301]
+
+# Add a trailing slash (/) to a URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\.[A-Za-z0-9]*$
+RewriteRule .*[^/]$ %{REQUEST_URI}/ [L,R=301]
+
+# Create pretty URLs
+RewriteRule ^([^/]+)/$ $1.html
+RewriteRule ^([^/]+)/([^/]+)/$ $1/$2.html
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/$ $1/$2/$3.html
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/$ $1/$2/$3/$4.html
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/$ $1/$2/$3/$4/$5.html
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/$ $1/$2/$3/$4/$5/$6.html
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/$ $1/$2/$3/$4/$5/$6/$7.html
+
+RewriteRule ^index.html$ /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=page\/login$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/page/login_destination_page/login/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=\/page\/login$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/page/login_destination_/page/login/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=forum$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_forum/? [R=301,L]
+RewriteRule ^timetostartcontest\/home$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/timetostartcontest/ [L,R=301]
+RewriteRule ^content\/do\-something\-good\-yourself\-father’s\-day$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/do-something-good-yourself-father_s-day/ [L,R=301]
+RewriteRule ^content\/cherry\-season\-bloomin’\-good\-time$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/cherry-season-bloomin_-good-time/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_2/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=3$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_3/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=4$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_4/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=5$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_5/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=6$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_6/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=7$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_7/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=8$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_8/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=25$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_25/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^faq[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/faq_page_1/? [R=301,L]
+RewriteRule ^page\/planning\-healthy\-meals$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/11099/ [L,R=301]
+RewriteRule ^page\/planning$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/11100/ [L,R=301]
+RewriteRule ^page\/meal\-preparation$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/11102/ [L,R=301]
+RewriteRule ^page\/canadas\-food\-guide$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/122/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMDIxODQ\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMDIxODQ/ [L,R=301]
+RewriteRule ^recipe\/judi’s\-meat\-casserole\-jeremy\-fisher$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipe/judi_s-meat-casserole-jeremy-fisher/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMDEwMzE\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMDEwMzE/ [L,R=301]
+RewriteRule ^recipe\/summer\-lovin’\-strawberry\-pancakes$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipe/summer-lovin_-strawberry-pancakes/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMDEzNzU\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMDEzNzU/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/cHJvZHVjdA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/cHJvZHVjdA/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMDI0OTI\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMDI0OTI/ [L,R=301]
+RewriteRule ^content\/it’s\-time\-asparagus$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/it_s-time-asparagus/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/102492#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/102492/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMDI0Njc\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMDI0Njc/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/102467#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/102467/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMDI0MzY\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMDI0MzY/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/102436#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/102436/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/102256#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/102256/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMDIxMzg\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMDIxMzg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/102138#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/102138/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^news\/healthcheck[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/news/healthcheck_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^news\/healthcheck[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/news/healthcheck_page_2/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=3$
+RewriteRule ^news\/healthcheck[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/news/healthcheck_page_3/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=4$
+RewriteRule ^news\/healthcheck[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/news/healthcheck_page_4/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=5$
+RewriteRule ^news\/healthcheck[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/news/healthcheck_page_5/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=6$
+RewriteRule ^news\/healthcheck[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/news/healthcheck_page_6/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=7$
+RewriteRule ^news\/healthcheck[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/news/healthcheck_page_7/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=8$
+RewriteRule ^news\/healthcheck[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/news/healthcheck_page_8/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=9$
+RewriteRule ^news\/healthcheck[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/news/healthcheck_page_9/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^tips_tools[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/tips_tools_page_1/? [R=301,L]
+RewriteRule ^page\/technical\-advisors\-3$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/83/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38654$
+RewriteRule ^page\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/page/login_destination_node/38654/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38654#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38654/? [R=301,L]
+RewriteRule ^page\/what\-consumers\-say$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/4290/ [L,R=301]
+RewriteRule ^page\/program\-criteria\-1$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/45/ [L,R=301]
+RewriteRule ^page\/grocery\-product\-finder$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/4289/ [L,R=301]
+RewriteRule ^page\/restaurant\-finder$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/4288/ [L,R=301]
+RewriteRule ^page\/research\-and\-feedback$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/10665/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^tid\=All$
+RewriteRule ^faq[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/faq_tid_All/? [R=301,L]
+RewriteRule ^page\/join\-now\-restaurants$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/page/join-now-restaurants-0/ [L,R=301]
+RewriteRule ^page\/flyers$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/58/ [L,R=301]
+RewriteRule ^page\/staff\-information$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/59/ [L,R=301]
+RewriteRule ^page\/julie\-lau$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/11178/ [L,R=301]
+RewriteRule ^page\/kim\-arrey$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/11179/ [L,R=301]
+RewriteRule ^page\/judith\-blucheau\-rd\-nutritionist$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/22675/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=forum\/917$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_forum/917/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^sort\=asc&order\=Topic$
+RewriteRule ^forum\/917[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/forum/917_sort_asc_order_Topic/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^sort\=asc&order\=Replies$
+RewriteRule ^forum\/917[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/forum/917_sort_asc_order_Replies/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^sort\=asc&order\=Created$
+RewriteRule ^forum\/917[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/forum/917_sort_asc_order_Created/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^sort\=asc&order\=Last%20reply$
+RewriteRule ^forum\/917[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/forum/917_sort_asc_order_Last_reply/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=forum\/918$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_forum/918/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^sort\=asc&order\=Topic$
+RewriteRule ^forum\/918[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/forum/918_sort_asc_order_Topic/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^sort\=asc&order\=Replies$
+RewriteRule ^forum\/918[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/forum/918_sort_asc_order_Replies/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^sort\=asc&order\=Created$
+RewriteRule ^forum\/918[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/forum/918_sort_asc_order_Created/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^sort\=asc&order\=Last%20reply$
+RewriteRule ^forum\/918[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/forum/918_sort_asc_order_Last_reply/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzk1NA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzk1NA/ [L,R=301]
+RewriteRule ^page\/become\-licensee\-grocery$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/28/ [L,R=301]
+RewriteRule ^page\/how\-it\-works\-2$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/19/ [L,R=301]
+RewriteRule ^page\/grocery\-product\-licensee\-fees$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/32/ [L,R=301]
+RewriteRule ^page\/become\-licensee\-restaurants$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/33/ [L,R=301]
+RewriteRule ^page\/food\-service\-how\-it\-works$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/8829/ [L,R=301]
+RewriteRule ^page\/restaurant\-licencee\-fees$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/34/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/62947#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/62947/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/62947#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/62947/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=19$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_19/? [R=301,L]
+RewriteRule ^content\/happy\-mother’s\-day\-0$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/happy-mother_s-day-0/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=22$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_22/? [R=301,L]
+RewriteRule ^content\/winter\-don’t\-hibernate\-stay\-active$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/winter-don_t-hibernate-stay-active/ [L,R=301]
+RewriteRule ^content\/what’s\-dinner…away\-home$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/what_s-dinner…away-home/ [L,R=301]
+RewriteRule ^content\/happy\-father’s\-day$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/happy-father_s-day/ [L,R=301]
+RewriteRule ^content\/isn’t\-salad\-already\-healthy$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/isn_t-salad-already-healthy/ [L,R=301]
+RewriteRule ^content\/dairy\-milking\-it\-what\-it’s\-worth$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/dairy-milking-it-what-it_s-worth/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=9$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_9/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=20$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_20/? [R=301,L]
+RewriteRule ^content\/happy\-mother’s\-day$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/happy-mother_s-day/ [L,R=301]
+RewriteRule ^content\/what\-health\-check\-dietitians\-can’t\-live\-without$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/what-health-check-dietitians-can_t-live-without/ [L,R=301]
+RewriteRule ^content\/what’s\-breakfast$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/what_s-breakfast/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=10$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_10/? [R=301,L]
+RewriteRule ^content\/it’s\-grow\-time$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/it_s-grow-time/ [L,R=301]
+RewriteRule ^content\/i’m\-small\-smoothies$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/i_m-small-smoothies/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=11$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_11/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=12$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_12/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^faq[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/faq_page_2/? [R=301,L]
+RewriteRule ^instylecontest\/home$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/instylecontest/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11204#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11204/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11204#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11204/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11209#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11209/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11209#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11209/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11207#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11207/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11207#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11207/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22939#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22939/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22939#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22939/? [R=301,L]
+RewriteRule ^content\/what\-life\-skill\-can\-improve\-one’s\-health\-seems\-be\-dwindling\-0$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/what-life-skill-can-improve-one_s-health-seems-be-dwindling-0/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11208#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11208/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11208#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11208/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11210#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11210/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11210#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11210/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22944#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22944/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22944#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22944/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11205#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11205/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11205#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11205/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^restaurant\-kids\-menu[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restaurant-kids-menu_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^restaurant\-kids\-menu[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restaurant-kids-menu_page_2/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^tid\=921$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_tid_921/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^tid\=970$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_tid_970/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^tid\=920$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_tid_920/? [R=301,L]
+RewriteRule ^restaurant\/kid’s\-chicken\-pasta$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restaurant/kid_s-chicken-pasta/ [L,R=301]
+RewriteRule ^restaurant\/kid’s\-shrimp\-pasta$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restaurant/kid_s-shrimp-pasta/ [L,R=301]
+RewriteRule ^restaurant\/kid’s\-cheerios\-cereal\-milk\-fruit\-and\-yogurt$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restaurant/kid_s-cheerios-cereal-milk-fruit-and-yogurt/ [L,R=301]
+RewriteRule ^restaurant\/kid’s\-chicken\-grill\-fry$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restaurant/kid_s-chicken-grill-fry/ [L,R=301]
+RewriteRule ^restaurant\/kid’s\-shrimp\-grill\-fry$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restaurant/kid_s-shrimp-grill-fry/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_2/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=3$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_3/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=4$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_4/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=5$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_5/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=6$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_6/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=7$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_7/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=8$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_8/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=22$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_22/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11200#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11200/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11200#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11200/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11206#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11206/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83MzAxNA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83MzAxNA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/73014#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/73014/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/73014#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/73014/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/cmVjaXBlL2xpc3Q\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/cmVjaXBlL2xpc3Q/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^order\=title&sort\=desc&tid\=All&tid_1\=All&keys\=$
+RewriteRule ^recipe\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipe/list_order_title_sort_desc_tid_All_tid_1_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^tid\=All&tid_1\=All&keys\=$
+RewriteRule ^recipe\/list\/full[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipe/list/full_tid_All_tid_1_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^recipe\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipe/list_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^recipe\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipe/list_page_2/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=3$
+RewriteRule ^recipe\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipe/list_page_3/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=4$
+RewriteRule ^recipe\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipe/list_page_4/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=17$
+RewriteRule ^recipe\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipe/list_page_17/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^order\=title&sort\=desc&tid_2\=All&tid\=All&tid_1\=All&keys\=$
+RewriteRule ^product\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/product/list_order_title_sort_desc_tid_2_All_tid_All_tid_1_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^order\=name&sort\=asc&tid_2\=All&tid\=All&tid_1\=All&keys\=$
+RewriteRule ^product\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/product/list_order_name_sort_asc_tid_2_All_tid_All_tid_1_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^order\=name_1&sort\=asc&tid_2\=All&tid\=All&tid_1\=All&keys\=$
+RewriteRule ^product\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/product/list_order_name_1_sort_asc_tid_2_All_tid_All_tid_1_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^tid_2\=All&tid\=All&tid_1\=All&keys\=$
+RewriteRule ^product\/list\/full[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/product/list/full_tid_2_All_tid_All_tid_1_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/product/list_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^product\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/product/list_page_2/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=3$
+RewriteRule ^product\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/product/list_page_3/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=4$
+RewriteRule ^product\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/product/list_page_4/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=60$
+RewriteRule ^product\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/product/list_page_60/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^order\=title&sort\=desc&tid_2\=All&keys\=$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restaurant/list_order_title_sort_desc_tid_2_All_keys/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83ODU4MA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83ODU4MA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/78580#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/78580/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/78580#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/78580/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83NDQyMA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83NDQyMA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/74420#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/74420/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/74420#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/74420/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83NDQyMg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83NDQyMg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/74422#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/74422/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/74422#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/74422/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83NDAzNw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83NDAzNw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/74037#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/74037/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/74037#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/74037/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/73846#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/73846/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/73846#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/73846/? [R=301,L]
+RewriteRule ^story\/harvey’s\-launches\-four\-health\-check\-items$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/story/harvey_s-launches-four-health-check-items/ [L,R=301]
+RewriteRule ^story\/mac’s\-has\-heart\-and\-stroke\-foundation\-health\-check\-entreeshealthy\-options\-added\-convenient\-gra$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/story/mac_s-has-heart-and-stroke-foundation-health-check-entreeshealthy-options-added-convenient-gra/ [L,R=301]
+RewriteRule ^story\/‘tis\-sweet\-life$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/story/_tis-sweet-life/ [L,R=301]
+RewriteRule ^story\/rewards\-significantly\-boost\-canadians’\-participation\-healthy\-lifestyle\-initiatives$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/story/rewards-significantly-boost-canadians_-participation-healthy-lifestyle-initiatives/ [L,R=301]
+RewriteRule ^story\/casey’s\-grill\-launches\-health\-check\-menu\-items\-and\-innovative\-nutrition\-information\-system$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/story/casey_s-grill-launches-health-check-menu-items-and-innovative-nutrition-information-system/ [L,R=301]
+RewriteRule ^story\/health\-check\-and\-clip\-n’\-save$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/story/health-check-and-clip-n_-save/ [L,R=301]
+RewriteRule ^content\/what’s\-so\-special\-about\-four\-food\-groups$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/what_s-so-special-about-four-food-groups/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^tips_tools[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/tips_tools_page_2/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1&tid\=All$
+RewriteRule ^faq[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/faq_page_1_tid_All/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83OTQ2Nw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83OTQ2Nw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/79467#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/79467/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/79467#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/79467/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83OTQ1NA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83OTQ1NA/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzcxNg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzcxNg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33716#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33716/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33716#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33716/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzc2Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzc2Mg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/72863#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/72863/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/72863#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/72863/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_2/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=3$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_3/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=4$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_4/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=5$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_5/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=6$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_6/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=7$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_7/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=8$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_8/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=106$
+RewriteRule ^prodsearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_106/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^recipesearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipesearch_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^recipesearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipesearch_page_2/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=3$
+RewriteRule ^recipesearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipesearch_page_3/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=4$
+RewriteRule ^recipesearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipesearch_page_4/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=5$
+RewriteRule ^recipesearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipesearch_page_5/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=6$
+RewriteRule ^recipesearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipesearch_page_6/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=7$
+RewriteRule ^recipesearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipesearch_page_7/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=8$
+RewriteRule ^recipesearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipesearch_page_8/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=11$
+RewriteRule ^recipesearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipesearch_page_11/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zOTUzMw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zOTUzMw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/39533#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/39533/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/39533#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/39533/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS80MDU2Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS80MDU2Mg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/27492#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/27492/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/27492#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/27492/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72735#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72735/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72735#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72735/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72734#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72734/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72734#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72734/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72716#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72716/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72716#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72716/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72710#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72710/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72710#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72710/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72695#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72695/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72695#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72695/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72669#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72669/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72669#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72669/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72634#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72634/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72634#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72634/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72632#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72632/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72632#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72632/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72576#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72576/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72576#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72576/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/68675#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/68675/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=18$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_18/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=13$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_13/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=14$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_14/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=15$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_15/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=16$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_16/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=17$
+RewriteRule ^blog[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog_page_17/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83Mjk2OQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83Mjk2OQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72969#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72969/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72969#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72969/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72966#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72966/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72966#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72966/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83MjkwMg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83MjkwMg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72902#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72902/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72902#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72902/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72849#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72849/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72849#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72849/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72837#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72837/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72837#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72837/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83Mjk3MA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83Mjk3MA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72970#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72970/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72970#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72970/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72829#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72829/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72829#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72829/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72828#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72828/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72828#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72828/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72813#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72813/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72813#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72813/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72812#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72812/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72812#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72812/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72809#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72809/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72809#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72809/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72808#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72808/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72808#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72808/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72789#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72789/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72789#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72789/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72786#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/72786/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/72786#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/72786/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/39070#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/39070/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/39070#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/39070/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/39061#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/39061/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/39061#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/39061/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/39026#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/39026/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/39026#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/39026/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38989#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38989/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38989#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38989/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38978#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38978/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38978#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38978/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38954#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38954/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38954#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38954/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38890#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38890/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38890#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38890/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38886#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38886/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38886#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38886/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38871#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38871/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38871#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38871/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38857#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38857/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38857#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38857/? [R=301,L]
+RewriteRule ^content\/rd\-what’s$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/rd-what_s/ [L,R=301]
+RewriteRule ^content\/setting\-smart\-new\-year’s\-resolutions$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/setting-smart-new-year_s-resolutions/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83MzA1Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83MzA1Mg/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83MjkwNA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83MjkwNA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38836#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38836/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38836#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38836/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38823#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38823/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38823#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38823/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38812#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38812/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38812#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38812/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38815#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38815/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38815#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38815/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38804#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38804/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38804#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38804/? [R=301,L]
+RewriteRule ^recipe\/samara’s\-layered\-mexican\-dip$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipe/samara_s-layered-mexican-dip/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38799#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38799/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38799#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38799/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38781#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38781/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38781#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38781/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38761#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38761/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38761#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38761/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38754#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38754/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38754#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38754/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38738#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38738/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38738#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38738/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^tid\=491&tid_1\=All&keys\=$
+RewriteRule ^recipesearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipesearch_tid_491_tid_1_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38710#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38710/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38710#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38710/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38694#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38694/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38694#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38694/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38692#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38692/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38692#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38692/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38693#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38693/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38693#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38693/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38682#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38682/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38682#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38682/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38637#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38637/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38637#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38637/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38635#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38635/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38635#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38635/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38621#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38621/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38621#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38621/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38585#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38585/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38585#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38585/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38523#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/38523/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/38523#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/38523/? [R=301,L]
+RewriteRule ^content\/kids\-kitchen\-–\-it’s\-cool\-cook$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/kids-kitchen-–-it_s-cool-cook/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=3$
+RewriteRule ^faq[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/faq_page_3/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/37361#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/37361/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/37361#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/37361/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzg1NA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzg1NA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33854$
+RewriteRule ^page\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/page/login_destination_node/33854/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zNjAyOQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zNjAyOQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/36029#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/36029/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/36029#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/36029/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zNjE0OA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zNjE0OA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33969#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33969/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33969#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33969/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/72845#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/72845/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/72845#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/72845/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83NDkyNA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83NDkyNA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/74924#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/74924/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83NDkyMg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83NDkyMg/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjk1OA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjk1OA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22958#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22958/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22958#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22958/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22934#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22934/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22934#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22934/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22858#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22858/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22858#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22858/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjc1Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjc1Mg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22752#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22752/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22752#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22752/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTg5MQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTg5MQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11891#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11891/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11891#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11891/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83MzAxMg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83MzAxMg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/75182#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/75182/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/75182#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/75182/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^tid\=862$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_tid_862/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^tid\=551$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_tid_551/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^tid\=552$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_tid_552/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^tid\=971$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_tid_971/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjcyMw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjcyMw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22723#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22723/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22723#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22723/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjQ1Mw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjQ1Mw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22453#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22453/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22453#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22453/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjQ1OA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjQ1OA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22458#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22458/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22458#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22458/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjQ2MA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjQ2MA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22460#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22460/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22460#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22460/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjQ2MQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjQ2MQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22461#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22461/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22461#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22461/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1&tid\=920$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_1_tid_920/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzg4Nw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzg4Nw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33887#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33887/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33887#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33887/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzg4OQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzg4OQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33889#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33889/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33889#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33889/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzg5MQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzg5MQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33891#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33891/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33891#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33891/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzg5Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzg5Mg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33892#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33892/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33892#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33892/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzg5NA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzg5NA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33894#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33894/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33894#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33894/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=21$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_21/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=9$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_9/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=10$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_10/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=11$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_11/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=12$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_12/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMzI1Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMzI1Mg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/23252#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/23252/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/23252#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/23252/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTI1OA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTI1OA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11258#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11258/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11258#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11258/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTI2OA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTI2OA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11268#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11268/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11268#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11268/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjYzNQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjYzNQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22635#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22635/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22635#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22635/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMDkxOQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMDkxOQ/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjgwNw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjgwNw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22807#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22807/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22807#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22807/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzg1Ng\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzg1Ng/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33856#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33856/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33856#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33856/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zNDI0Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zNDI0Mg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/34242#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/34242/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/34242#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/34242/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zNDI0Mw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zNDI0Mw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/34243#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/34243/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/34243#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/34243/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zNDI1Ng\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zNDI1Ng/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/34256#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/34256/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/34256#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/34256/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS85ODk2Ng\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS85ODk2Ng/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS85OTE5Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS85OTE5Mg/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS85OTIyMA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS85OTIyMA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^order\=title&sort\=desc&page\=1&tid_2\=All&tid\=All&tid_1\=All&keys\=$
+RewriteRule ^product\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/product/list_order_title_sort_desc_page_1_tid_2_All_tid_All_tid_1_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^order\=name&sort\=asc&page\=1&tid_2\=All&tid\=All&tid_1\=All&keys\=$
+RewriteRule ^product\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/product/list_order_name_sort_asc_page_1_tid_2_All_tid_All_tid_1_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^order\=name_1&sort\=asc&page\=1&tid_2\=All&tid\=All&tid_1\=All&keys\=$
+RewriteRule ^product\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/product/list_order_name_1_sort_asc_page_1_tid_2_All_tid_All_tid_1_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^order\=title&sort\=asc&tid_2\=All&keys\=$
+RewriteRule ^restaurant\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restaurant/list_order_title_sort_asc_tid_2_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^tid_2\=All&keys\=$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restaurant/list/full_tid_2_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1&order\=title&sort\=desc&tid_2\=All&keys\=$
+RewriteRule ^restaurant\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restaurant/list_page_1_order_title_sort_desc_tid_2_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2&order\=title&sort\=desc&tid_2\=All&keys\=$
+RewriteRule ^restaurant\/list[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restaurant/list_page_2_order_title_sort_desc_tid_2_All_keys/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83NDU0Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83NDU0Mg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/74542#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/74542/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/74542#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/74542/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83NDU0MA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83NDU0MA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/74540#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/74540/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/74540#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/74540/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/72817#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/72817/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/72817#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/72817/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/72714#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/72714/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/72714#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/72714/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/62902#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/62902/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/62902#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/62902/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/56760#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/56760/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/56760#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/56760/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38980#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/38980/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38980#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/38980/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38892#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/38892/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38892#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/38892/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38429#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/38429/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38429#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/38429/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38497#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/38497/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38497#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/38497/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38145#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/38145/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38145#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/38145/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/37497#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/37497/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/37497#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/37497/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33679#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33679/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33679#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33679/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33612#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33612/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33612#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33612/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33604#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33604/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33604#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33604/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33531#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33531/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33531#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33531/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33491#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33491/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33491#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33491/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33487#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33487/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33487#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33487/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33462#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33462/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33462#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33462/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33460#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33460/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33460#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33460/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33438#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33438/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33438#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33438/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33394#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33394/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33394#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33394/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33392#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33392/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33392#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33392/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/23311#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/23311/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/23311#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/23311/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22655#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22655/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22655#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22655/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22653#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22653/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22653#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22653/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22415#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22415/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22415#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22415/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22413#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22413/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22413#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22413/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22234#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22234/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22234#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22234/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/19938#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/19938/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/19938#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/19938/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11552#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11552/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11552#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11552/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11535#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11535/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11535#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11535/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11272#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11272/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11272#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11272/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11091#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11091/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11091#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11091/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83Mjg3NQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83Mjg3NQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/72875#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/72875/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/72875#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/72875/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83Mjg3Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83Mjg3Mg/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zNDE1Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zNDE1Mg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/34152#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/34152/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/34152#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/34152/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zNDE1MQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zNDE1MQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/34151#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/34151/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/34151#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/34151/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2&tid\=All$
+RewriteRule ^faq[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/faq_page_2_tid_All/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzU5Ng\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzU5Ng/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33596#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33596/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33596#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33596/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzYwMg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzYwMg/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yNQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yNQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=105$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_105/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=9$
+RewriteRule ^prodsearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_9/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=10$
+RewriteRule ^prodsearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_10/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=11$
+RewriteRule ^prodsearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_11/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=12$
+RewriteRule ^prodsearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/prodsearch_page_12/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/8572$
+RewriteRule ^protected\-node[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/page/health-check-logos/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22646#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22646/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22646#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22646/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTE5Ng\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTE5Ng/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11196#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11196/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11196#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11196/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zODgwNw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zODgwNw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38807#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/38807/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38807#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/38807/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^blogs\/cdombrow[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blogs/cdombrow_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^blogs\/cdombrow[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blogs/cdombrow_page_2/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=3$
+RewriteRule ^blogs\/cdombrow[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blogs/cdombrow_page_3/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^blog\/103[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog/103_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^blog\/103[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog/103_page_2/? [R=301,L]
+RewriteRule ^content\/get\-smart\-your\-kids’\-hearts\-and\-win$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/get-smart-your-kids_-hearts-and-win/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^blogs\/healthcheck[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blogs/healthcheck_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^blogs\/healthcheck[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blogs/healthcheck_page_2/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=3$
+RewriteRule ^blogs\/healthcheck[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blogs/healthcheck_page_3/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83MjYxMA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83MjYxMA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^blogs\/alegendre[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blogs/alegendre_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=2$
+RewriteRule ^blogs\/alegendre[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blogs/alegendre_page_2/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMTgwNg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMTgwNg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/21806#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/21806/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/21806#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/21806/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zODc2NA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zODc2NA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38764#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/38764/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38764#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/38764/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTUxNg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTUxNg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11516#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11516/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11516#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11516/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^blogs\/sfoisy[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blogs/sfoisy_page_1/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTYwNA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTYwNA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11604#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11604/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11604#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11604/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTU5NQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTU5NQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11595#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11595/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11595#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11595/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMDc5Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMDc5Mg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/11296#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/11296/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/11296#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/11296/? [R=301,L]
+RewriteRule ^content\/healthy\-kids\-meal\-casey’s$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/healthy-kids-meal-casey_s/ [L,R=301]
+RewriteRule ^content\/mise\-en\-place\-–\-approach\-easy\-and\-“no\-fail”\-cooking$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/mise-en-place-–-approach-easy-and-_no-fail_-cooking/ [L,R=301]
+RewriteRule ^content\/revisiting\-your\-new\-year’s\-resolutions$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/revisiting-your-new-year_s-resolutions/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/YmxvZy8xMjY\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/YmxvZy8xMjY/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^blog\/126[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blog/126_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^blogs\/katie\-jessop[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blogs/katie-jessop_page_1/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS84MzA1MA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS84MzA1MA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/83050#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/83050/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/83050#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/83050/? [R=301,L]
+RewriteRule ^content\/check\-new\-year’s\-resolutions$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/check-new-year_s-resolutions/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^blogs\/jweinfeld[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/blogs/jweinfeld_page_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33933#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33933/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33933#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33933/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTUxNA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTUxNA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11514#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11514/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11514#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11514/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11890#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11890/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11890#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11890/? [R=301,L]
+RewriteRule ^recipe\/samara’s\-oven\-baked\-zucchini\-sticks$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipe/samara_s-oven-baked-zucchini-sticks/ [L,R=301]
+RewriteRule ^recipe\/samara’s\-tangy\-corn\-red\-pepper\-and\-chicken\-pizza$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipe/samara_s-tangy-corn-red-pepper-and-chicken-pizza/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34255#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/34255/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34255#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/34255/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34228#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/34228/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34228#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/34228/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34193#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/34193/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34193#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/34193/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34154#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/34154/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34154#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/34154/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33973#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33973/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33973#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33973/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34144#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/34144/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34144#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/34144/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34055#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/34055/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34055#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/34055/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34051#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/34051/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/34051#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/34051/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33974#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33974/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33974#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33974/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33985#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33985/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33985#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33985/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33979#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33979/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33979#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33979/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83MzE0Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83MzE0Mg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/73142#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/73142/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/73142#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/73142/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMTgxMA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMTgxMA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/21810#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/21810/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/21810#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/21810/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zNDI0MA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zNDI0MA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/34240#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/34240/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/34240#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/34240/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/YmxvZy8xNDQ\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/YmxvZy8xNDQ/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMzA2OQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMzA2OQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/23069#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/23069/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/23069#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/23069/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMDc4Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMDc4Mg/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMDc4OA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMDc4OA/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zODY2OQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zODY2OQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38669#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/38669/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38669#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/38669/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33958#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33958/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33958#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33958/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzk1MQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzk1MQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33951#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33951/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33951#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33951/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzkzNg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzkzNg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33936#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33936/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33936#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33936/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzkxMw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzkxMw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33913#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33913/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33913#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33913/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzg1MA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzg1MA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33850#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33850/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33850#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33850/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzgyMw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzgyMw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33823#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33823/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33823#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33823/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzc5Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzc5Mg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33792#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33792/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33792#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33792/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzc4Ng\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzc4Ng/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33786#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33786/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33786#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33786/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=1&tid\=491&tid_1\=All&keys\=$
+RewriteRule ^recipesearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/recipesearch_page_1_tid_491_tid_1_All_keys/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zNDExMg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zNDExMg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33497#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33497/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33497#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33497/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33492#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33492/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33492#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33492/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzQ3Mw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzQ3Mw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33473#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33473/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33473#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33473/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzQ2Nw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzQ2Nw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33467#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33467/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33467#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33467/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzQ1Nw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzQ1Nw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33457#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33457/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33457#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33457/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzQyMw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzQyMw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33423#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33423/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33423#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33423/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzQwNw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzQwNw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33407#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33407/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33407#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33407/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzM5Ng\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzM5Ng/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33396#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/33396/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/33396#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/33396/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/28727#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/28727/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/28727#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/28727/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yODQ2Mw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yODQ2Mw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=node\/28463#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/28463/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/28463#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/28463/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=4$
+RewriteRule ^faq[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/faq_page_4/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zODUzMg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zODUzMg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38532#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/38532/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/38532#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/38532/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zODUzNQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zODUzNQ/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzYyNw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzYyNw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33627#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33627/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33627#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33627/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzYzMw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzYzMw/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzk5NA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzk5NA/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzk1Nw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzk1Nw/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzk5MQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzk5MQ/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/aW5zdHlsZWNvbnRlc3QvZGFpbHk\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/aW5zdHlsZWNvbnRlc3QvZGFpbHk/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMzU2Nw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMzU2Nw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/23567#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/23567/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/23567#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/23567/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/24136#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/24136/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/24136#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/24136/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTc3MA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTc3MA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22282#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22282/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22282#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22282/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjI4Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjI4Mg/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTc3MQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTc3MQ/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTc2OQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTc2OQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=1$
+RewriteRule ^contest\/healthy\-tips[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/contest/healthy-tips_page_1/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/Y29udGVzdC9oZWFsdGh5LXRpcHM\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/Y29udGVzdC9oZWFsdGh5LXRpcHM/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjk4Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjk4Mg/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22982#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22982/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22982#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22982/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjk5NQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjk5NQ/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTc2MQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTc2MQ/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTc3Mg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTc3Mg/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTUwNw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTUwNw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11507#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11507/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11507#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11507/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTI5OQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTI5OQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/35120#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/35120/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/35120#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/35120/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/35116#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/35116/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/35116#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/35116/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/35109#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/35109/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/35109#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/35109/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11270#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11270/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11270#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11270/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11266#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11266/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11266#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11266/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11264#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11264/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11264#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11264/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=20$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_20/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=13$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_13/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=14$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_14/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=15$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_15/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=16$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_16/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=17$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_17/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=18$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_18/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^page\=19$
+RewriteRule ^restosearch[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restosearch_page_19/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS85NDcyNg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS85NDcyNg/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS85NDczMA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS85NDczMA/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS85NDcyOA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS85NDcyOA/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8zMzY4Mw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8zMzY4Mw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33683#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/33683/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/33683#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/33683/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS85NDczMg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS85NDczMg/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS85NDcwNg\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS85NDcwNg/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS85NDcwOA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS85NDcwOA/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/cmVzdGF1cmFudC9saXN0L2Z1bGw\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/cmVzdGF1cmFudC9saXN0L2Z1bGw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^order\=title&sort\=desc&tid_2\=All&keys\=$
+RewriteRule ^restaurant\/list\/full[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/restaurant/list/full_order_title_sort_desc_tid_2_All_keys/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/72815#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/72815/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/72815#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/72815/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS83ODMxMA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS83ODMxMA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/78310#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/78310/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/78310#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/78310/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8xMTIxNw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8xMTIxNw/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11217#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/11217/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/11217#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/11217/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22647#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22647/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22647#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22647/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjY1NA\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjY1NA/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22654#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_comment/reply/22654/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=comment\/reply\/22654#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_comment/reply/22654/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/11533#comment\-form$
+RewriteRule ^user\/login[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/login_destination_node/11533/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^destination\=node\/11533#comment\-form$
+RewriteRule ^user\/register[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/user/register_destination_node/11533/? [R=301,L]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjk0MQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjk0MQ/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjcyNw\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjcyNw/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjY4Ng\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjY4Ng/ [L,R=301]
+RewriteRule ^bookmarks\/item\/addpage\/bm9kZS8yMjY4NQ\=\=$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/bookmarks/item/addpage/bm9kZS8yMjY4NQ/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^page\=3&tid\=All$
+RewriteRule ^faq[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/faq_page_3_tid_All/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^utm_source\=smr&utm_medium\=subtitle&utm_campaign\=back\+to\+school$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/backtoschool/home_utm_source_smr_utm_medium_subtitle_utm_campaign_back_to_school/? [R=301,L]
+RewriteRule ^content\/“helpmy\-kid\-does\-not\-want\-eat\-vegetables”$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/_helpmy-kid-does-not-want-eat-vegetables_/ [L,R=301]
+RewriteRule ^content\/salt\-you’re\-dumped$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/content/salt-you_re-dumped/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^mosmsg\=file\+not\+found\:\+french\/home\.htm$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/fr/404-html_mosmsg_file_not_found__french/home/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^mosmsg\=file\+not\+found\:\+french\/raisinpetillanfr\.htm$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/fr/404-html_mosmsg_file_not_found__french/raisinpetillanfr/? [R=301,L]
+RewriteRule ^healthyeattips\/E\-square\/FibreChallenge\.ai$ /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/healthyeattips/E-square/FibreChallenge-ai/ [L,R=301]
+RewriteRule ^image_captcha\/111683\/1314392554.html$ /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/ [L,R=301]
+RewriteRule ^image_captcha\/143225\/1315237259.html$ /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/ [L,R=301]
+RewriteRule ^image_captcha\/163080\/1318236453.html$ /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/ [L,R=301]
+RewriteRule ^image_captcha\/277304\/1336315074.html$ /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/ [L,R=301]
+RewriteRule ^image_captcha\/277364\/1336358234.html$ /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/ [L,R=301]
+RewriteRule ^image_captcha\/302701\/1348098837.html$ /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^option\=com_pollxt&$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_pollxt_/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=119&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_119_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=120&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_120_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=121&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_121_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=122&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_122_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=123&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_123_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=124&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_124_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=125&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_125_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=126&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_126_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=127&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_127_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=128&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_128_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=129&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_129_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=130&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_130_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=131&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_131_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=132&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_132_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=133&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_133_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=134&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_134_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=135&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_135_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=136&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_136_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=137&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_137_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=138&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_138_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=139&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_139_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=140&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_140_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=141&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_141_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=142&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_142_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=143&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_143_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=144&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_144_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=225&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_225_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=226&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_226_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=227&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_227_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=228&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_228_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=229&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_229_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=230&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_230_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=231&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_231_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=232&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_232_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=235&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_235_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=69&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_69_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=70&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_70_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=71&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_71_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=72&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_72_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=73&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_73_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=74&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_74_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=75&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_75_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=76&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_76_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=77&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_77_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=78&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_78_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=79&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_79_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=80&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_80_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=81&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_81_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=82&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_82_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=83&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_83_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=84&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_84_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=85&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_85_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=86&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_86_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=87&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_87_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=88&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_88_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^option\=com_content&task\=view&id\=89&Itemid\=1$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_option_com_content_task_view_id_89_Itemid_1/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^lang\=en$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_lang_en/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^lang\=fr$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/index_lang_fr/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^V$
+RewriteRule ^misc\/drupal\.js[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/misc/drupal-js_V/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^p$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/comment/comment-css_p/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^j$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/forum/forum-css_j/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^p$
+RewriteRule ^modules\/forum\/forum\.css[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/forum/forum-css_p/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^p$
+RewriteRule ^modules\/node\/node\.css[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/node/node-css_p/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^V$
+RewriteRule ^modules\/node\/node\.css[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/node/node-css_V/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^p$
+RewriteRule ^modules\/poll\/poll\.css[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/poll/poll-css_p/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^V$
+RewriteRule ^modules\/poll\/poll\.css[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/poll/poll-css_V/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^p$
+RewriteRule ^modules\/system\/defaults\.css[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/system/defaults-css_p/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^V$
+RewriteRule ^modules\/system\/defaults\.css[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/system/defaults-css_V/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^p$
+RewriteRule ^[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/system/system-menus-css_p/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^V$
+RewriteRule ^modules\/system\/system\-menus\.css[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/system/system-menus-css_V/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^p$
+RewriteRule ^modules\/system\/system\.css[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/system/system-css_p/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^V$
+RewriteRule ^modules\/system\/system\.css[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/system/system-css_V/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^n$
+RewriteRule ^modules\/taxonomy\/taxonomy\.css[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/taxonomy/taxonomy-css_n/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^p$
+RewriteRule ^modules\/user\/user\.css[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/user/user-css_p/? [R=301,L]
+RewriteCond %{QUERY_STRING} ^V$
+RewriteRule ^modules\/user\/user\.css[/]? /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/modules/user/user-css_V/? [R=301,L]
+RewriteRule ^page\/different\-types\-fat\-0$.html /scraping/files/live/healthcheck.org_erik_altva.com_cepnesk8yry/node/6273/ [L,R=301]

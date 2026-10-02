@@ -1,0 +1,101 @@
+path,tier,referring_domains,links,dofollow,max_dr,top_anchor,crawl_file,action
+/,1,69,174,128,92,Health Check,index.html,already-live
+/page/different-types-fat,1,18,23,23,90,four main types,page/different-types-fat.html,restore-page
+/story/health-check-exit,1,10,13,12,75,http://www.healthcheck.org/story/health-check-exit,story/health-check-exit.html,restore-page
+/page/helping-you-eat-well,1,8,18,14,70,Helping You Eat Well | Heart & Stroke Health Check Program,page/helping-you-eat-well.html,restore-page
+/sites/default/files/mmallet/GroceryNutrientCriteria_Sept11.pdf,1,7,7,4,72,the original,,recover-pdf-from-wayback
+/faq,1,6,14,10,57,FAQ | Heart & Stroke Health Check Program,faq.html,restore-page
+/page/nutrient-criteria-grocery-0,1,6,11,6,57,the original,page/nutrient-criteria-grocery-0.html,restore-page
+/story/health-check-media,1,5,9,9,76,press release,story/health-check-media.html,restore-page
+/page/what-health-check,1,3,5,5,90,Heart & Stroke Foundation. What is Health Check? www.healthcheck.org/page/what-h,page/what-health-check.html,restore-page
+/fr/home/home.html,1,3,5,5,77,,fr/home/home.html,redirect-home
+/instylecontest/home,1,3,10,4,69,http://www.healthcheck.org/instylecontest/home,instylecontest/home.html,redirect-home
+/en/home/home.html,1,3,11,11,48,http://www.healthcheck.org/en/home/home.html#,en/home/home.html,redirect-to-english-equivalent
+/node/11157,1,2,32,32,89,Carol Dombrow,node/11157.html,restore-page
+/page/katie-jessop-rd,1,2,4,4,89,Katie Jessop,page/katie-jessop-rd.html,restore-page
+/page/program-criteria-3,1,2,3,3,89,nutrient criteria,page/program-criteria-3.html,restore-page
+/page/samara-foisy-rd-mhsc,1,2,4,4,89,Samara Foisy,page/samara-foisy-rd-mhsc.html,restore-page
+/french/ff_home.html,1,2,4,4,88,Visez santé,,redirect-home
+/page/what-consumers-say,1,2,2,2,79,http://www.healthcheck.org/page/what-consumers-say,page/what-consumers-say.html,restore-page
+/story/december-15-2004-food-industry-offers-consumers-solution-fight-against-obesity-health-check-pr,1,2,6,6,70,a 2004 Heart and Stroke Foundation press release on the Health Check program,story/december-15-2004-food-industry-offers-consumers-solution-fight-against-obesity-health-check-pr.html,restore-page
+/story/british-columbia-pizza-huts-get-a-health-check-pizza-hut,1,2,8,8,69,Pizza Hut has now announced its participation,story/british-columbia-pizza-huts-get-a-health-check-pizza-hut.html,restore-page
+/backtoschool/home,1,2,7,3,69,http://www.healthcheck.org/backtoschool/home,backtoschool/home.html,redirect-home
+/content/st-patrick’s-day-healthy-way-think-green,1,1,1,0,92,here,,recover-page-from-wayback
+/en/healthy-recipes/recipes.html,1,1,1,0,91,www.healthcheck.org/en/healthy-recipes/recipes.html,en/healthy-recipes/recipes.html,redirect-to-english-equivalent
+/page/program-criteria,1,1,2,2,90,http://www.healthcheck.org/page/program-criteria,,recover-page-from-wayback
+/page/restaurant-overview,1,1,2,2,89,list,page/restaurant-overview.html,restore-page
+/content/confessions-former-football-wife,1,1,2,2,89,Samara Foisy,content/confessions-former-football-wife.html,restore-page
+/Timetostartcontest,1,1,1,0,87,www.healthcheck.org/Timetostartcontest,timetostartcontest,redirect-home
+/en/about-health-check/meat-alternatives.html,1,1,1,1,87,,en/about-health-check/meat-alternatives.html,redirect-to-english-equivalent
+/french/fibrefacts.htm,1,1,2,0,83,http://www.healthcheck.org/french/fibrefacts.htm,,redirect-home
+/page/types-fibre,1,1,2,0,82,Heart and Stroke Foundation: Types of Fibre,page/types-fibre.html,restore-page
+/story/harvey’s-launches-four-health-check-items,1,1,2,2,81,The Canadian Heart and Stroke Foundation’s decision to place their Health Check ,story/harvey_s-launches-four-health-check-items.html,restore-page
+/fr/page/restaurant-overview,1,1,1,1,79,http://www.healthcheck.org/fr/page/restaurant-overview,fr/page/restaurant-overview.html,redirect-home
+/fr/eating-out/eating-out.html,1,1,1,1,79,http://www.healthcheck.org/fr/eating-out/eating-out.html,fr/eating-out/eating-out.html,redirect-home
+/recipe/microwave-apple-crisp-omelette,1,1,2,2,77,pple crisp omelette,,recover-page-from-wayback
+/recipe/granola-yogurt-parfait,1,1,2,2,77,1. Yogurt granola parfait,,recover-page-from-wayback
+/content/dairy-milking-it-what-it’s-worth,1,1,1,1,75,Health Check,content/dairy-milking-it-what-it_s-worth.html,restore-page
+/english/e_home.html,1,1,1,1,74,www.healthcheck.org --> Health Check website,english/e_home.html,redirect-to-english-equivalent
+/page/nutrient-criteria-grocery,1,1,1,1,72,http://www.healthcheck.org/page/nutrient-criteria-grocery,page/nutrient-criteria-grocery.html,restore-page
+/page/nutrient-criteria-restaurants,1,1,1,1,71,http://www.healthcheck.org/page/nutrient-criteria-restaurants,page/nutrient-criteria-restaurants.html,restore-page
+/2013/rules_fr.php,1,1,2,0,69,http://www.healthcheck.org/2013/rules_fr.php,,redirect-home
+/timetostartcontest/rules,1,1,4,0,69,http://www.healthcheck.org/timetostartcontest/rules,timetostartcontest/rules.html,redirect-home
+/instylecontest/rules,1,1,4,0,69,http://www.healthcheck.org/instylecontest/rules,instylecontest/rules.html,redirect-home
+/timetostartcontest/register-inscription,1,1,2,0,69,http://www.healthcheck.org/timetostartc ... nscription,,redirect-home
+/2013/rules_en.php,1,1,2,0,69,http://www.healthcheck.org/2013/rules_en.php,,redirect-home
+/timetostartcontest/enter,1,1,1,0,69,http://www.healthcheck.org/timetostartcontest/enter,timetostartcontest/enter.html,redirect-home
+/contest/daily,1,1,2,0,69,http://www.healthcheck.org/contest/daily,contest/daily,redirect-home
+/healthybeat14/contest,1,1,2,0,69,http://www.healthcheck.org/healthybeat14/contest,,redirect-home
+/page/program-critieria,1,1,1,1,69,http://www.healthcheck.org/page/program-critieria,page/program-critieria.html,restore-page
+/sites/default/files/editor/HSF_Calendar2012_Eng_OnlineVersion.pdf,1,1,1,0,69,http://www.healthcheck.org/sites/defaul ... ersion.pdf,,recover-pdf-from-wayback
+/contest/home,2,2,7,7,48,http://www.healthcheck.org/contest/home,contest/home.html,redirect-home
+/en/nutritional-information/nutrient-criteria-grocery.html,2,2,7,7,47,nutrient criteria,en/nutritional-information/nutrient-criteria-grocery.html,redirect-to-english-equivalent
+/product/original-non-hydrogenated-margarine-7-g-foodservice-item,2,2,3,3,27,"""Health Check Symbol and Becel""",,recover-page-from-wayback
+/contest/enter,2,2,5,5,26,win a nutrition makeover trip to Toronto,contest/enter.html,redirect-home
+/blogs/jweinfeld,2,1,1,1,59,healthcheck.org,blogs/jweinfeld.html,restore-page
+/restaurant-kids-menu,2,1,1,1,55,Click here,restaurant-kids-menu.html,restore-page
+/contest/prizes-weekly,2,1,3,3,48,http://www.healthcheck.org/contest/prizes-weekly,contest/prizes-weekly.html,redirect-home
+/contest/rules,2,1,2,2,48,http://www.healthcheck.org/contest/rules,contest/rules.html,redirect-home
+/images/stories/hc_icon_eng.gif,2,1,1,1,48,http://www.healthcheck.org/images/st...c_icon_eng.gif,images/stories/hc_icon_eng.gif,restore-image
+/contest/prizes,2,1,3,3,48,http://www.healthcheck.org/contest/prizes,contest/prizes.html,redirect-home
+/sites/default/files/editor/HC10_Nutrient Criteriapdf_changes_Aug10.pdf,2,1,3,3,47,allowable levels of sodium,,recover-pdf-from-wayback
+/page/grocery-product-licensee-fees,2,1,14,14,47,fees,page/grocery-product-licensee-fees.html,restore-page
+/story/health-check-drives-away-salt,2,1,6,6,47,this,story/health-check-drives-away-salt.html,restore-page
+/sites/default/files/editor/HealthCheck_Nutrient criteria_retail_2009(2)_0.pdf,2,1,5,5,47,posted just over a month ago,,recover-pdf-from-wayback
+/sites/default/files/editor/HealthCheck_NutrientCriteria_Retail_October09.pdf,2,1,4,4,47,all that matter,,recover-pdf-from-wayback
+/content/how-can-you-possibly-compare-one-food-another,2,1,4,4,47,a recent post,content/how-can-you-possibly-compare-one-food-another.html,restore-page
+/prodsearch?tid_2=All&tid=All&keys=,2,1,5,5,47,program participants,prodsearch.html,redirect-home
+/content/heres-a-challenge-create-a-healthy-pizza-lunch,2,1,4,4,47,the latest post,content/heres-a-challenge-create-a-healthy-pizza-lunch.html,restore-page
+/story/caseys-grill-launches-health-check-items,2,1,4,4,47,The second,,recover-page-from-wayback
+/sites/default/files/editor/Nutrient Criteria_Foodservice.March 2010.EN_.pdf,2,1,2,2,47,Health Check have to say,,recover-pdf-from-wayback
+/story/what-new-health-check,2,1,4,4,47,the Heart and Stroke Foundation's latest press release,story/what-new-health-check.html,restore-page
+/content/making-a-difference-one-pizza-a-time,2,1,8,8,47,Making a difference one Pizza at a time,content/making-a-difference-one-pizza-a-time.html,restore-page
+/sites/default/files/mmallet/HC13_NutrientCriteria_foodservice_ october 2013_English.pdf,2,1,3,3,47,Health Check have to say,,recover-pdf-from-wayback
+/page/technical-advisors-3,2,1,6,6,47,Technical Advisory Committee,page/technical-advisors-3.html,restore-page
+/images/pdf/HSFSobeysBooklet_P8 Nutrition Information.pdf,2,1,4,4,47,A food label can tell you alot!,,recover-pdf-from-wayback
+/sites/default/files/pfletcher/Restaurant NutrientCriteria_RevNov2010.pdf,2,1,2,2,47,none of the 12 categories,,recover-pdf-from-wayback
+/content/what-are-canadians-saying-online-about-healthy-eating,2,1,4,4,47,their blog post,content/what-are-canadians-saying-online-about-healthy-eating.html,restore-page
+/page/health-check-team,2,1,4,4,47,the Heart and Stroke Foundation's Health Check Registered Dietitians,page/health-check-team.html,restore-page
+/en/join-health-check/nutrient-criteria-grocery.html,2,1,3,3,47,criteria,en/join-health-check/nutrient-criteria-grocery.html,redirect-to-english-equivalent
+/sites/default/files/pfletcher/Grocery Nutrient Criteria pdf_Jan11.pdf,2,1,4,4,47,56 food categories,,recover-pdf-from-wayback
+/sites/default/files/admin/HealthCheck_Nutrient criteria_foodservice_2009.pdf,2,1,4,4,47,restaurant criteria page,,recover-pdf-from-wayback
+/content/one-nutrition-program-we-can-trust,2,1,4,4,47,One nutrition program we can trust,content/one-nutrition-program-we-can-trust.html,restore-page
+/page/canadas-food-guide,2,1,1,1,38,here,page/canadas-food-guide.html,restore-page
+/blog,2,1,1,1,37,blog,blog.html,restore-page
+/e-cigs-vs-cigarettes,2,1,1,1,30,Studies,,recover-page-from-wayback
+/story/cedar-planked-atlantic-salmon-wins-healthy-innovation-award,2,1,2,2,23,more…,story/cedar-planked-atlantic-salmon-wins-healthy-innovation-award.html,restore-page
+/AIR MILES/landing page,2,1,2,2,9,Click here for more information.,,recover-page-from-wayback
+/page/program-participants-0,2,1,1,1,5,http://www.healthcheck.org/page/program-participants-0,page/program-participants-0.html,restore-page
+/tips_tools,2,1,1,1,1,website,tips_tools.html,restore-page
+/restosearch?tid=970&keys=,2,1,6,6,0,,restosearch.html,redirect-home
+/instylecontest/enter,2,1,3,3,0,"win a trip to The Heart Truth Fashion Show or one of ten $1,000 grocery gift car",instylecontest/enter.html,redirect-home
+/images/index_logo.jpg,2,1,2,2,0,,,recover-image-from-wayback
+/rhubarb-diet,3,1,1,0,36,This weight loss plan,,recover-page-from-wayback
+/story/health-check-exitl,3,1,1,0,31,cancelled,,recover-page-from-wayback
+/page/function-nutrients,3,1,2,0,28,http://www.healthcheck.org/page/function-nutrients,page/function-nutrients.html,restore-page
+/page/nutrients-women>,3,1,2,0,10,http://www.healthcheck.org/page/nutrients-women>,page/nutrients-women.html,restore-page
+/page/products-overview,3,1,1,0,8,http://www.healthcheck.org/page/products-overview,page/products-overview.html,restore-page
+/restosearch_page_1,3,1,1,0,7,Eating Out | Heart& Health Check Program,restosearch_page_1.html,restore-page
+/en/about-health-check/restaurants.html,3,1,1,0,7,Healthcheck,en/about-health-check/restaurants.html,redirect-to-english-equivalent
+/en/join-health-check/nutrient-criteria-restaurant,3,1,2,0,7,Healthcheck - Nutrient Criteria (Restaurant),en/join-health-check/nutrient-criteria-restaurant.html,redirect-to-english-equivalent
+/english/documents/33040412_EatOut-FastFood04.25.05.pdf,3,1,2,0,0,http://www.healthcheck.org/english/documents/33040412_EatOut-FastFood04.25.05.pd,,recover-pdf-from-wayback

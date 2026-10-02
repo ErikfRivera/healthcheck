@@ -1,0 +1,13 @@
+.bodytext {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-decoration: none;
+}
+.header {  font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #333333}
+.subhead {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FF0000}
+.bulleted {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; list-style-type: circle; color: #000000; font-weight: normal; text-indent: 5pt}
+.topnavlinks {  font-family: Arial, Helvetica, sans-serif; font-size: 9px}
+.header_b {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold}
+.propart_head {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; text-transform: uppercase}
+.propart_subhead {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px}
+.propart_body {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px; font-weight: normal}.bodysuper {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8px; background-position: top; white-space: normal; vertical-align: top; top: 50px; clip:  rect(   )}

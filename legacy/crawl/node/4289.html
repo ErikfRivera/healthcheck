@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Grocery Product Finder | Health Check Program</title>  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="shortcut icon" href="../../sites/all/themes/healthcheck/favicon.ico" type="image/x-icon"/>
+<style type="text/css" media="all">
+  @import "../../modules/node/node.css";
+  @import "../../modules/poll/poll.css";
+  @import "../../modules/system/defaults.css";
+  @import "../../modules/system/system.css";
+  @import "../../modules/system/system-menus.css";
+  @import "../../modules/user/user.css";
+  @import "../../sites/all/modules/cck/theme/content-module.css";
+  @import "../../sites/all/modules/ckeditor/ckeditor.css";
+  @import "../../sites/all/modules/ctools/css/ctools.css";
+  @import "../../sites/all/modules/date/date.css";
+  @import "../../sites/all/modules/filefield/filefield.css";
+  @import "../../sites/all/modules/google_analytics_reports/google_analytics_reports/google_analytics_reports.css";
+  @import "../../sites/all/modules/lightbox2/css/lightbox.css";
+  @import "../../sites/all/modules/logintoboggan/logintoboggan.css";
+  @import "../../sites/all/modules/nice_menus/nice_menus.css";
+  @import "../../sites/all/modules/nice_menus/nice_menus_default.css";
+  @import "../../sites/all/modules/panels/css/panels.css";
+  @import "../../sites/all/modules/twitter_pull/twitter-pull-listing.css";
+  @import "../../sites/all/modules/extlink/extlink.css";
+  @import "../../sites/all/modules/cck/modules/fieldgroup/fieldgroup.css";
+  @import "../../sites/all/modules/views/css/views.css";
+  @import "../../sites/all/themes/zen/zen/html-elements.css";
+  @import "../../sites/all/themes/zen/zen/tabs.css";
+  @import "../../sites/all/themes/zen/zen/messages.css";
+  @import "../../sites/all/themes/zen/zen/block-editing.css";
+  @import "../../sites/all/themes/zen/zen/wireframes.css";
+</style>
+<style type="text/css" media="all">
+  @import "../../sites/all/themes/healthcheck/layout.css";
+  @import "../../sites/all/themes/healthcheck/healthcheck.css";
+</style>
+<style type="text/css" media="print">
+  @import "../../sites/all/themes/healthcheck/print.css";
+</style>
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/healthcheck/ie.css?R" />
+<![endif]-->
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/healthcheck/ie8.css?R" />
+<![endif]-->
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/healthcheck/ie7.css?R" />
+<![endif]-->
+  <script type="text/javascript" src="../../sites/all/modules/jquery_update/replace/jquery.min.js"></script>
+<script type="text/javascript" src="../../misc/drupal.js"></script>
+<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/lightbox_video.js"></script>
+<script type="text/javascript" src="../../sites/all/modules/lightbox2/js/lightbox.js"></script>
+<script type="text/javascript" src="../../sites/all/modules/nice_menus/superfish/js/superfish.js"></script>
+<script type="text/javascript" src="../../sites/all/modules/nice_menus/superfish/js/jquery.bgiframe.min.js"></script>
+<script type="text/javascript" src="../../sites/all/modules/nice_menus/superfish/js/jquery.hoverIntent.minified.js"></script>
+<script type="text/javascript" src="../../sites/all/modules/nice_menus/nice_menus.js"></script>
+<script type="text/javascript" src="../../sites/all/modules/panels/js/panels.js"></script>
+<script type="text/javascript" src="../../sites/all/modules/extlink/extlink.js"></script>
+<script type="text/javascript" src="../../sites/all/modules/views/js/base.js"></script>
+<script type="text/javascript" src="../../sites/all/modules/views/js/dependent.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutbound": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip" }, "googleAnalyticsReportsAjaxUrl": "http://www.healthcheck.org/google-analytics-reports/ajax", "lightbox2": { "rtl": "0", "file_path": "/(\\w\\w/)sites/default/files", "default_image": "/sites/all/modules/lightbox2/images/brokenimage.jpg", "border_size": 10, "font_color": "000", "box_color": "fff", "top_position": "", "overlay_opacity": "0.8", "overlay_color": "000", "disable_close_click": 1, "resize_sequence": 0, "resize_speed": 400, "fade_in_speed": 400, "slide_down_speed": 600, "use_alt_layout": 0, "disable_resize": 0, "disable_zoom": 0, "force_show_nav": 0, "show_caption": 1, "loop_items": 0, "node_link_text": "View Image Details", "node_link_target": 0, "image_count": "Image !current of !total", "video_count": "Video !current of !total", "page_count": "Page !current of !total", "lite_press_x_close": "press \x3ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\x3e\x3ckbd\x3ex\x3c/kbd\x3e\x3c/a\x3e to close", "download_link_text": "", "enable_login": false, "enable_contact": false, "keys_close": "c x 27", "keys_previous": "p 37", "keys_next": "n 39", "keys_zoom": "z", "keys_play_pause": "32", "display_image_size": "original", "image_node_sizes": "()", "trigger_lightbox_classes": "", "trigger_lightbox_group_classes": "", "trigger_slideshow_classes": "", "trigger_lightframe_classes": "", "trigger_lightframe_group_classes": "", "custom_class_handler": 0, "custom_trigger_classes": "", "disable_for_gallery_lists": true, "disable_for_acidfree_gallery_lists": true, "enable_acidfree_videos": true, "slideshow_interval": 5000, "slideshow_automatic_start": true, "slideshow_automatic_exit": true, "show_play_pause": true, "pause_on_next_click": false, "pause_on_previous_click": true, "loop_slides": false, "iframe_width": 600, "iframe_height": 450, "iframe_border": 1, "enable_video": 1, "flvPlayer": "http://www.healthcheck.org/", "flvFlashvars": "" }, "nice_menus_options": { "delay": 800, "speed": 1 }, "extlink": { "extTarget": "_blank", "extClass": 0, "extSubdomains": 1, "extExclude": "(visezsante\\.org)|(healthcheck.org)", "extInclude": "", "extCssExclude": "", "extCssExplicit": "", "extAlert": 0, "extAlertText": "\x3cp\x3eThis link will take you to an external web site. We are not responsible for their content.\x3c/p\x3e", "mailtoClass": 0 } });
+//--><!]]>
+</script>
+<!--[if lt IE 7.]>
+    <script type="text/javascript" src="/sites/all/themes/healthcheck/IE6png.js"></script>
+<![endif]-->
+  <script type="text/javascript">
+  function delayer(){
+      window.location = "http://www.healthcheck.org/"
+  }
+  function delayFR(){
+      window.location = "http://www.visezsante.org/"
+  }
+  $(document).ready(function () {
+		$('a[type*="application"]').each(function(){
+			$(this).attr({ target: "_blank" })
+		});
+  });
+  </script>
+</head>
+<body class="not-front not-logged-in node-type-page one-sidebar sidebar-right i18n-en page-page-grocery-product-finder section-page">
+  <div id="page"><div id="page-inner">
+    <div id="header">
+							<div id="logo"><a href="/" title="Home" rel="home"><img src="../../sites/all/themes/healthcheck/logo.png"></img></a></div>
+			<div id="top_menu"><div id="block-block-124" class="block block-block region-odd odd region-count-1 count-5"><div class="block-inner">
+  <div class="content">
+    <a href="../../page/login/">LOGIN</a> | <a href="../../page/register/">JOIN</a>&nbsp;| <a href="../../forum/"></a>  <a href="../../blog/">HEALTH CHECK BLOG</a>  </div>
+</div></div> <!-- /block-inner, /block -->
+</div>
+			<div id="search-box"><div id="block-search-0" class="block block-search region-odd odd region-count-1 count-13"><div class="block-inner">
+  <div class="content">
+    <form action="http://www.healthcheck.org/page/grocery-product-finder" accept-charset="UTF-8" method="post" id="search-block-form">
+<div><div id="search" class="container-inline">
+  <div class="form-item" id="edit-search-block-form-1-wrapper">
+ <label for="edit-search-block-form-1">Search: </label>
+ <input type="text" maxlength="128" name="search_block_form" id="edit-search-block-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text"/>
+</div>
+<input type="submit" name="op" id="edit-submit" value="" class="form-submit"/>
+<input type="hidden" name="form_build_id" id="form-0a8d445b164671032e796523fe1f7e00" value="form-0a8d445b164671032e796523fe1f7e00"/>
+<input type="hidden" name="form_id" id="edit-search-block-form" value="search_block_form"/>
+</div>
+</div></form>
+  </div>
+</div></div> <!-- /block-inner, /block -->
+</div>			<h1 id="site-name">
+				<a href="/" title="Home" rel="home">
+					Health Check<sup>TM</sup> Program				</a>
+			</h1>
+							<div id="primary">
+					<div id="block-nice_menus-2" class="block block-nice_menus region-odd even region-count-1 count-12"><div class="block-inner">
+  <div class="content">
+    <ul class="nice-menu nice-menu-down" id="nice-menu-2"><li class="menu-263 menuparent menu-path-node-13 active-trail first  odd "><a href="../../page/what-health-check/" title="What is Health Check">About Us</a><ul><li class="menu-817 menu-path-node-13 first  odd "><a href="../../page/what-health-check/" title="What is Health Check?">What is Health Check?</a></li>
+<li class="menu-31932 menu-path-node-38684 even "><a href="../../page/health-check-team/" title="Health Check Team">Our Team</a></li>
+<li class="menu-756 menuparent menu-path-node-78 odd "><a href="../../page/helping-you-eat-well/" title="Helps You Eat Well">Helping You Eat Well</a><ul><li class="menu-758 menu-path-node-80 first  odd "><a href="../../page/program-criteria-3/" title="Program Criteria">Nutrient Criteria</a></li>
+<li class="menu-761 menu-path-node-83 even  last "><a href="../../page/technical-advisors-3/" title="Technical Advisors">Technical Advisors</a></li>
+</ul>
+</li>
+<li class="menu-4149 menu-path-node-8557 even "><a href="../../page/changing-food-supply/" title="Changing the Food Supply">Changing the Food Supply</a></li>
+<li class="menu-772 menuparent menu-path-node-94 active-trail odd "><a href="../../page/program-participants-0/" title="Companies Earn Health Check">Program Participants</a><ul><li class="menu-762 menu-path-node-4289 active-trail first  odd "><a href="../../page/grocery-product-finder/" title="Grocery Participants" class="active">Grocery Participants</a></li>
+<li class="menu-770 menu-path-node-4288 even  last "><a href="../../page/restaurant-finder/" title="Restaurant Participants">Restaurant Participants</a></li>
+</ul>
+</li>
+<li class="menu-114 menu-path-healthcheckorg-faq even  last "><a href="../../faq/" title="FAQ">FAQ</a></li>
+</ul>
+</li>
+<li class="menu-36185 menuparent menu-path-node-38713 even "><a href="../../page/healthy-eating/" title="">Healthy Eating</a><ul><li class="menu-800 menuparent menu-path-node-122 first  odd "><a href="../../page/canadas-food-guide/" title="Canada's Food Guide">Canada&#039;s Food Guide</a><ul><li class="menu-805 menu-path-node-127 first  odd "><a href="../../node/127/" title="Vegetables &amp; Fruit">Vegetables and Fruit</a></li>
+<li class="menu-806 menu-path-node-128 even "><a href="../../node/128/" title="Grain Products">Grain Products</a></li>
+<li class="menu-808 menu-path-node-130 odd "><a href="../../page/milk-alternatives/" title="Milk &amp; Alternatives">Milk and Alternatives</a></li>
+<li class="menu-810 menu-path-node-132 even "><a href="../../page/meat-alternatives-0/" title="Meat &amp; Alternatives">Meat and Alternatives</a></li>
+<li class="menu-1475 menu-path-node-3766 odd "><a href="../../page/fats-oils/" title="">Fats and Oils</a></li>
+<li class="menu-11179 menu-path-node-3767 even  last "><a href="../../page/combination-foods/" title="">Mixed Dishes</a></li>
+</ul>
+</li>
+<li class="menu-36195 menuparent menu-path-node-38715 even "><a href="../../page/nutri-facts/">Nutrition Facts</a><ul><li class="menu-801 menuparent menu-path-node-123 first  odd "><a href="../../node/123/" title="Cholesterol">Cholesterol</a><ul><li class="menu-1854 menu-path-node-4313 first  odd "><a href="../../page/cholesterol-tips/" title="Tips">How to Control Blood Cholesterol</a></li>
+<li class="menu-1846 menu-path-node-4314 even  last "><a href="../../page/health-check-can-help-cholesterol/" title="Health Check Can Help">Health Check Can Help</a></li>
+</ul>
+</li>
+<li class="menu-804 menuparent menu-path-node-126 even "><a href="../../page/facts-fat/" title="The Facts on Fat">The Facts on Fat</a><ul><li class="menu-1840 menu-path-node-4306 first  odd "><a href="../../page/different-types-fat/" title="Types of Fat">Types of Fat</a></li>
+<li class="menu-1841 menu-path-node-4307 even "><a href="../../page/healthy-fats/" title="Healthy Fats">Healthy Fats</a></li>
+<li class="menu-1842 menu-path-node-4308 odd "><a href="../../node/4308/" title="Unhealthy Fats">Unhealthy Fats</a></li>
+<li class="menu-1843 menu-path-node-3770 even "><a href="../../page/managing-fat-your-diet/" title="Managing Dietary Fat">Managing Dietary Fat</a></li>
+<li class="menu-1844 menu-path-node-4309 odd  last "><a href="../../node/4309/" title="Health Check Can Help">Health Check Can Help</a></li>
+</ul>
+</li>
+<li class="menu-803 menuparent menu-path-node-125 odd "><a href="../../node/125/" title="Trans Fat">Trans Fat</a><ul><li class="menu-1849 menu-path-node-4310 first  odd "><a href="../../page/minimizing-risk-trans-fats/" title="Minimizing the Risks">Minimizing the Risks</a></li>
+<li class="menu-1845 menu-path-node-4311 even  last "><a href="../../page/health-check-can-help-trans-fat/" title="Health Check Can Help">Health Check Can Help</a></li>
+</ul>
+</li>
+<li class="menu-802 menuparent menu-path-node-124 even "><a href="../../page/fibre-facts/" title="Fibre">Fibre</a><ul><li class="menu-1856 menu-path-node-4315 first  odd "><a href="../../page/types-fibre/" title="Types of Fibre">Types of Fibre</a></li>
+<li class="menu-1852 menu-path-node-4316 even "><a href="../../page/fibre-tips/" title="Tips">Tips</a></li>
+<li class="menu-41865 menu-path-node-4317 odd  last "><a href="../../page/health-check-can-help-fibre/" title="">Health Check Can Help</a></li>
+</ul>
+</li>
+<li class="menu-812 menuparent menu-path-node-134 odd "><a href="../../node/134/" title="Sodium">Sodium</a><ul><li class="menu-1851 menu-path-node-4318 first  odd "><a href="../../page/sodium-tips/" title="Tips">Tips</a></li>
+<li class="menu-39498 menu-path-node-38747 even  last "><a href="../../page/health-check-can-help-sodium-1/" title="">Health Check Can Help</a></li>
+</ul>
+</li>
+<li class="menu-814 menuparent menu-path-node-136 even "><a href="../../page/sugar/" title="Sugar">Sugar</a><ul><li class="menu-1855 menu-path-node-4320 first  odd "><a href="../../page/sugar-tips/" title="Tips">Tips</a></li>
+<li class="menu-1848 menu-path-node-4321 even  last "><a href="../../page/health-check-can-help-sugar/" title="Health Check Can Help">Health Check Can Help</a></li>
+</ul>
+</li>
+<li class="menu-3309 menu-path-node-6478 odd  last "><a href="../../page/function-nutrients/" title="The Function of Nutrients">The Function of Nutrients</a></li>
+</ul>
+</li>
+<li class="menu-5649 menuparent menu-path-node-11099 odd "><a href="../../page/planning-healthy-meals/" title="">Planning Healthy Meals</a><ul><li class="menu-5650 menu-path-node-11100 first  odd "><a href="../../page/planning/" title="">Planning</a></li>
+<li class="menu-5651 menu-path-node-11101 even "><a href="../../node/11101/" title="">Shopping</a></li>
+<li class="menu-5652 menu-path-node-11102 odd  last "><a href="../../page/meal-preparation/" title="">Meal Preparation</a></li>
+</ul>
+</li>
+<li class="menu-811 menuparent menu-path-node-133 even "><a href="../../page/eating-out/" title="Eating Out">Eating Out</a><ul><li class="menu-36207 menu-path-node-38723 first  odd  last "><a href="../../page/health-check-can-help-eating-out/">Health Check Can Help</a></li>
+</ul>
+</li>
+<li class="menu-36196 menuparent menu-path-node-38716 odd "><a href="../../page/healthy-eating-life/" title="">Healthy Eating for Life</a><ul><li class="menu-5654 menu-path-node-11104 first  odd "><a href="../../page/young-children/" title="">Young Children</a></li>
+<li class="menu-5655 menu-path-node-11105 even "><a href="../../page/school-aged-and-teens/" title="">School-aged and Teens</a></li>
+<li class="menu-5656 menuparent menu-path-node-11106 odd "><a href="../../page/women/" title="">Women</a><ul><li class="menu-11184 menu-path-node-11293 first  odd  last "><a href="../../page/nutrients-women/" title="">Nutrients for Women</a></li>
+</ul>
+</li>
+<li class="menu-40552 menu-path-node-38751 even  last "><a href="../../page/healthy-families-0/">Healthy Families</a></li>
+</ul>
+</li>
+<li class="menu-5660 menu-path-node-11110 even  last "><a href="../../page/special-occasions/" title="">Special Occasions</a></li>
+</ul>
+</li>
+<li class="menu-253 menuparent menu-path-node-3 odd "><a href="../../page/recipes/" title="Recipes">Recipes</a><ul><li class="menu-33298 menu-path-node-38712 first  odd "><a href="../../page/recipe-criteria/" title="Recipe Criteria">Recipe Criteria</a></li>
+<li class="menu-4113 menu-path-node-3 even "><a href="../../page/recipes/" title="Recipe Finder">Recipe Finder</a></li>
+<li class="menu-2632 menu-path-node-4471 odd  last "><a href="../../page/tips-a-healthier-recipe/" title="">Tips for a Healthier Recipe</a></li>
+</ul>
+</li>
+<li class="menu-5643 menu-path-node-11096 even "><a href="../../page/ask-our-dietitians/" title="">Advice From Our Dietitians</a></li>
+<li class="menu-251 menuparent menu-path-node-1 odd "><a href="../../page/products-overview/" title="Find a Product">Products</a><ul><li class="menu-775 menu-path-node-97 first  odd "><a href="../../page/program-critieria/" title="Nutrient  Critieria">Nutrient Criteria</a></li>
+<li class="menu-36197 menu-path-node-38717 even "><a href="../../page/mutrient-claims/" title="">Nutrient Claims</a></li>
+<li class="menu-1561 menu-path-node-4289 odd  last "><a href="../../page/grocery-product-finder/" title="Find Health Check Products" class="active">Find Health Check Products</a></li>
+</ul>
+</li>
+<li class="menu-252 menuparent menu-path-node-2 even  last "><a href="../../page/restaurant-overview/" title="Find a Restaurant">Restaurants</a><ul><li class="menu-32596 menu-path-node-38686 first  odd "><a href="../../page/nutrient-criteria/" title="">Nutrient Criteria</a></li>
+<li class="menu-1560 menu-path-node-4288 even  last "><a href="../../page/restaurant-finder/" title="">Restaurant Finder</a></li>
+</ul>
+</li>
+</ul>
+  </div>
+</div></div> <!-- /block-inner, /block -->
+				</div> <!-- /#main-menu -->
+					</div> <!-- /#header-inner, /#header -->
+    <div id="main">
+	<div id="main-top-bg">
+	<div id="main-inner" class="clear-block">
+	<div id="body_top">
+       				<div class="breadcrumb"><a href="/">Home</a> › <a href="../../page/what-health-check/" title="What is Health Check">About Us</a> › <a href="../../page/program-participants-0/" title="Companies Earn Health Check">Program Participants</a> › Grocery Participants</div>        	    <div id="printshare"><div id="block-block-49" class="block block-block region-odd even region-count-1 count-6"><div class="block-inner">
+  <div class="content">
+<script type="text/javascript">
+var addthis_pub="pmusaraj";
+var addthis_options = 'email, twitter, facebook, digg, delicious, myspace, google, live';
+</script>
+<div class="print-share-buttons"><a href="javascript:window.print();"><img src="../../sites/default/files/print.gif"/>Print</a> | <a href="http://www.addthis.com/bookmark.php?v=20" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="../../sites/default/files/share.gif"/>Share</a> | <img src="../../sites/default/files/bookmark.gif"/><a href="/" id="bookmarks_addthispage">ADD TO FAVOURITES</a></div>
+<script type="text/javascript" src="../../js/200/addthis_widget.js"></script> 
+  </div>
+</div></div> <!-- /block-inner, /block -->
+</div>
+    </div>
+   	<div id="pre_content">
+            </div>    
+	<div id="content-site">
+	  <div id="content-inner">
+          <div id="content-header">
+    		                                  </div> <!-- /#content-header -->
+        <div id="content-area">
+            <div id="node-4289" class="node node-type-page"><div class="node-inner">
+   <h2 class="title">
+      <a href="../../page/grocery-product-finder/" title="Grocery Product Finder">Grocery Product Finder</a>
+	</h2>
+  <div class="content">
+    <p>Search the complete list of Health Check grocery products. This list is updated regularly as new items join the program.</p>
+<p>&nbsp;</p>
+  </div>
+</div></div> <!-- /node-inner, /node -->
+		    <div id="below_left"></div>
+		    <div id="below_right"></div>
+            <div id="below"><div id="block-views--exp-prod_search-default" class="block block-views region-odd even region-count-1 count-20"><div class="block-inner">
+      <h2 class="title">Product Finder</h2>
+  <div class="content">
+    <form action="../../prodsearch/" accept-charset="UTF-8" method="get" id="views-exposed-form-prod-search-default">
+<div><div class="views-exposed-form">
+  <div class="views-exposed-widgets clear-block wrap-inputs">
+          <div class="views-exposed-widget single-input-widget">
+                  <label>
+            Select Category          </label>
+                        <div class="views-widget">
+          <div class="form-item" id="edit-tid-2-wrapper">
+ <select name="tid_2" class="form-select" id="edit-tid-2"><option value="All" selected="selected"> All -</option><option value="642">Apple and Other Fruit Sauces</option><option value="592">Bread</option><option value="657">Bread Products</option><option value="687">Breakfast Cereals (20 g to 42 g per 250 mL)</option><option value="710">Breakfast Cereals (43 g or more per 250 mL)</option><option value="709">Breakfast Cereals (Hot)</option><option value="711">Breakfast Cereals (Very High Fibre - 28 g or more fibre per 100 g)</option><option value="1001">Burger and meatballs</option><option value="613">Canned Fish and Seafood (packed in broth or water)</option><option value="628">Canned Fish and Seafood (seasoned, sauced)</option><option value="647">Canned Fruit</option><option value="609">Canned Legumes (prepared)</option><option value="653">Canned Tomatoes</option><option value="646">Canned Vegetables (plain)</option><option value="591">Cheese</option><option value="634">Cheese - Cottage (plain and flavoured)</option><option value="632">Cheese - Ricotta (plain)</option><option value="635">Cheese - Soy-based </option><option value="244">Crackers / Rusks</option><option value="699">Croutons</option><option value="620">Deli Meats / Ham</option><option value="760">Dinners &amp; Entrees / Mixed Dishes - 10 g or 15 g or less total fat</option><option value="201">Dried Fruit and Nut Mixture</option><option value="644">Dried Fruit Pieces</option><option value="195">Dried Fruit Snacks</option><option value="614">Dried Legumes</option><option value="616">Egg Substitutes</option><option value="617">Eggs</option><option value="612">Fish and Seafood (plain)</option><option value="619">Fish and Seafood (sauced)</option><option value="627">Fish and Seafood (seasoned or coated)</option><option value="690">Flour / Grains</option><option value="649">Fresh and Frozen Vegetables (plain)</option><option value="879">Fresh Cheese (plain and flavoured) excluding Cottage and Ricotta</option><option value="643">Fresh Fruit</option><option value="880">Frozen and Canned Legumes (plain)</option><option value="645">Frozen and Canned Vegetables</option><option value="648">Frozen Fruit</option><option value="193">Frozen Fruit Bars</option><option value="640">Fruit Juices</option><option value="202">Grain-based Bars</option><option value="877">Legume-based Dips</option><option value="654">Lettuce with Toppers (without dressing)</option><option value="765">Major Main Entrée Sauce (such as pasta sauce) - 3 g or less total fat</option><option value="157">Margarines / Light Margarines</option><option value="610">Meat (ground)</option><option value="629">Meat (stuffed)</option><option value="611">Meats / Poultry (plain)</option><option value="935">Meats / Poultry (seasoned, coated)</option><option value="864">Meats / Poultry (with sauce)</option><option value="630">Milk and Milk-based Drinks</option><option value="844">Minor Main Entrée Vegetable-based Sauce</option><option value="194">Muffins / Muffin-style Bars</option><option value="936">Nut and/or Seed Bars (with or without dried fruit)</option><option value="625">Nuts / Seeds / Ready to Eat Dried Legumes (e.g. soybeans)</option><option value="626">Nuts and Seeds Butters</option><option value="154">Oils</option><option value="675">Pasta</option><option value="606">Pasta (stuffed)</option><option value="622">Patties / Meatballs etc.</option><option value="605">Pizza</option><option value="813">Plain Popcorn</option><option value="631">Plant-based Beverages (e.g. soy beverages)</option><option value="608">Potato and Pasta Salads</option><option value="618">Processed Fish</option><option value="678">Rice (except Instant Rice) / Grains (plain)</option><option value="712">Rice - Instant (plain)</option><option value="723">Rice Cakes</option><option value="174">Salad Dressings / Mayonnaise / Light Mayonnaise</option><option value="607">Salads - Other </option><option value="772">Sausages</option><option value="696">Side Dishes - Rice, Grains or Potatoes</option><option value="141">Soups</option><option value="771">Tofu (plain)</option><option value="624">Tofu or Meat or Fish with Vegetables</option><option value="651">Tomato Juice</option><option value="214">Tomato Paste</option><option value="641">Vegetable Juices and Blends</option><option value="878">Vegetable-based Dips</option><option value="615">Vegetarian Meat Alternatives</option><option value="650">Vegetarian or Meat Pies - 10 g or less total fat</option><option value="763">Vegetarian or Meat Pies - 15 g or less total fat and low in saturated fat</option><option value="623">Vegetarian Terrines / Spreads / Pâtés</option><option value="713">Waffles / Pancakes</option><option value="934">Yogurt-based Dips</option><option value="881">Yogurt-based Drinks</option><option value="633">Yogurts</option></select>
+</div>
+        </div>
+      </div>
+          <div class="views-exposed-widget single-input-widget">
+                  <label>
+            Select Brand          </label>
+                        <div class="views-widget">
+          <div class="form-item" id="edit-tid-wrapper">
+ <select name="tid" class="form-select" id="edit-tid"><option value="All" selected="selected"> All -</option><option value="1028">AgriFood</option><option value="336">Albacore</option><option value="1037">Alpen</option><option value="368">Alpina</option><option value="467">Arc-en-ciel mounts</option><option value="414">Astro BioBest</option><option value="947">Astro Fat Free</option><option value="417">Astro Original</option><option value="418">Astro Zer0</option><option value="836">Astro Zer0 Superfruit</option><option value="930">Avo-Oil</option><option value="486">Aylmer</option><option value="849">Aylmer Accents</option><option value="488">Aylmer Gourmet</option><option value="1047">B&amp;G Foods</option><option value="805">Bassili’s Best</option><option value="419">Beatrice</option><option value="171">Becel</option><option value="974">Becel pro-activ</option><option value="446">Bennett’s</option><option value="667">Ben’s Holsum Fresh</option><option value="662">Ben’s Smart</option><option value="464">Big Valley</option><option value="695">Bistro Express</option><option value="421">Black Diamond</option><option value="346">Blue Diamond</option><option value="378">BlueWater</option><option value="669">Bon Matin</option><option value="671">Bon Matin GrainsEntiers</option><option value="1004">Bon Matin Healthy Way</option><option value="998">Boring Porridge</option><option value="701">Breton</option><option value="1078">Bry-Conn</option><option value="683">Campagnolo</option><option value="249">Campbell&#039;s Condensed  </option><option value="923">Campbell&#039;s Light</option><option value="254">Campbell’s Chunky</option><option value="846">Campbell’s Creations</option><option value="142">Campbell’s Eating Smart</option><option value="252">Campbell’s Gardennay</option><option value="251">Campbell’s Healthy Request</option><option value="726">Canmar</option><option value="210">Canola Harvest</option><option value="1084">Canolina</option><option value="208">Capri</option><option value="928">Catelli Bistro</option><option value="269">Catelli Garden Select</option><option value="673">Catelli Healthy Harvest</option><option value="676">Catelli Smart Pasta</option><option value="686">Cheerios</option><option value="283">Clark</option><option value="457">Cling Peaches</option><option value="316">Clover Leaf</option><option value="304">Club des Millionnaires</option><option value="1002">Co-op</option><option value="899">Coastal Waters</option><option value="258">Commensal</option><option value="395">Compass</option><option value="951">Cookin&#039; Greens</option><option value="812">Country Morning</option><option value="1000">Crab Delectables</option><option value="1075">Crystal</option><option value="376">Cuddy classic</option><option value="489">Del Monte</option><option value="1064">Delmar Farms</option><option value="1003">Dempster&#039;s Healthy Way</option><option value="663">Dempster’s Bodywise</option><option value="660">Dempster’s Grainhouse</option><option value="664">Dempster’s Smart</option><option value="658">Dempster’s WholeGrains</option><option value="212">Derlea</option><option value="809">Desi Chef</option><option value="461">Dole</option><option value="463">Dole Squish’ems</option><option value="1026">Dunn-Rite</option><option value="223">Eating Right</option><option value="820">Eating Right Kids</option><option value="475">Edamame</option><option value="314">EggCreations</option><option value="470">Elite</option><option value="169">Filippo Berio</option><option value="822">Flax For Nutrition</option><option value="1071">Fruit d&#039;Or</option><option value="954">Gelderman Farms</option><option value="342">GoldEgg</option><option value="1085">Golden Grains</option><option value="700">Grain First</option><option value="666">Grainhouse</option><option value="1051">Grandma Emily</option><option value="363">Granny’s Poultry Cooperative</option><option value="697">Grissol</option><option value="387">Hallmark</option><option value="352">Hampton House</option><option value="286">Healthy Choice</option><option value="949">Healthy Choice Gourmet Steamers</option><option value="271">Heinz</option><option value="173">Hellmann’s</option><option value="334">Heritage</option><option value="1073">Hilray Whole Grains</option><option value="1081">Holy Crap</option><option value="688">Italian Home Bakery</option><option value="479">Jaffa</option><option value="873">Jasmine Foods</option><option value="1049">JD Sweid Foods Ltd</option><option value="233">Jones Popcorn</option><option value="1035">Kinnikinnick Foods</option><option value="403">Kirkland Signature</option><option value="288">Knorr</option><option value="911">Knorr/Lipton</option><option value="182">La belle excuse</option><option value="338">La Preference</option><option value="155">Lactantia Healthy Attitude</option><option value="372">Lesters</option><option value="793">Lilydale</option><option value="1043">Live Right</option><option value="1044">Live Right</option><option value="426">L’élan</option><option value="982">Maple Lodge Farms</option><option value="340">Mario’s</option><option value="975">Mava Food for Life</option><option value="178">Mazola</option><option value="661">McGavin’s Smart</option><option value="677">Minute Rice</option><option value="459">Money’s</option><option value="875">Mortimer’s</option><option value="444">Mott’s Fruitsations</option><option value="895">Mott’s Fruitsations (Canada Dry Motts)</option><option value="896">Mott’s Fruitsations (Kisko Products)</option><option value="445">Mott’s Garden Cocktail</option><option value="424">My Soy</option><option value="792">N/A</option><option value="728">Nativa</option><option value="900">Nature&#039;s Classics</option><option value="312">Naturegg</option><option value="870">No fat No sugar added</option><option value="307">Nona’s</option><option value="320">Northern King</option><option value="983">Nourish (A Complete Meal by Campbell’s) </option><option value="159">Nuvel</option><option value="449">Ocean Spray®</option><option value="451">Ocean Spray® Craisins®</option><option value="799">Omstead Selectables</option><option value="910">P.S.I.’s Grande Gourmet</option><option value="963">PI International</option><option value="1005">POM</option><option value="672">POM Smart</option><option value="860">Post 100% Bran</option><option value="859">Post Grape-Nuts</option><option value="806">Postcard Foods</option><option value="797">Prairie Berries</option><option value="257">Prego</option><option value="322">Premium</option><option value="718">Primo Grain Wise</option><option value="329">Pulse</option><option value="1034">Quality</option><option value="984">Ragù</option><option value="802">Real Good Bread</option><option value="811">Roast and Boast</option><option value="300">Rosemount Sales and Marketing</option><option value="731">Ryvita</option><option value="841">Sartaj</option><option value="238">Shakti</option><option value="705">Sher Desi</option><option value="832">Silver Hills / Mack’s Flax</option><option value="833">Silver Hills / Squirrelly</option><option value="834">Silver Hills / Steady Eddie</option><option value="684">Silver Hills / The Big 16</option><option value="393">Skoulakis</option><option value="473">Slush Puppie</option><option value="933">Smart Grain</option><option value="274">Snack’n go</option><option value="907">Sobeys Atlantic</option><option value="407">SoGood</option><option value="1052">Sonora Foods Ltd.</option><option value="428">St-Albert Cheese</option><option value="854">Stagg</option><option value="292">Stagg Silverado</option><option value="260">Stouffer’s</option><option value="874">Stouffer’s Sauté Sensations</option><option value="276">Summer Fresh</option><option value="433">Sun-Rype</option><option value="434">Sun-Rype Fruit Plus Veggies</option><option value="943">Sun-Rype Fruit Plus Vitamins &amp; Minerals</option><option value="237">Sun-Rype Fruit to Go</option><option value="235">Sun-Rype FruitSource</option><option value="796">Sun-Rype Light &amp; Refreshing</option><option value="152">Sunfrie</option><option value="721">Sunrise</option><option value="401">Sunrise Farms</option><option value="306">Tanner</option><option value="1006">The Marketplace Bakery</option><option value="857">The Original Shredded Wheat</option><option value="858">The Original Shredded Wheat &amp; Bran</option><option value="965">Thiru&#039;s</option><option value="326">Thompson</option><option value="290">Tomasso Sensia</option><option value="302">U.S. Farm-Raised Catfish</option><option value="693">Uncle Ben’s</option><option value="716">Unico</option><option value="253">V8</option><option value="437">V8-V-Fusion</option><option value="435">V8-V-Go</option><option value="436">V8-V-Plus</option><option value="915">Vivi Bene</option><option value="240">Wafu</option><option value="1036">Weetabix</option><option value="442">Welch’s</option><option value="225">Western Family</option><option value="1031">Western Family Organics</option><option value="665">Wholesome Harvest</option><option value="398">Yves Veggie Cuisine</option><option value="277">Zinetti</option><option value="968">Zorba</option></select>
+</div>
+        </div>
+      </div>
+          <div class="views-exposed-widget single-input-widget">
+                  <label>
+            Keyword Search          </label>
+                        <div class="views-widget">
+          <div class="form-item" id="edit-keys-wrapper">
+ <input type="text" maxlength="128" name="keys" id="edit-keys" size="15" value="" title="Enter the terms you wish to search for." class="form-text"/>
+</div>
+        </div>
+      </div>
+        <div class="views-exposed-widget exposed-search">
+    <input type="submit" id="edit-submit" value="Submit" class="form-submit"/>
+          </div>
+  </div>
+</div>
+</div></form>
+  </div>
+</div></div> <!-- /block-inner, /block -->
+</div>
+												<div id="bottom"><div id="block-multiblock-3" class="block block-multiblock region-odd odd region-count-1 count-21"><div class="block-inner">
+  <div class="content">
+<script type="text/javascript">
+var addthis_pub="pmusaraj";
+var addthis_options = 'email, twitter, facebook, digg, delicious, myspace, google, live';
+</script>
+<div class="print-share-buttons"><a href="javascript:window.print();"><img src="../../sites/default/files/print.gif"/>Print</a> | <a href="http://www.addthis.com/bookmark.php?v=20" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="../../sites/default/files/share.gif"/>Share</a> | <img src="../../sites/default/files/bookmark.gif"/><a href="/" id="bookmarks_addthispage">ADD TO FAVOURITES</a></div>
+<script type="text/javascript" src="../../js/200/addthis_widget.js"></script> 
+  </div>
+</div></div> <!-- /block-inner, /block -->
+</div>
+        </div>
+      </div></div> <!-- /#content-inner, /#content or /#content-site -->
+	    <div id="sidebar-right-site">
+			<div id="block-block-186" class="block block-block region-odd odd region-count-1 count-1"><div class="block-inner">
+  <div class="content">
+    <img src="../../sites/default/files/follow.gif"/>
+ <a href="http://www.healthcheck.org/rssfeed"><img src="../../sites/default/files/rss.gif"/></a>
+ <a href="http://twitter.com/HSFHealthCheck"><img src="../../sites/default/files/twitter.gif"/></a>
+ <a href="http://www.youtube.com/user/HSFHealthCheck?ob=0&amp;feature=results_main"><img src="../../sites/default/files/youtube icon_followus.png"/></a>
+<a href="http://pinterest.com/HSFhealthcheck/" style="margin-right: 5px;"><img src="../../images/about/buttons/big-p-button.png" width="28" height="28" alt="Follow Me on Pinterest"/></a>  </div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-block-126" class="block block-block region-even even region-count-2 count-2"><div class="block-inner">
+  <div class="content">
+      <a href="../../mail/"><img src="../../sites/default/files/healthy_eating.jpg"/></a>
+  </div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-block-138" class="block block-block region-odd odd region-count-3 count-3"><div class="block-inner">
+  <div class="content">
+    <a href="../../tips_tools/"><img src="../../sites/default/files/editor/xtm_design_healthcheck_phase2_tips_20and_20tools_20tout_20RED.png"/></a>
+  </div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-block-50" class="block block-block region-even even region-count-4 count-4"><div class="block-inner">
+  <div class="content">
+    <div class="button-program-license">
+<a href="../../page/program-critieria/">Nutrient Criteria Grocery</a>
+</div>
+  </div>
+</div></div> <!-- /block-inner, /block -->
+        </div>
+    	<div class="clear-block"></div>
+	</div><div id="main-bottom"></div></div> <!-- /#main-inner, /#main-top-bg, /#main-bottom -->
+	          <div id="content-bottom" class="region region-content_bottom">
+            <div id="block-views-feature_recipe-block_1" class="block block-views region-odd odd region-count-1 count-7"><div class="block-inner">
+      <h2 class="title">Recipe of the Week</h2>
+  <div class="content">
+    <div class="view view-feature-recipe view-id-feature_recipe view-display-id-block_1 view-dom-id-9">
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+  <div class="views-field-field-image-fid">
+                <span class="field-content"><img class="imagefield imagefield-field_image" width="97" height="75" alt="" src="../../sites/default/files/MuesliSM.jpg"/></span>
+  </div>
+  <div class="views-field-body">
+                <span class="field-content">Over-night Muesli</span>
+  </div>
+  <div class="views-field-field-url-url">
+                <span class="field-content"><a href="../../recipe/over-night-muesli/" target="_blank" class="featured-link">LEARN more &gt;</a></span>
+  </div>
+  </div>
+    </div>
+</div>   </div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-views-question-block_1" class="block block-views region-even even region-count-2 count-8"><div class="block-inner">
+      <h2 class="title">Question of the Week</h2>
+  <div class="content">
+    <div class="view view-question view-id-question view-display-id-block_1 view-dom-id-10">
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+  <div class="views-field-title">
+                <span class="field-content">What’s in season in September?</span>
+  </div>
+  <div class="views-field-view-node">
+                <span class="field-content"><a href="../../content/what_s-season-september/">LEARN answer&gt;</a></span>
+  </div>
+  </div>
+    </div>
+</div>   </div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-views-tipoftheweek-block_1" class="block block-views region-odd odd region-count-3 count-9"><div class="block-inner">
+      <h2 class="title">Tip of the Week</h2>
+  <div class="content">
+    <div class="view view-tipoftheweek view-id-tipoftheweek view-display-id-block_1 view-dom-id-11">
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+  <div class="views-field-body">
+                <div class="field-content">Fall is a great time to check out the variety of squash available.</div>
+  </div>
+  <div class="views-field-view-node">
+                <span class="field-content"><a href="../../page/healthy-eating/">LEARN more&gt;</a></span>
+  </div>
+  </div>
+    </div>
+</div>   </div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-block-123" class="block block-block region-even even region-count-4 count-10"><div class="block-inner">
+  <div class="content">
+    Information for:
+  </div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-menu-secondary-links" class="block block-menu region-odd odd region-count-5 count-11"><div class="block-inner">
+  <div class="content">
+    <ul class="menu"><li class="expanded first active-trail"><a href="../../page/licensee-overview-0/" title="Food Manufacturers">Food Manufacturers</a><ul class="menu"><li class="leaf first"><a href="../../page/how-participate/" title="">How to Participate</a></li>
+<li class="leaf"><a href="../../page/nutrient-criteria-grocery/" title="">Grocery Nutrient Criteria</a></li>
+<li class="leaf active-trail"><a href="../../page/grocery-product-finder/" title="Health Check Products" class="active">Health Check Products</a></li>
+<li class="leaf last"><a href="../../page/developing-recipes/">Developing Recipes</a></li>
+</ul></li>
+<li class="expanded"><a href="../../page/foodservice/" title="Foodservice">Foodservice</a><ul class="menu"><li class="collapsed first"><a href="../../page/how-participate-0/" title="">How to Participate</a></li>
+<li class="leaf"><a href="../../page/restaurant-finder/" title="Health Check Menu Items">Health Check Menu Items</a></li>
+<li class="leaf"><a href="../../page/staff-training/" title="">Staff Training</a></li>
+<li class="leaf last"><a href="../../page/chef-resources/" title="Chef Resources">Chef Resources</a></li>
+</ul></li>
+<li class="expanded"><a href="../../page/overview-0/" title="Retailers">Retailers</a><ul class="menu"><li class="leaf first"><a href="../../node/49/" title="How It Works">How It Works</a></li>
+<li class="leaf"><a href="../../page/how-join/" title="">How to Join</a></li>
+<li class="leaf"><a href="../../page/grocery-product-finder/" title="Health Check Products" class="active">Health Check Products</a></li>
+<li class="leaf last"><a href="../../page/hc-your-store/" title="Promote Health Check">Promote Health Check</a></li>
+</ul></li>
+<li class="expanded"><a href="../../node/37/" title="Health Professionals">Health Professionals</a><ul class="menu"><li class="leaf first"><a href="../../page/how-it-works-0/" title="">How It Works</a></li>
+<li class="leaf"><a href="../../program_information/" title="Program Information">Program Information</a></li>
+<li class="leaf"><a href="../../page/resources-0/" title="Resources">Resources</a></li>
+<li class="leaf last"><a href="../../page/getting-involved/" title="Contact Us">Contact Us</a></li>
+</ul></li>
+<li class="expanded last"><a href="../../page/media-room/" title="Media Room">Media Room</a><ul class="menu"><li class="leaf first"><a href="../../news/healthcheck/" title="Media Releases">Media Releases</a></li>
+<li class="leaf"><a href="../../page/resources-2/" title="">Resources &amp; Stats</a></li>
+<li class="leaf"><a href="../../faq/" title="">FAQs</a></li>
+<li class="leaf last"><a href="../../page/media-contact/" title="">Contact Us</a></li>
+</ul></li>
+</ul>  </div>
+</div></div> <!-- /block-inner, /block -->
+          </div> <!-- /#content-bottom -->
+                  <div id="footer">
+		<div id="footer-inner" class="region region-footer">
+							<a href="http://www.heartandstroke.com/site/c.ikIQLcMWJtE/b.2796497/k.F922/Heart_Disease_Stroke_and_Healthy_Living.htm" target="_blank"><img src="../../sites/default/files/footer_logo_en.gif"></img></a>								<div id="footer-menu"><div id="block-menu-menu-footermenu" class="block block-menu region-odd even region-count-1 count-14"><div class="block-inner">
+  <div class="content">
+    <ul class="menu"><li class="leaf first"><a href="../../page/contact-us/" title="">Contact</a></li>
+<li class="leaf"><a href="../../page/privacy-policy/" title="">Website Privacy Policy</a></li>
+<li class="leaf"><a href="../../page/disclaimer-0/" title="">Disclaimer</a></li>
+<li class="leaf last"><a href="../../sitemap/" title="">Sitemap</a></li>
+</ul>  </div>
+</div></div> <!-- /block-inner, /block -->
+<div id="block-locale-0" class="block block-locale region-even odd region-count-2 count-15"><div class="block-inner">
+  <div class="content">
+    <ul><li class="en first active"><a href="../../page/grocery-product-finder/" class="language-link active">English</a></li>
+<li class="fr last"><a href="http://www.visezsante.org/node/6245" class="language-link">Français</a></li>
+</ul>  </div>
+</div></div> <!-- /block-inner, /block -->
+</div>
+			<div id="footer-message">Copyright @ 2018 | Altva Health <br/></div>
+		</div>   
+        <div id="footer-copyright">
+			&trade; The Health Check logo, Health Check word mark, Heart and Stroke Foundation logo and Heart and Stroke Foundation word mark are trademarks of the Heart and Stroke Foundation of Canada used under license.       	
+        </div>
+	  </div> <!-- /#footer-inner, /#footer -->
+  </div></div></div> <!-- /#page-inner, /#page -->
+  <script type="text/javascript" src="../../sites/all/modules/google_analytics_reports/google_analytics_reports/google_analytics_reports.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-17658871-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl/" : "http://www/") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+</body>
+</html>

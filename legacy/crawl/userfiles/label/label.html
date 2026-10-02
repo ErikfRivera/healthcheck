@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+  <title>Heart&Stroke; Health Check Program</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../../../userfiles/label/label-styles.css">
+<link rel="stylesheet" type="text/css" href="../../../userfiles/label/thickbox.css">
+<script type="text/javascript" src="../../../userfiles/label/jquery.js"></script>
+<script type="text/javascript" src="../../../userfiles/label/thickbox.js"></script>
+<script type="text/javascript">
+<!--
+var aImgPreloader = new Array;
+aImgPreloader[aImgPreloader.length] = new Array('size','size.gif','size_on.gif');
+aImgPreloader[aImgPreloader.length] = new Array('daily','daily.gif','daily_on.gif');
+aImgPreloader[aImgPreloader.length] = new Array('calories','calories.gif','calories_on.gif');
+aImgPreloader[aImgPreloader.length] = new Array('fat','fat.gif','fat_on.gif');
+aImgPreloader[aImgPreloader.length] = new Array('cholesterol','cholesterol.gif','cholesterol_on.gif');
+aImgPreloader[aImgPreloader.length] = new Array('sodium','sodium.gif','sodium_on.gif');
+aImgPreloader[aImgPreloader.length] = new Array('carbs','carbs.gif','carbs_on.gif');
+aImgPreloader[aImgPreloader.length] = new Array('protein','protein.gif','protein_on.gif');
+aImgPreloader[aImgPreloader.length] = new Array('vita','vita.gif','vita_on.gif');
+aImgPreloader[aImgPreloader.length] = new Array('vitc','vitc.gif','vitc_on.gif');
+aImgPreloader[aImgPreloader.length] = new Array('calcium','calcium.gif','calcium_on.gif');
+aImgPreloader[aImgPreloader.length] = new Array('iron','iron.gif','iron_on.gif');
+var oImgContainer = new Object;
+for(i=0;i<aImgPreloader.length;i++)
+{
+	if(document.images)
+	{
+		oImgContainer[aImgPreloader[i][0]] = new Image;
+		oImgContainer[aImgPreloader[i][0]].src = aImgPreloader[i][1];
+		oImgContainer[aImgPreloader[i][0] + 'On'] = new Image;
+		oImgContainer[aImgPreloader[i][0] + 'On'].src = aImgPreloader[i][2];
+	}
+}
+function roll(sImg,bOver)
+{
+	if(document.images)
+	{
+		if (bOver)
+		{
+			document.images[sImg].src = oImgContainer[sImg + 'On'].src;
+		} else {
+			document.images[sImg].src = oImgContainer[sImg].src;
+		}
+	}
+}
+//-->
+</script>
+</head>
+<body class="front logged-in one-sidebar sidebar-right">
+<div id="hclabelpages">
+<table border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td valign="top"><img src="../../../userfiles/label/soup-left.jpg" width="78" height="629" alt="soup can"></td>
+		<td class="hovers" valign="top"><img height="102" alt="soup can" src="../../../userfiles/label/soup-top.jpg" width="266"/>
+		<a class="thickbox" onblur="this.onmouseout();" onmouseover="roll('size',true);" title="Serving Size" onfocus="this.onmouseover();" onmouseout="roll('size');" href="#TB_inline?height=120&amp;width=600&amp;inlineId=size"><img src="../../../userfiles/label/size.gif" name="size" alt=""/></a>
+		<a class="thickbox" onblur="this.onmouseout();" onmouseover="roll('daily',true);" title="The %Daily Value" onfocus="this.onmouseover();" onmouseout="roll('daily');" href="#TB_inline?height=320&amp;width=600&amp;inlineId=daily"><img src="../../../userfiles/label/daily.gif" name="daily" alt=""/></a>
+		<a class="thickbox" onblur="this.onmouseout();" onmouseover="roll('calories',true);" title="Calories" onfocus="this.onmouseover();" onmouseout="roll('calories');" href="#TB_inline?height=80&amp;width=600&amp;inlineId=calories"><img src="../../../userfiles/label/calories.gif" name="calories" alt=""/></a>
+		<a class="thickbox" onblur="this.onmouseout();" onmouseover="roll('fat',true);" title="Fat" onfocus="this.onmouseover();" onmouseout="roll('fat');" href="#TB_inline?height=160&amp;width=600&amp;inlineId=fat"><img src="../../../userfiles/label/fat.gif" name="fat" alt=""/></a>
+		<a class="thickbox" onblur="this.onmouseout();" onmouseover="roll('cholesterol',true);" title="Cholesterol" onfocus="this.onmouseover();" onmouseout="roll('cholesterol');" href="#TB_inline?height=140&amp;width=600&amp;inlineId=cholesterol"><img src="../../../userfiles/label/cholesterol.gif" name="cholesterol" alt=""/></a>
+		<a class="thickbox" onblur="this.onmouseout();" onmouseover="roll('sodium',true);" title="Sodium" onfocus="this.onmouseover();" onmouseout="roll('sodium');" href="#TB_inline?height=160&amp;width=600&amp;inlineId=sodium"><img src="../../../userfiles/label/sodium.gif" name="sodium" alt=""/></a>
+		<a class="thickbox" onblur="this.onmouseout();" onmouseover="roll('carbs',true);" title="Carbohydrates" onfocus="this.onmouseover();" onmouseout="roll('carbs');" href="#TB_inline?height=160&amp;width=600&amp;inlineId=carbs"><img src="../../../userfiles/label/carbs.gif" name="carbs" alt=""/></a>
+		<a class="thickbox" onblur="this.onmouseout();" onmouseover="roll('protein',true);" title="Protein" onfocus="this.onmouseover();" onmouseout="roll('protein');" href="#TB_inline?height=100&amp;width=600&amp;inlineId=protein"><img src="../../../userfiles/label/protein.gif" name="protein" alt=""/></a>
+		<a class="thickbox" onblur="this.onmouseout();" onmouseover="roll('vita',true);" title="Vitamin A" onfocus="this.onmouseover();" onmouseout="roll('vita');" href="#TB_inline?height=80&amp;width=600&amp;inlineId=vita"><img src="../../../userfiles/label/vita.gif" name="vita" alt=""/></a>
+		<a class="thickbox" onblur="this.onmouseout();" onmouseover="roll('vitc',true);" title="Vitamin C" onfocus="this.onmouseover();" onmouseout="roll('vitc');" href="#TB_inline?height=80&amp;width=600&amp;inlineId=vitc"><img src="../../../userfiles/label/vitc.gif" name="vitc" alt=""/></a>
+		<a class="thickbox" onblur="this.onmouseout();" onmouseover="roll('calcium',true);" title="Calcium" onfocus="this.onmouseover();" onmouseout="roll('calcium');" href="#TB_inline?height=80&amp;width=600&amp;inlineId=calcium"><img src="../../../userfiles/label/calcium.gif" name="calcium" alt=""/></a>
+		<a class="thickbox" onblur="this.onmouseout();" onmouseover="roll('iron',true);" title="Iron" onfocus="this.onmouseover();" onmouseout="roll('iron');" href="#TB_inline?height=80&amp;width=600&amp;inlineId=iron"><img src="../../../userfiles/label/iron.gif" name="iron" alt=""/></a>
+		<img height="170" alt="soup can" src="../../../userfiles/label/soup-bot.jpg" width="266"/></td>
+		<td valign="top"><img src="../../../userfiles/label/soup-right.jpg" width="101" height="629" alt="soup can"></td>
+		<td valign="top"><h2>How to read the Nutrition Facts table on food packages</h2>
+		<p style="margin-top:15px;">Health Canada requires food manufacturers to provide an ingredient list and a Nutrition Facts table on packages to inform shoppers about the contents and nutrients in their products. Remember that for each product you choose, it is only one of many foods you will eat in a day. The Nutrition Facts table is based on a 2,000 calorie diet.</p>
+		<p><b>The Nutrition Facts table</b> lists calories and 13 core nutrients calculated from the serving size.</p>
+		<p><b>The Ingredients</b> list itemizes all the foods and additives found in the product beginning with the ingredient used most. For example, if sugar is listed first, the food has a lot of sugar in it.</p>
+		<p style="background:#fc1921;color:#fff;padding:10px;">Please click on the categories on the label for a more detailed description.</p>
+		</td>
+	</tr>
+</table>
+<div class="popups" id="size" style="display:none;">
+	<p><b>Serving size</b> tells you the amount the food manufacturer has used to calculate the calories and nutrient values in the Nutrition Facts table. For example, a loaf of bread may have 20 slices in the package, but the serving size may be based on 1 slice. So if you make a sandwich, you'll need to double the amount of calories and nutrients to figure out how much you're eating. When you are comparing two food products in the same category, make sure the serving sizes are the same. </p>
+</div>
+<div class="popups" id="daily" style="display:none;">
+	<p><b>The %Daily Value</b> tells you if there is a little or a lot of a nutrient in a food and can be used as a benchmark to figure out if you need more or less of a nutrient according to your requirements or medical condition. The %Daily Value is based on a scale from 0% to 100% according to the Recommended Daily Intake (RDI) for vitamins and minerals. For example, if a food contains 240 mg of sodium, and the Daily Value for sodium is 2,400 mg per day, then this food would provide you with 10% of your day's total intake of sodium.<br><br>The %Daily Value translates all your daily requirements into a single, easy-to-track measurement and is a helpful tool when you want to lower your intake of certain nutrients, like sodium, and increase others, like fibre.<br><br>According to Health Canada, the %Daily Values are calculated for carbohydrates, total fat, and saturated and trans fats based on a 2,000-calorie diet. Your Daily Values may be higher or lower depending on your energy needs. The recommendations for the other nutrients are not related to calorie intake, and therefore the %Daily Values for these nutrients apply to most people. There are no %Daily Values for <b>sugar</b> or <b>protein</b>. According to Health Canada, there is no recognized guideline on the amount of sugar that should be consumed by healthy populations. For protein, intakes are generally adequate and are not a health concern for most Canadians who eat a balanced diet.</p>
+</div>
+<div class="popups" id="calories" style="display:none;">
+	<p><b>Calories</b> equal the amount of energy found in a food, according to serving size. In order to maintain a healthy weight, it is important to balance energy in with energy out. In other words, you want to eat the right amount of food to fuel your level of activity. </p>
+</div>
+<div class="popups" id="fat" style="display:none;">
+	<p><b>Fat</b> represents the sum total of all fats contained in your product –including <b>saturated and trans fats</b>. Saturated fat is what your body uses to make cholesterol, which can build up and narrow your arteries, a heart condition known as atherosclerosis. Trans fats raise the levels of your bad cholesterol, increasing your risk for heart disease and stroke. There are no safe levels of trans fats. That's why the Heart and Stroke Foundation urges Canadians to limit processed <b>trans fats </b>to<b> </b>as little as 5%Daily Value of your total daily fat intake, or try to avoid it altogether if possible. A healthy eating pattern includes 20% to 35% of your calories from fat. For a woman, this means 45 g  to 75 g of fat a day. For a man, this means about 60g to 105 g per day.</p>
+</div>
+<div class="popups" id="cholesterol" style="display:none;">
+	<p><b>Cholesterol</b> is made by the body, but some comes from the foods we eat. According to Health Canada, listing the %Daily Value for cholesterol is optional because, while it is a risk factor for heart disease, a reduction in saturated fat intake, which is found in foods such as fatty cuts of beef, lamb, pork, poultry (with skin) and full-fat dairy products, lard, coconut, palm and palm kernel oil, fast foods, snack foods, many ready-prepared foods and those made with hydrogenated vegetable oil, will be accompanied by a reduction in cholesterol intake. </p>
+</div>
+<div class="popups" id="sodium" style="display:none;">
+	<p><b>Sodium</b> listings on food packages are based on a Daily Value of 2,400 mg per day. Look for lower-sodium and salt-free products.<br><br>The Heart and Stroke Foundation recommends that Canadians consume no more than 2,300 mg a day, which is found in as little as 1 tsp (5 mL) of salt. Sodium may increase blood pressure, the number one risk factor for stroke and a major risk factor for heart disease. If you have been diagnosed with high blood pressure, consult with your physician to determine the amount of sodium that's right for you.</p>
+</div>
+<div class="popups" id="carbs" style="display:none;">
+	<p><b>Carbohydrates</b> are compounds found in bread, cereal, pasta, rice, vegetables and fruit, among other foods. In the Nutrient Facts table, carbohydrates include starches, fibre and sugar. It's a good idea to look for foods that have a high %Daily Value for fibre. Most Canadians get half the recommended fibre required, which is between 21 g and 38 g, depending on age and gender. Health Check products must contain at least 2 g of fibre per serving for specific food categories. As for sugar, the amount varies, depending on the product. For example, cold cereals with the Health Check symbol should contain no more than 6 grams of sugar per 30 g serving.</p>
+</div>
+<div class="popups" id="protein" style="display:none;">
+	<p><b>Protein</b> is a compound found in animal products, nuts and legumes. On a daily basis, it is easy to eat enough protein to keep your body healthy, which is why a %Daily Value is not given for this nutrient. For good health, though, choose lean meats and remove the skin from chicken. Try beans, fish and soy more often.</p>
+</div>
+<div class="popups" id="vita" style="display:none;">
+	<p><b>Vitamin A</b> is important for healthy vision and bone growth. </p>
+</div>
+<div class="popups" id="vitc" style="display:none;">
+	<p><b>Vitamin C</b> is found in many fruits and vegetables and is an important antioxidant. </p>
+</div>
+<div class="popups" id="calcium" style="display:none;">
+	<p><b>Calcium </b>is essential to healthy bones and teeth, but many adults fall well short of achieving their recommended daily intake. Look for products such as milk, yogurt and fortified soy beverages with a high %Daily Value.</p>
+</div>
+<div class="popups" id="iron" style="display:none;">
+	<p><b>Iron</b> plays a key role in transporting oxygen around your body and the health of your cells. Meats, dairy, beans, whole grains, fortified cereals and dark, leafy greens all contain iron.</p>
+</div>
+</div>

@@ -1,0 +1,3 @@
+# Raw legacy crawl: keep out of diffs, language stats, and PR review noise.
+legacy/crawl/** linguist-vendored -diff
+legacy/ahrefs-backlinks-2026-10-02.tsv -diff

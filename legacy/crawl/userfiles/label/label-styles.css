@@ -1,0 +1,19 @@
+#default { background:none; }
+#title { height:28px; }
+#hclabelpages {font-size:1.1em;line-height:150%;padding-top:15px;}
+#hclabelpages h2 {font-size:30px;line-height:30px;font-family:helvetica,arial,sans-serif;font-weight:normal;color:#FC1921;margin-top:15px;}
+#hclabelpages p {margin:10px 0;}
+#hclabelpages .section {width:100%;}
+#hclabelpages .section td {padding:0;vertical-align:top;}
+#hclabelpages .section td.typecopy {padding-right:15px;}
+#hclabelpages .section td.hcimg {width:225px;text-align:right;font-size:11px;color:#666;line-height:130%;}
+#hclabelpages .section td.hcimg img {display:block;margin:34px 0 5px 0px;}
+.hctable {border-collapse:collapse;margin:20px 0 0 0;}
+.hctable th {padding:5px 0;border-top:5px solid black;border-bottom:1px solid black;}
+.hctable th.col2 {text-align:right;}
+.hctable td {padding:5px;border-bottom:1px solid #cccccc;}
+.hctable td.col1 {padding:5px 20px 5px 0;}
+.hctable td.col2 {padding:5px 0;text-align:right;}
+td.hovers img {display:block;}
+a img {border:none;}
+p {font-size:12px;font-family:tahoma,arial,sans-serif;}

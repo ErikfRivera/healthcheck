@@ -1,0 +1,663 @@
+@font-face {
+    font-family: 'denseregular';
+    src: url('sites/all/themes/healthcheck/font/dense-regular-webfont.eot');
+    src: url('sites/all/themes/healthcheck/font/dense-regular-webfont.eot#iefix') format('embedded-opentype'),
+         url('sites/all/themes/healthcheck/font/dense-regular-webfont.woff') format('woff'),
+         url('sites/all/themes/healthcheck/font/dense-regular-webfont.ttf') format('truetype'),
+         url('img/dense-regular-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'museo_sans_500regular';
+    src: url('sites/all/themes/healthcheck/font/MuseoSans_500-webfont.eot');
+    src: url('sites/all/themes/healthcheck/font/MuseoSans_500-webfont.eot#iefix') format('embedded-opentype'),
+         url('sites/all/themes/healthcheck/font/MuseoSans_500-webfont.woff') format('woff'),
+         url('sites/all/themes/healthcheck/font/MuseoSans_500-webfont.ttf') format('truetype'),
+         url('img/MuseoSans_500-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'museo_slab500';
+    src: url('sites/all/themes/healthcheck/font/Museo_Slab_500_2-webfont.eot');
+    src: url('sites/all/themes/healthcheck/font/Museo_Slab_500_2-webfont.eot#iefix') format('embedded-opentype'),
+         url('sites/all/themes/healthcheck/font/Museo_Slab_500_2-webfont.woff') format('woff'),
+         url('sites/all/themes/healthcheck/font/Museo_Slab_500_2-webfont.ttf') format('truetype'),
+         url('img/Museo_Slab_500_2-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.clear {
+	clear:both;
+	width: 100%;
+}	
+.section-recipe #content-site,
+.section-product #content-site,
+.section-restaurant #content-site {
+    display: inline;
+    float: left;
+    margin-left: 2px;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 0;
+    width: 900px;
+	min-height: 890px;
+}
+.page-recipe #content-site,
+.page-product #content-site ,
+.page-restaurant #content-site{
+	min-height: 0;
+}
+#backResults,
+#searchBy {
+	font-family: 'denseregular', sans-serif;
+	color: #737384;
+	font-size: 32px;
+	line-height: 1.1em;	
+	text-align: left;
+	margin: 10px 15px;
+	border-bottom: 1px solid #EB2E28;
+}
+#searchBy {
+	margin:0px 0px;
+}
+#backResults a,
+#backResults a:link {
+	color: #737384;
+}
+/** RECIPE SPECIFIC **/
+.section-recipe #recipeImage {
+	display: table;
+	position:absolute;
+	right: 59px;
+	margin-top: 5px;
+	z-index: 2;
+	box-shadow: 0px 5px 5px 0px #666666;
+}
+.section-recipe #recipeImage  img{
+	margin: 0px;
+}
+#prepIcons {
+	display: table;
+	position:absolute;
+	right: 59px;
+	margin-top: 370px;
+	background-color: #FFF;
+	z-index: 2;
+	padding: 30px 10px 20px 20px;
+}
+.prepWrapper {
+	border-top: 1px solid #E6321E;
+	border-bottom: 1px solid #E6321E;	
+}
+#prepIcons table {
+	width: 340px;
+}
+#prepIcons td {
+	vertical-align: center;
+	text-align: center;
+	font-family: 'denseregular', sans-serif;
+	color: #AAA;
+	font-size: 25px;
+	font-weight: normal;
+	padding: 3px;
+}
+.section-recipe #body {
+	
+}
+.view-recipe-list .views-field-tid {
+	width: 140px;
+}
+.view-recipe-list .views-field-tid-1 {
+	width: 240px;
+	padding-right:10px;
+}
+.view-recipe-list .views-field-title {
+	padding-right: 20px;
+}
+.view-restaurant-list .views-field-tid {
+	width: 150px;
+}
+/** SECTION STYLING **/
+.section-recipe .title-wrapper,
+.section-product .title-wrapper,
+.section-restaurant .title-wrapper {
+	background-color: #999;
+	padding: 10px 20px;	
+}
+.section-recipe .page-title,
+.section-product .page-title,
+.section-restaurant .page-title {
+	display: table;
+	border-top: 1px solid #FFF;
+	border-bottom: 1px solid #FFF;
+	color: #FFF;	
+	font-family: 'denseregular', sans-serif;
+	font-weight: bold;
+	padding: 0px 15px;
+	margin:0px;
+	width: auto;
+}
+.section-recipe #content-site h1,
+.section-product #content-site h1,
+.section-restaurant #content-site h1 {
+	font-size: 50px;
+	font-weight: bold;
+	line-height: 1.1em;
+	margin:0px;
+	width: 470px;
+	text-align: center;
+}
+.section-product #content-site h1,
+.section-restaurant #content-site h1 {
+	width: auto;
+}
+.section-recipe #recipeWrapper {
+	position:relative;
+	top:0px;
+	left:0px;
+	width: 550px;
+	min-height: 400px;
+}
+
+#recipeWrapper .leftWrapper {
+	float: left;
+	width: 310px;
+	min-height: 460px;
+	margin: 0px;
+}
+#recipeWrapper .rightWrapper {
+	float: left;
+	width: 240px;
+	margin: 0px;
+}
+
+.section-recipe #details {
+	margin: 15px 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666666;	
+	line-height: 1.3em;	
+}
+.section-recipe #copyright {
+	font-size: 8px;
+	color: #666666;	
+	margin-left: 20px;
+}
+
+/*  Accordion  */
+.ui-accordion, .ui-accordion td { font-family: Arial, Helvetica, sans-serif; color: #666666;}
+.ui-accordion-content ul {
+	list-style-image: url('img/bullet.gif');	
+}
+.ui-accordion ul { margin:0px; }
+.ui-accordion { width: 100%;}
+.ui-accordion .ui-accordion-header { position: relative; margin-top: 1px; zoom: 1; }
+.ui-accordion .ui-accordion-li-fix { display: inline; }
+.ui-accordion .ui-accordion-header-active { border-bottom: 0 !important; }
+.ui-accordion .ui-accordion-header a { display: block; font-size: 1em; padding: .5em .5em .5em .7em; }
+.ui-accordion-icons .ui-accordion-header a { padding-left: 2.2em; }
+.ui-accordion .ui-accordion-header .ui-icon { position: absolute; left: .5em; top: 50%; margin-top: -8px; }
+.ui-accordion .ui-accordion-content { padding: 0px 20px; border-top: 0; margin-top: -2px; position: relative; top: 1px; margin-bottom: 0px; overflow: auto; display: block; zoom: 1; font-size: 11px;}
+.ui-accordion .ui-accordion-content-active { display: block; }
+.ui-accordion-content table, .ui-accordion-content p, .ui-accordion-content ul { margin-top:0px;}
+
+/* Interaction states
+----------------------------------*/
+#content-site .ui-state-default, #content-site .ui-widget-content .ui-state-default, #content-site .ui-widget-header .ui-state-default { font-weight: normal; color: #FFF; padding-left:30px; margin:0px; background-color: #999;}
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #FFF; text-decoration: none; }
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { background-color: #FCDC4F; font-weight: normal; color: #212121; }
+.ui-state-hover a, .ui-state-hover a:hover { color: #212121/*{fcHover}*/; text-decoration: none; }
+#content-site .ui-state-active, #content-site .ui-widget-content .ui-state-active, #content-site  h3.ui-widget-header .ui-state-active { background-color: #999; font-weight: normal; color: #FFF; padding-left:20px; margin-bottom:0px;}
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #212121; text-decoration: none; }
+.ui-widget :active { outline: none; }
+
+
+/* Nutritional Facts */
+#nutrition-wrapper { padding:5px; border: 1px solid #FFF; background-color: #EB2E28; display:table; z-index:99; position: relative; top: 10px;}
+#nutrition-padding { padding:5px; border: 1px dashed #FFF; display:table;}
+#nutrition-facts-table { background-color: #FFF; }
+#nutrition-facts-table.borderSolid { border: 1px solid #000000; padding: 1px; }
+#nutrition-facts-table .fontSize90 { font-size: 90%; }
+#nutrition-facts-table .bottomSolid { border-bottom: 2px solid #666666; }
+#nutrition-facts-table .alignLeft { text-align: left; }
+#nutrition-facts-table .width55 { width: 55%; }
+#nutrition-facts-table .indent10 { padding-left: 10px; }
+#nutrition-facts-table .alignRight { text-align: right; }
+#nutrition-facts-table .noWrap { white-space: nowrap; }
+#nutrition-facts-table .fontSize140, .h3Size { font-size: 140%; font-weight: bold;}
+#nutrition-facts-table th { font-weight: bold; text-align: center; vertical-align: top; }
+#nutrition-facts-table td { text-align: left; vertical-align: top; }
+
+
+/******* PRODUCTS **********/
+#contentWrapper {
+	margin: 20px 15px;
+	width: 870px;
+}
+#companyLogo {
+	float: left;
+	width: 120px;	
+}
+#productImage {
+	float:left;
+	width: 220px;
+	margin-left: 10px;
+}
+#detailsWrapper {
+	float:left;
+	width: 240px;
+	margin: 0px 10px 0px 10px;
+}
+#criteriaWrapper {
+	background-color: #666;
+	border: 1px solid #666;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
+	width: 194px;
+	padding: 3px;
+}
+.criteria {
+	border: 1px solid #FFF;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
+	padding: 10px;
+	color: #FFF;
+	font-size: 10px;
+	line-height: 1.2em;
+	font-family: Arial, sans-serif;
+}
+.criteria h2{
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	border-top: 1px dashed #FFF;
+	border-bottom: 1px dashed #FFF;
+	margin: 0px 0px 10px 0px;	
+	text-transform: uppercase;
+	text-align:center;
+}
+#disclaimer {
+	color: #525252;
+	font-size: 11px;
+	line-height: 1.2em;
+	font-style: italic;
+	margin: 10px 0px;
+}
+#details {
+	font-family: Arial, sans-serif;
+	font-size: 11px;
+	color: #9797A3;
+	line-height: 1.3em;
+}
+#details big {
+	color: #C50A05;
+	font-size: 11px;
+	font-weight: bold;
+}
+.foodservice {
+	font-weight: bold;
+}
+#nutritionFactsWrapper {
+	float:left;
+	width: 255px;
+}
+/** Restaurant **/
+#menuImage {
+	width: 240px;	
+}
+#descriptionWrapper {
+	float:left;
+	width: 210px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#description {
+	font-size: 11px;
+}
+.taxonomy_image_wrapper {
+	width:120px;
+	text-align:left;
+}
+#website {
+	text-align: left;
+}
+#website a, #website a:link{
+	color: #535353;
+	font-size: 12px;
+}
+
+
+/**************************************** SEARCH ************************************************/
+/** Select Styles **/
+#edit-tid-wrapper select,
+#edit-tid-1-wrapper select,
+#edit-tid-2-wrapper select,
+#edit-keys-wrapper select,
+#edit-keys-wrapper input.form-text {
+	padding:2px 5px 5px 5px;
+	margin: 0;
+	color:#747484;
+	border:none;
+	background: transparent;
+	outline:none;    
+	-webkit-appearance:none;
+	-moz-appearance:none;    
+	cursor:pointer;
+	
+	width: 368px;   
+	height: 44px;
+	
+	font-family: 'denseregular', sans-serif;
+	font-size: 35px;
+	font-weight: bold;
+}
+/*
+.mac.chrome #edit-tid-wrapper select,
+.mac.chrome #edit-tid-1-wrapper select,
+.mac.chrome #edit-tid-2-wrapper select,
+.mac.chrome #edit-keys-wrapper select,
+.mac.chrome #edit-keys-wrapper input.form-text,
+*/
+.chrome #edit-tid-wrapper select,
+.chrome #edit-tid-1-wrapper select,
+.chrome #edit-tid-2-wrapper select,
+.chrome #edit-keys-wrapper select,
+.chrome #edit-keys-wrapper input.form-text,
+.ie #edit-tid-wrapper select,
+.ie #edit-tid-1-wrapper select,
+.ie #edit-tid-2-wrapper select,
+.ie #edit-keys-wrapper select,
+.ie #edit-keys-wrapper input.form-text {
+	font-size: 20px;
+}
+
+#edit-tid-wrapper select option,
+#edit-tid-1-wrapper select option,
+#edit-tid-2-wrapper select option,
+#edit-keys-wrapper select optioon{
+    font-size: 13px;
+	font-weight:normal;
+}   
+   
+#edit-tid-wrapper,
+#edit-tid-1-wrapper,
+#edit-tid-2-wrapper,
+#edit-keys-wrapper,
+#edit-term-node-tid-wrapper,
+#edit-term-node-tid-1-wrapper,
+#edit-term-node-tid-2-wrapper {
+   width: 340px;
+   height: 44px;
+   margin-top: 0px;
+   overflow: hidden;
+   background: url(img/select_arrow.gif) no-repeat right #FFF;
+   border: 1px solid #DDD;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+	/**
+    -webkit-box-shadow: 0 2px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 2px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 2px 0 #ccc, 0 -1px #fff inset;   **/
+}   
+.section-recipe .single-input-widget,
+.section-product .single-input-widget,
+.section-restaurant .single-input-widget{
+	width: 370px;
+	height: 50px;
+}
+.section-recipe .views-exposed-form .views-exposed-widget,
+.section-product .views-exposed-form .views-exposed-widget,
+.section-restaurant .views-exposed-form .views-exposed-widget{    
+    float: left;
+    padding: 3px 0px;
+} 
+#edit-keys-wrapper {
+	background: none;
+}
+#edit-keys-wrapper input.form-text {
+	background: url(img/keyword.gif) no-repeat 0 0 #FFF;
+}
+.i18n-fr #edit-keys-wrapper input.form-text {
+	background: url(img/keyword-french.gif) no-repeat 0 0 #FFF;
+}
+.ie #edit-keys-wrapper input.form-text,
+.chrome #edit-keys-wrapper input.form-text {
+	background: url(img/keyword-20.gif) no-repeat 0 0 #FFF;
+}
+.ie .i18n-fr #edit-keys-wrapper input.form-text,
+.chrome .i18n-fr #edit-keys-wrapper input.form-text {
+	background: url(img/keyword-20-french.gif) no-repeat 0 0 #FFF;
+}
+
+.ie .i18n-fr #edit-keys-wrapper input.form-text.active,
+.chrome .i18n-fr #edit-keys-wrapper input.form-text.active,
+#edit-keys-wrapper input.form-text.active {
+	background: none no-repeat 0 0 #FFF;
+}
+
+/* Submit Button */
+.views-exposed-form .views-exposed-widget .form-submit {	
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);		
+	background-color:#ffffff;
+	
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	
+	border:1px solid #dcdcdc;	
+	display:inline-block;
+	color:#666666;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;	
+	text-shadow:0px 1px 0px #ffffff;	
+	margin:0px;
+}
+.i18n-fr .views-exposed-form .views-exposed-widget .form-submit {	
+	padding:6px 10px;
+}
+.views-exposed-form .views-exposed-widget .form-submit:hover {	
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+	
+	background-color:#f6f6f6;
+}
+.views-exposed-form .views-exposed-widget .form-submit:active {
+	position:relative;
+	top:1px;
+}
+
+/** VIEWS LISTING PAGES **/
+.view-id-recipe_list,
+.view-id-product_list,
+.view-id-restaurant_list {
+	margin: 0px 20px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #EB2E28;
+}
+.view-filters,
+#views-exposed-form-restaurant-list-default,
+#views-exposed-form-product-list-default,
+#views-exposed-form-recipe-list-default {
+	display: table;	
+	margin: 15px 0px 5px 0px;
+}
+.views-exposed-form {
+	margin:0px;
+	border-top: 1px solid #737384;
+	border-bottom: 1px solid #737384;
+	display: table;
+	width:475px;
+	padding-top: 8px;
+}
+.searchCount {
+	font-weight: bold;
+	font-size: 28px;
+	font-family: 'denseregular', sans-serif;
+	color: #737384;	
+	line-height: 1.1em;	
+	text-align: left;
+	border-top: 3px double #EB2E28;
+	border-bottom: 3px double #737384;
+	padding: 5px;
+}
+.view th {
+	background-color: #999;
+	color: #FFF;
+	font-size: 20px;
+	font-family: 'denseregular', sans-serif;
+	text-transform: Uppercase;
+	line-height: 1.1em;
+	white-space:nowrap;
+	padding: 2px 0px;
+}
+.view th a, .view th a:link{
+	color:#FFF;
+	font-size: 20px;
+}
+.view th img {
+	margin-left: 5px;
+}
+.view tr.odd td {
+	background-color: #EEE;
+	border-bottom: 1px solid #CCC;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.view tr.even td {
+	background-color: #FFF;
+	border-bottom: 1px solid #CCC;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.view td.views-field-image,
+.view td.views-field-field-image-fid {
+	padding:10px;
+}
+.view td.views-field-title a, .view td.views-field-title a:link, .view td.views-field{	
+	color: #444;
+	font-weight: bold;
+	font-family: 'museo_sans_500regular', sans-serif;
+	font-size: 12px;
+}
+.view td.views-field {
+	font-weight: normal;
+}
+.view .item-list .pager li {
+	padding: 5px 0px 5px 0px;
+	font-family: denseregular, sans-serif;
+	font-size: 18px;
+}
+.item-list ul li.pager-all {
+	margin-right: 15px;
+}
+.pager-current {
+	color: #EB2E28;
+}
+.item-list li a.active{
+	color: #737384;
+}
+li.pager-next a.active,
+li.pager-last a.active,
+li.pager-previous a.active,
+li.pager-first a.active{
+	color: #737384;
+	font-size: 22px;
+}
+.view-recipe-list .view-content {
+	display: table;
+	width: 100%;
+}
+.views-field-nothing {
+	width: 500px;
+	font-size: 11px;
+	color: #666;
+	font-family: Arial, sans-serif;
+}
+.view-restaurant-list th.views-field-tid {
+	text-align: left;
+}
+.view-empty {
+	color: #747484;
+	font-family: 'denseregular',sans-serif;
+    font-size: 35px;  
+	margin: 20px 0px;
+}
+
+.view-display-id-page_3 #backResults {
+	margin:0px 0px 0px 0px;	
+	font-size: 20px;	
+}
+.view-display-id-page_3 .searchCount {
+	border-top: 0px;
+}
+
+/** List Logo **/
+.view-restaurant-logo {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	font-size:13px;
+	font-weight: normal;
+	line-height: normal;
+}
+.view-restaurant-logo .views-field-field-website-url a {
+	color: #737384;	
+}
+.view-restaurant-list .views-field-field-image-fid {
+	width: 140px;
+}
+/*** TOP SEARCH **/
+#topSearch-wrapper { padding:0px; background: url('img/TopSearchBg.gif') no-repeat 0 0 transparent; display:table; z-index:99; width:980px; height:237px;}
+.fancybox-skin { 
+	border-radius: 20px;
+	background-color: transparent;
+}
+.topSearchTitle {
+	font-family: 'denseregular', sans-serif;
+	font-size: 64px;
+	color: #FFF;
+	float:left;
+	margin: 60px 0px 0px 150px;
+	width: 200px;
+}
+.topSearchDetails {
+	font-family: 'denseregular', sans-serif;
+	color: #FFF;
+	font-size: 48px;
+	text-align:right;
+	float:right;	
+	margin: 40px 30px 0px 0px;
+}
+.topSearchDetails p{
+	margin:0px;
+}
+.topSearchDetails a, .topSearchDetails a:link {
+	font-family: 'denseregular', sans-serif;
+	color: #FFF;
+	font-size: 36px;
+	text-align:right;
+	background: url('img/redLink.gif') no-repeat center right transparent;
+	padding-right: 50px;
+}

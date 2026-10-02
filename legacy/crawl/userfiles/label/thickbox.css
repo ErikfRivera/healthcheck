@@ -1,0 +1,22 @@
+#TB_window 			{ font: 12px Arial, Helvetica, sans-serif;color: #333333; }
+#TB_secondLine 			{ font: 10px Arial, Helvetica, sans-serif;color:#666666; }
+#TB_window a:link 		{ color: #666666; }
+#TB_window a:visited 		{ color: #666666; }
+#TB_window a:hover 		{ color: #000; }
+#TB_window a:active 		{ color: #666666; }
+#TB_window a:focus		{ color: #666666; }
+#TB_overlay 			{ position: fixed;z-index:100;top: 0px;left: 0px;height:100%;width:100%; }
+.TB_overlayMacFFBGHack 		{ background: url(http://www.healthcheck.org/userfiles/label/macFFBgHack.png) repeat;}
+.TB_overlayBG 			{ background-color:#000;filter:alpha(opacity=35);-moz-opacity: 0.35;opacity: 0.35; }
+* html #TB_overlay 		{ position: absolute;height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px'); }
+#TB_window 			{ position: fixed;background: #ffffff;z-index: 102;color:#000000;display:none;text-align:left;top:50%;left:50%;padding:10px; }
+* html #TB_window 		{ position: absolute;margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px'); }
+
+#TB_title			{ height:38px;font-size:30px;line-height:30px;font-family:helvetica,arial,sans-serif;font-weight:normal;color:#fc1921;padding:5px 0 0 0;border-top:5px solid black;border-bottom:1px solid black; }
+#TB_ajaxWindowTitle		{ float:left;}
+#TB_closeAjaxWindow		{ background:#fff url("img/close.gif") 0 10px no-repeat;padding:2px 0 0 28px;text-align:right;float:right;font-size:11px; }
+
+#TB_ajaxContent			{ clear:both;margin:0;padding:0;overflow:auto;text-align:left;line-height:1.4em; }
+#TB_ajaxContent p		{ margin:10px;padding:0;text-align:justify; }
+#TB_load			{ position: fixed;display:none;height:13px;width:208px;z-index:103;top: 50%;left: 50%;margin: -6px 0 0 -104px; }
+* html #TB_load 		{ position: absolute;margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px'); }

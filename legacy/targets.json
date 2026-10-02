@@ -1,0 +1,1460 @@
+[
+ {
+  "path": "/",
+  "tier": 1,
+  "referring_domains": 69,
+  "links": 174,
+  "dofollow": 128,
+  "max_dr": 92,
+  "top_anchor": "Health Check",
+  "crawl_file": "index.html",
+  "action": "already-live",
+  "raw_targets": [
+   "http://www.healthcheck.org/",
+   "https://www.healthcheck.org/"
+  ]
+ },
+ {
+  "path": "/page/different-types-fat",
+  "tier": 1,
+  "referring_domains": 18,
+  "links": 23,
+  "dofollow": 23,
+  "max_dr": 90,
+  "top_anchor": "four main types",
+  "crawl_file": "page/different-types-fat.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/different-types-fat",
+   "https://www.healthcheck.org/page/different-types-fat"
+  ]
+ },
+ {
+  "path": "/story/health-check-exit",
+  "tier": 1,
+  "referring_domains": 10,
+  "links": 13,
+  "dofollow": 12,
+  "max_dr": 75,
+  "top_anchor": "http://www.healthcheck.org/story/health-check-exit",
+  "crawl_file": "story/health-check-exit.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/story/health-check-exit",
+   "http://www.healthcheck.org/story/health-check-exit%20",
+   "https://www.healthcheck.org/story/health-check-exit%20"
+  ]
+ },
+ {
+  "path": "/page/helping-you-eat-well",
+  "tier": 1,
+  "referring_domains": 8,
+  "links": 18,
+  "dofollow": 14,
+  "max_dr": 70,
+  "top_anchor": "Helping You Eat Well | Heart & Stroke Health Check Program",
+  "crawl_file": "page/helping-you-eat-well.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/helping-you-eat-well",
+   "http://www.healthcheck.org/page/helping-you-eat-well%20",
+   "https://www.healthcheck.org/page/helping-you-eat-well",
+   "https://www.healthcheck.org/page/helping-you-eat-well%20"
+  ]
+ },
+ {
+  "path": "/sites/default/files/mmallet/GroceryNutrientCriteria_Sept11.pdf",
+  "tier": 1,
+  "referring_domains": 7,
+  "links": 7,
+  "dofollow": 4,
+  "max_dr": 72,
+  "top_anchor": "the original",
+  "crawl_file": "",
+  "action": "recover-pdf-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/sites/default/files/mmallet/GroceryNutrientCriteria_Sept11.pdf"
+  ]
+ },
+ {
+  "path": "/faq",
+  "tier": 1,
+  "referring_domains": 6,
+  "links": 14,
+  "dofollow": 10,
+  "max_dr": 57,
+  "top_anchor": "FAQ | Heart & Stroke Health Check Program",
+  "crawl_file": "faq.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/faq",
+   "https://www.healthcheck.org/faq"
+  ]
+ },
+ {
+  "path": "/page/nutrient-criteria-grocery-0",
+  "tier": 1,
+  "referring_domains": 6,
+  "links": 11,
+  "dofollow": 6,
+  "max_dr": 57,
+  "top_anchor": "the original",
+  "crawl_file": "page/nutrient-criteria-grocery-0.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/nutrient-criteria-grocery-0",
+   "https://www.healthcheck.org/page/nutrient-criteria-grocery-0"
+  ]
+ },
+ {
+  "path": "/story/health-check-media",
+  "tier": 1,
+  "referring_domains": 5,
+  "links": 9,
+  "dofollow": 9,
+  "max_dr": 76,
+  "top_anchor": "press release",
+  "crawl_file": "story/health-check-media.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/story/health-check-media",
+   "https://www.healthcheck.org/story/health-check-media"
+  ]
+ },
+ {
+  "path": "/page/what-health-check",
+  "tier": 1,
+  "referring_domains": 3,
+  "links": 5,
+  "dofollow": 5,
+  "max_dr": 90,
+  "top_anchor": "Heart & Stroke Foundation. What is Health Check? www.healthcheck.org/page/what-h",
+  "crawl_file": "page/what-health-check.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/what-health-check",
+   "https://www.healthcheck.org/page/what-health-check"
+  ]
+ },
+ {
+  "path": "/fr/home/home.html",
+  "tier": 1,
+  "referring_domains": 3,
+  "links": 5,
+  "dofollow": 5,
+  "max_dr": 77,
+  "top_anchor": "",
+  "crawl_file": "fr/home/home.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/fr/home/home.html",
+   "https://www.healthcheck.org/fr/home/home.html"
+  ]
+ },
+ {
+  "path": "/instylecontest/home",
+  "tier": 1,
+  "referring_domains": 3,
+  "links": 10,
+  "dofollow": 4,
+  "max_dr": 69,
+  "top_anchor": "http://www.healthcheck.org/instylecontest/home",
+  "crawl_file": "instylecontest/home.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/instylecontest/home",
+   "https://www.healthcheck.org/instylecontest/home"
+  ]
+ },
+ {
+  "path": "/en/home/home.html",
+  "tier": 1,
+  "referring_domains": 3,
+  "links": 11,
+  "dofollow": 11,
+  "max_dr": 48,
+  "top_anchor": "http://www.healthcheck.org/en/home/home.html#",
+  "crawl_file": "en/home/home.html",
+  "action": "redirect-to-english-equivalent",
+  "raw_targets": [
+   "http://www.healthcheck.org/en/home/home.html",
+   "https://www.healthcheck.org/en/home/home.html"
+  ]
+ },
+ {
+  "path": "/node/11157",
+  "tier": 1,
+  "referring_domains": 2,
+  "links": 32,
+  "dofollow": 32,
+  "max_dr": 89,
+  "top_anchor": "Carol Dombrow",
+  "crawl_file": "node/11157.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/node/11157",
+   "https://www.healthcheck.org/node/11157"
+  ]
+ },
+ {
+  "path": "/page/katie-jessop-rd",
+  "tier": 1,
+  "referring_domains": 2,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 89,
+  "top_anchor": "Katie Jessop",
+  "crawl_file": "page/katie-jessop-rd.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/katie-jessop-rd",
+   "https://www.healthcheck.org/page/katie-jessop-rd"
+  ]
+ },
+ {
+  "path": "/page/program-criteria-3",
+  "tier": 1,
+  "referring_domains": 2,
+  "links": 3,
+  "dofollow": 3,
+  "max_dr": 89,
+  "top_anchor": "nutrient criteria",
+  "crawl_file": "page/program-criteria-3.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/program-criteria-3",
+   "https://www.healthcheck.org/page/program-criteria-3"
+  ]
+ },
+ {
+  "path": "/page/samara-foisy-rd-mhsc",
+  "tier": 1,
+  "referring_domains": 2,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 89,
+  "top_anchor": "Samara Foisy",
+  "crawl_file": "page/samara-foisy-rd-mhsc.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/samara-foisy-rd-mhsc",
+   "https://www.healthcheck.org/page/samara-foisy-rd-mhsc"
+  ]
+ },
+ {
+  "path": "/french/ff_home.html",
+  "tier": 1,
+  "referring_domains": 2,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 88,
+  "top_anchor": "Visez santé",
+  "crawl_file": "",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/french/ff_home.html"
+  ]
+ },
+ {
+  "path": "/page/what-consumers-say",
+  "tier": 1,
+  "referring_domains": 2,
+  "links": 2,
+  "dofollow": 2,
+  "max_dr": 79,
+  "top_anchor": "http://www.healthcheck.org/page/what-consumers-say",
+  "crawl_file": "page/what-consumers-say.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/what-consumers-say"
+  ]
+ },
+ {
+  "path": "/story/december-15-2004-food-industry-offers-consumers-solution-fight-against-obesity-health-check-pr",
+  "tier": 1,
+  "referring_domains": 2,
+  "links": 6,
+  "dofollow": 6,
+  "max_dr": 70,
+  "top_anchor": "a 2004 Heart and Stroke Foundation press release on the Health Check program",
+  "crawl_file": "story/december-15-2004-food-industry-offers-consumers-solution-fight-against-obesity-health-check-pr.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/story/december-15-2004-food-industry-offers-consumers-solution-fight-against-obesity-health-check-pr"
+  ]
+ },
+ {
+  "path": "/story/british-columbia-pizza-huts-get-a-health-check-pizza-hut",
+  "tier": 1,
+  "referring_domains": 2,
+  "links": 8,
+  "dofollow": 8,
+  "max_dr": 69,
+  "top_anchor": "Pizza Hut has now announced its participation",
+  "crawl_file": "story/british-columbia-pizza-huts-get-a-health-check-pizza-hut.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/story/british-columbia-pizza-huts-get-a-health-check-pizza-hut"
+  ]
+ },
+ {
+  "path": "/backtoschool/home",
+  "tier": 1,
+  "referring_domains": 2,
+  "links": 7,
+  "dofollow": 3,
+  "max_dr": 69,
+  "top_anchor": "http://www.healthcheck.org/backtoschool/home",
+  "crawl_file": "backtoschool/home.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/backtoschool/home",
+   "https://www.healthcheck.org/backtoschool/home"
+  ]
+ },
+ {
+  "path": "/content/st-patrick’s-day-healthy-way-think-green",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 0,
+  "max_dr": 92,
+  "top_anchor": "here",
+  "crawl_file": "",
+  "action": "recover-page-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/content/st-patrick%E2%80%99s-day-healthy-way-think-green"
+  ]
+ },
+ {
+  "path": "/en/healthy-recipes/recipes.html",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 0,
+  "max_dr": 91,
+  "top_anchor": "www.healthcheck.org/en/healthy-recipes/recipes.html",
+  "crawl_file": "en/healthy-recipes/recipes.html",
+  "action": "redirect-to-english-equivalent",
+  "raw_targets": [
+   "https://www.healthcheck.org/en/healthy-recipes/recipes.html"
+  ]
+ },
+ {
+  "path": "/page/program-criteria",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 2,
+  "max_dr": 90,
+  "top_anchor": "http://www.healthcheck.org/page/program-criteria",
+  "crawl_file": "",
+  "action": "recover-page-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/program-criteria",
+   "https://www.healthcheck.org/page/program-criteria"
+  ]
+ },
+ {
+  "path": "/page/restaurant-overview",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 2,
+  "max_dr": 89,
+  "top_anchor": "list",
+  "crawl_file": "page/restaurant-overview.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/restaurant-overview",
+   "https://www.healthcheck.org/page/restaurant-overview"
+  ]
+ },
+ {
+  "path": "/content/confessions-former-football-wife",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 2,
+  "max_dr": 89,
+  "top_anchor": "Samara Foisy",
+  "crawl_file": "content/confessions-former-football-wife.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/content/confessions-former-football-wife",
+   "https://www.healthcheck.org/content/confessions-former-football-wife"
+  ]
+ },
+ {
+  "path": "/Timetostartcontest",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 0,
+  "max_dr": 87,
+  "top_anchor": "www.healthcheck.org/Timetostartcontest",
+  "crawl_file": "timetostartcontest",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/Timetostartcontest"
+  ]
+ },
+ {
+  "path": "/en/about-health-check/meat-alternatives.html",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 87,
+  "top_anchor": "",
+  "crawl_file": "en/about-health-check/meat-alternatives.html",
+  "action": "redirect-to-english-equivalent",
+  "raw_targets": [
+   "http://www.healthcheck.org/en/about-health-check/meat-alternatives.html"
+  ]
+ },
+ {
+  "path": "/french/fibrefacts.htm",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 0,
+  "max_dr": 83,
+  "top_anchor": "http://www.healthcheck.org/french/fibrefacts.htm",
+  "crawl_file": "",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/french/fibrefacts.htm",
+   "https://www.healthcheck.org/french/fibrefacts.htm"
+  ]
+ },
+ {
+  "path": "/page/types-fibre",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 0,
+  "max_dr": 82,
+  "top_anchor": "Heart and Stroke Foundation: Types of Fibre",
+  "crawl_file": "page/types-fibre.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/types-fibre/",
+   "https://www.healthcheck.org/page/types-fibre/"
+  ]
+ },
+ {
+  "path": "/story/harvey’s-launches-four-health-check-items",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 2,
+  "max_dr": 81,
+  "top_anchor": "The Canadian Heart and Stroke Foundation’s decision to place their Health Check ",
+  "crawl_file": "story/harvey_s-launches-four-health-check-items.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/story/harvey%E2%80%99s-launches-four-health-check-items",
+   "https://www.healthcheck.org/story/harvey%E2%80%99s-launches-four-health-check-items"
+  ]
+ },
+ {
+  "path": "/fr/page/restaurant-overview",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 79,
+  "top_anchor": "http://www.healthcheck.org/fr/page/restaurant-overview",
+  "crawl_file": "fr/page/restaurant-overview.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/fr/page/restaurant-overview"
+  ]
+ },
+ {
+  "path": "/fr/eating-out/eating-out.html",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 79,
+  "top_anchor": "http://www.healthcheck.org/fr/eating-out/eating-out.html",
+  "crawl_file": "fr/eating-out/eating-out.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/fr/eating-out/eating-out.html"
+  ]
+ },
+ {
+  "path": "/recipe/microwave-apple-crisp-omelette",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 2,
+  "max_dr": 77,
+  "top_anchor": "pple crisp omelette",
+  "crawl_file": "",
+  "action": "recover-page-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/recipe/microwave-apple-crisp-omelette",
+   "https://www.healthcheck.org/recipe/microwave-apple-crisp-omelette"
+  ]
+ },
+ {
+  "path": "/recipe/granola-yogurt-parfait",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 2,
+  "max_dr": 77,
+  "top_anchor": "1. Yogurt granola parfait",
+  "crawl_file": "",
+  "action": "recover-page-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/recipe/granola-yogurt-parfait",
+   "https://www.healthcheck.org/recipe/granola-yogurt-parfait"
+  ]
+ },
+ {
+  "path": "/content/dairy-milking-it-what-it’s-worth",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 75,
+  "top_anchor": "Health Check",
+  "crawl_file": "content/dairy-milking-it-what-it_s-worth.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "https://www.healthcheck.org/content/dairy-milking-it-what-it%E2%80%99s-worth"
+  ]
+ },
+ {
+  "path": "/english/e_home.html",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 74,
+  "top_anchor": "www.healthcheck.org --> Health Check website",
+  "crawl_file": "english/e_home.html",
+  "action": "redirect-to-english-equivalent",
+  "raw_targets": [
+   "http://www.healthcheck.org/english/e_home.html"
+  ]
+ },
+ {
+  "path": "/page/nutrient-criteria-grocery",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 72,
+  "top_anchor": "http://www.healthcheck.org/page/nutrient-criteria-grocery",
+  "crawl_file": "page/nutrient-criteria-grocery.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/nutrient-criteria-grocery"
+  ]
+ },
+ {
+  "path": "/page/nutrient-criteria-restaurants",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 71,
+  "top_anchor": "http://www.healthcheck.org/page/nutrient-criteria-restaurants",
+  "crawl_file": "page/nutrient-criteria-restaurants.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/nutrient-criteria-restaurants"
+  ]
+ },
+ {
+  "path": "/2013/rules_fr.php",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 0,
+  "max_dr": 69,
+  "top_anchor": "http://www.healthcheck.org/2013/rules_fr.php",
+  "crawl_file": "",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/2013/rules_fr.php",
+   "https://www.healthcheck.org/2013/rules_fr.php"
+  ]
+ },
+ {
+  "path": "/timetostartcontest/rules",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 4,
+  "dofollow": 0,
+  "max_dr": 69,
+  "top_anchor": "http://www.healthcheck.org/timetostartcontest/rules",
+  "crawl_file": "timetostartcontest/rules.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/timetostartcontest/rules",
+   "https://www.healthcheck.org/timetostartcontest/rules"
+  ]
+ },
+ {
+  "path": "/instylecontest/rules",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 4,
+  "dofollow": 0,
+  "max_dr": 69,
+  "top_anchor": "http://www.healthcheck.org/instylecontest/rules",
+  "crawl_file": "instylecontest/rules.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/instylecontest/rules",
+   "https://www.healthcheck.org/instylecontest/rules"
+  ]
+ },
+ {
+  "path": "/timetostartcontest/register-inscription",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 0,
+  "max_dr": 69,
+  "top_anchor": "http://www.healthcheck.org/timetostartc ... nscription",
+  "crawl_file": "",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/timetostartcontest/register-inscription",
+   "https://www.healthcheck.org/timetostartcontest/register-inscription"
+  ]
+ },
+ {
+  "path": "/2013/rules_en.php",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 0,
+  "max_dr": 69,
+  "top_anchor": "http://www.healthcheck.org/2013/rules_en.php",
+  "crawl_file": "",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/2013/rules_en.php",
+   "https://www.healthcheck.org/2013/rules_en.php"
+  ]
+ },
+ {
+  "path": "/timetostartcontest/enter",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 0,
+  "max_dr": 69,
+  "top_anchor": "http://www.healthcheck.org/timetostartcontest/enter",
+  "crawl_file": "timetostartcontest/enter.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/timetostartcontest/enter"
+  ]
+ },
+ {
+  "path": "/contest/daily",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 0,
+  "max_dr": 69,
+  "top_anchor": "http://www.healthcheck.org/contest/daily",
+  "crawl_file": "contest/daily",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/contest/daily",
+   "https://www.healthcheck.org/contest/daily"
+  ]
+ },
+ {
+  "path": "/healthybeat14/contest",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 0,
+  "max_dr": 69,
+  "top_anchor": "http://www.healthcheck.org/healthybeat14/contest",
+  "crawl_file": "",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/healthybeat14/contest",
+   "https://www.healthcheck.org/healthybeat14/contest"
+  ]
+ },
+ {
+  "path": "/page/program-critieria",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 69,
+  "top_anchor": "http://www.healthcheck.org/page/program-critieria",
+  "crawl_file": "page/program-critieria.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/program-critieria"
+  ]
+ },
+ {
+  "path": "/sites/default/files/editor/HSF_Calendar2012_Eng_OnlineVersion.pdf",
+  "tier": 1,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 0,
+  "max_dr": 69,
+  "top_anchor": "http://www.healthcheck.org/sites/defaul ... ersion.pdf",
+  "crawl_file": "",
+  "action": "recover-pdf-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/sites/default/files/editor/HSF_Calendar2012_Eng_OnlineVersion.pdf"
+  ]
+ },
+ {
+  "path": "/contest/home",
+  "tier": 2,
+  "referring_domains": 2,
+  "links": 7,
+  "dofollow": 7,
+  "max_dr": 48,
+  "top_anchor": "http://www.healthcheck.org/contest/home",
+  "crawl_file": "contest/home.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/contest/home",
+   "https://www.healthcheck.org/contest/home"
+  ]
+ },
+ {
+  "path": "/en/nutritional-information/nutrient-criteria-grocery.html",
+  "tier": 2,
+  "referring_domains": 2,
+  "links": 7,
+  "dofollow": 7,
+  "max_dr": 47,
+  "top_anchor": "nutrient criteria",
+  "crawl_file": "en/nutritional-information/nutrient-criteria-grocery.html",
+  "action": "redirect-to-english-equivalent",
+  "raw_targets": [
+   "http://www.healthcheck.org/en/nutritional-information/nutrient-criteria-grocery.html",
+   "https://www.healthcheck.org/en/nutritional-information/nutrient-criteria-grocery.html"
+  ]
+ },
+ {
+  "path": "/product/original-non-hydrogenated-margarine-7-g-foodservice-item",
+  "tier": 2,
+  "referring_domains": 2,
+  "links": 3,
+  "dofollow": 3,
+  "max_dr": 27,
+  "top_anchor": "\"Health Check Symbol and Becel\"",
+  "crawl_file": "",
+  "action": "recover-page-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/product/original-non-hydrogenated-margarine-7-g-foodservice-item",
+   "https://www.healthcheck.org/product/original-non-hydrogenated-margarine-7-g-foodservice-item"
+  ]
+ },
+ {
+  "path": "/contest/enter",
+  "tier": 2,
+  "referring_domains": 2,
+  "links": 5,
+  "dofollow": 5,
+  "max_dr": 26,
+  "top_anchor": "win a nutrition makeover trip to Toronto",
+  "crawl_file": "contest/enter.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/contest/enter",
+   "https://www.healthcheck.org/contest/enter"
+  ]
+ },
+ {
+  "path": "/blogs/jweinfeld",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 59,
+  "top_anchor": "healthcheck.org",
+  "crawl_file": "blogs/jweinfeld.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/blogs/jweinfeld"
+  ]
+ },
+ {
+  "path": "/restaurant-kids-menu",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 55,
+  "top_anchor": "Click here",
+  "crawl_file": "restaurant-kids-menu.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/restaurant-kids-menu"
+  ]
+ },
+ {
+  "path": "/contest/prizes-weekly",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 3,
+  "dofollow": 3,
+  "max_dr": 48,
+  "top_anchor": "http://www.healthcheck.org/contest/prizes-weekly",
+  "crawl_file": "contest/prizes-weekly.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/contest/prizes-weekly",
+   "https://www.healthcheck.org/contest/prizes-weekly"
+  ]
+ },
+ {
+  "path": "/contest/rules",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 2,
+  "max_dr": 48,
+  "top_anchor": "http://www.healthcheck.org/contest/rules",
+  "crawl_file": "contest/rules.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/contest/rules"
+  ]
+ },
+ {
+  "path": "/images/stories/hc_icon_eng.gif",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 48,
+  "top_anchor": "http://www.healthcheck.org/images/st...c_icon_eng.gif",
+  "crawl_file": "images/stories/hc_icon_eng.gif",
+  "action": "restore-image",
+  "raw_targets": [
+   "http://www.healthcheck.org/images/stories/hc_icon_eng.gif"
+  ]
+ },
+ {
+  "path": "/contest/prizes",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 3,
+  "dofollow": 3,
+  "max_dr": 48,
+  "top_anchor": "http://www.healthcheck.org/contest/prizes",
+  "crawl_file": "contest/prizes.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/contest/prizes",
+   "https://www.healthcheck.org/contest/prizes"
+  ]
+ },
+ {
+  "path": "/sites/default/files/editor/HC10_Nutrient Criteriapdf_changes_Aug10.pdf",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 3,
+  "dofollow": 3,
+  "max_dr": 47,
+  "top_anchor": "allowable levels of sodium",
+  "crawl_file": "",
+  "action": "recover-pdf-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/sites/default/files/editor/HC10_Nutrient%20Criteriapdf_changes_Aug10.pdf"
+  ]
+ },
+ {
+  "path": "/page/grocery-product-licensee-fees",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 14,
+  "dofollow": 14,
+  "max_dr": 47,
+  "top_anchor": "fees",
+  "crawl_file": "page/grocery-product-licensee-fees.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/grocery-product-licensee-fees",
+   "https://www.healthcheck.org/page/grocery-product-licensee-fees"
+  ]
+ },
+ {
+  "path": "/story/health-check-drives-away-salt",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 6,
+  "dofollow": 6,
+  "max_dr": 47,
+  "top_anchor": "this",
+  "crawl_file": "story/health-check-drives-away-salt.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/story/health-check-drives-away-salt",
+   "https://www.healthcheck.org/story/health-check-drives-away-salt"
+  ]
+ },
+ {
+  "path": "/sites/default/files/editor/HealthCheck_Nutrient criteria_retail_2009(2)_0.pdf",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 5,
+  "dofollow": 5,
+  "max_dr": 47,
+  "top_anchor": "posted just over a month ago",
+  "crawl_file": "",
+  "action": "recover-pdf-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/sites/default/files/editor/HealthCheck_Nutrient%20criteria_retail_2009%282%29_0.pdf"
+  ]
+ },
+ {
+  "path": "/sites/default/files/editor/HealthCheck_NutrientCriteria_Retail_October09.pdf",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 47,
+  "top_anchor": "all that matter",
+  "crawl_file": "",
+  "action": "recover-pdf-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/sites/default/files/editor/HealthCheck_NutrientCriteria_Retail_October09.pdf"
+  ]
+ },
+ {
+  "path": "/content/how-can-you-possibly-compare-one-food-another",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 47,
+  "top_anchor": "a recent post",
+  "crawl_file": "content/how-can-you-possibly-compare-one-food-another.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/content/how-can-you-possibly-compare-one-food-another",
+   "https://www.healthcheck.org/content/how-can-you-possibly-compare-one-food-another"
+  ]
+ },
+ {
+  "path": "/prodsearch?tid_2=All&tid=All&keys=",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 5,
+  "dofollow": 5,
+  "max_dr": 47,
+  "top_anchor": "program participants",
+  "crawl_file": "prodsearch.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/prodsearch?tid_2=All&tid=All&keys=",
+   "https://www.healthcheck.org/prodsearch?tid_2=All&tid=All&keys="
+  ]
+ },
+ {
+  "path": "/content/heres-a-challenge-create-a-healthy-pizza-lunch",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 47,
+  "top_anchor": "the latest post",
+  "crawl_file": "content/heres-a-challenge-create-a-healthy-pizza-lunch.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/content/heres-a-challenge-create-a-healthy-pizza-lunch",
+   "https://www.healthcheck.org/content/heres-a-challenge-create-a-healthy-pizza-lunch"
+  ]
+ },
+ {
+  "path": "/story/caseys-grill-launches-health-check-items",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 47,
+  "top_anchor": "The second",
+  "crawl_file": "",
+  "action": "recover-page-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/story/caseys-grill-launches-health-check-items",
+   "https://www.healthcheck.org/story/caseys-grill-launches-health-check-items"
+  ]
+ },
+ {
+  "path": "/sites/default/files/editor/Nutrient Criteria_Foodservice.March 2010.EN_.pdf",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 2,
+  "max_dr": 47,
+  "top_anchor": "Health Check have to say",
+  "crawl_file": "",
+  "action": "recover-pdf-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/sites/default/files/editor/Nutrient%20Criteria_Foodservice.March%202010.EN_.pdf"
+  ]
+ },
+ {
+  "path": "/story/what-new-health-check",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 47,
+  "top_anchor": "the Heart and Stroke Foundation's latest press release",
+  "crawl_file": "story/what-new-health-check.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/story/what-new-health-check",
+   "https://www.healthcheck.org/story/what-new-health-check"
+  ]
+ },
+ {
+  "path": "/content/making-a-difference-one-pizza-a-time",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 8,
+  "dofollow": 8,
+  "max_dr": 47,
+  "top_anchor": "Making a difference one Pizza at a time",
+  "crawl_file": "content/making-a-difference-one-pizza-a-time.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/content/making-a-difference-one-pizza-a-time",
+   "https://www.healthcheck.org/content/making-a-difference-one-pizza-a-time"
+  ]
+ },
+ {
+  "path": "/sites/default/files/mmallet/HC13_NutrientCriteria_foodservice_ october 2013_English.pdf",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 3,
+  "dofollow": 3,
+  "max_dr": 47,
+  "top_anchor": "Health Check have to say",
+  "crawl_file": "",
+  "action": "recover-pdf-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/sites/default/files/mmallet/HC13_NutrientCriteria_foodservice_%20october%202013_English.pdf"
+  ]
+ },
+ {
+  "path": "/page/technical-advisors-3",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 6,
+  "dofollow": 6,
+  "max_dr": 47,
+  "top_anchor": "Technical Advisory Committee",
+  "crawl_file": "page/technical-advisors-3.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/technical-advisors-3",
+   "https://www.healthcheck.org/page/technical-advisors-3"
+  ]
+ },
+ {
+  "path": "/images/pdf/HSFSobeysBooklet_P8 Nutrition Information.pdf",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 47,
+  "top_anchor": "A food label can tell you alot!",
+  "crawl_file": "",
+  "action": "recover-pdf-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/images/pdf/HSFSobeysBooklet_P8%20Nutrition%20Information.pdf",
+   "https://www.healthcheck.org/images/pdf/HSFSobeysBooklet_P8%20Nutrition%20Information.pdf"
+  ]
+ },
+ {
+  "path": "/sites/default/files/pfletcher/Restaurant NutrientCriteria_RevNov2010.pdf",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 2,
+  "max_dr": 47,
+  "top_anchor": "none of the 12 categories",
+  "crawl_file": "",
+  "action": "recover-pdf-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/sites/default/files/pfletcher/Restaurant%20NutrientCriteria_RevNov2010.pdf"
+  ]
+ },
+ {
+  "path": "/content/what-are-canadians-saying-online-about-healthy-eating",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 47,
+  "top_anchor": "their blog post",
+  "crawl_file": "content/what-are-canadians-saying-online-about-healthy-eating.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/content/what-are-canadians-saying-online-about-healthy-eating",
+   "https://www.healthcheck.org/content/what-are-canadians-saying-online-about-healthy-eating"
+  ]
+ },
+ {
+  "path": "/page/health-check-team",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 47,
+  "top_anchor": "the Heart and Stroke Foundation's Health Check Registered Dietitians",
+  "crawl_file": "page/health-check-team.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/health-check-team",
+   "https://www.healthcheck.org/page/health-check-team"
+  ]
+ },
+ {
+  "path": "/en/join-health-check/nutrient-criteria-grocery.html",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 3,
+  "dofollow": 3,
+  "max_dr": 47,
+  "top_anchor": "criteria",
+  "crawl_file": "en/join-health-check/nutrient-criteria-grocery.html",
+  "action": "redirect-to-english-equivalent",
+  "raw_targets": [
+   "http://www.healthcheck.org/en/join-health-check/nutrient-criteria-grocery.html",
+   "https://www.healthcheck.org/en/join-health-check/nutrient-criteria-grocery.html"
+  ]
+ },
+ {
+  "path": "/sites/default/files/pfletcher/Grocery Nutrient Criteria pdf_Jan11.pdf",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 47,
+  "top_anchor": "56 food categories",
+  "crawl_file": "",
+  "action": "recover-pdf-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/sites/default/files/pfletcher/Grocery%20Nutrient%20Criteria%20pdf_Jan11.pdf"
+  ]
+ },
+ {
+  "path": "/sites/default/files/admin/HealthCheck_Nutrient criteria_foodservice_2009.pdf",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 47,
+  "top_anchor": "restaurant criteria page",
+  "crawl_file": "",
+  "action": "recover-pdf-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/sites/default/files/admin/HealthCheck_Nutrient%20criteria_foodservice_2009.pdf"
+  ]
+ },
+ {
+  "path": "/content/one-nutrition-program-we-can-trust",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 4,
+  "dofollow": 4,
+  "max_dr": 47,
+  "top_anchor": "One nutrition program we can trust",
+  "crawl_file": "content/one-nutrition-program-we-can-trust.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/content/one-nutrition-program-we-can-trust",
+   "https://www.healthcheck.org/content/one-nutrition-program-we-can-trust"
+  ]
+ },
+ {
+  "path": "/page/canadas-food-guide",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 38,
+  "top_anchor": "here",
+  "crawl_file": "page/canadas-food-guide.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "https://www.healthcheck.org/page/canadas-food-guide"
+  ]
+ },
+ {
+  "path": "/blog",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 37,
+  "top_anchor": "blog",
+  "crawl_file": "blog.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/blog"
+  ]
+ },
+ {
+  "path": "/e-cigs-vs-cigarettes",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 30,
+  "top_anchor": "Studies",
+  "crawl_file": "",
+  "action": "recover-page-from-wayback",
+  "raw_targets": [
+   "https://www.healthcheck.org/e-cigs-vs-cigarettes"
+  ]
+ },
+ {
+  "path": "/story/cedar-planked-atlantic-salmon-wins-healthy-innovation-award",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 2,
+  "max_dr": 23,
+  "top_anchor": "more…",
+  "crawl_file": "story/cedar-planked-atlantic-salmon-wins-healthy-innovation-award.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/story/cedar-planked-atlantic-salmon-wins-healthy-innovation-award",
+   "https://www.healthcheck.org/story/cedar-planked-atlantic-salmon-wins-healthy-innovation-award"
+  ]
+ },
+ {
+  "path": "/AIR MILES/landing page",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 2,
+  "max_dr": 9,
+  "top_anchor": "Click here for more information.",
+  "crawl_file": "",
+  "action": "recover-page-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/AIR%20MILES/landing%20page",
+   "https://www.healthcheck.org/AIR%20MILES/landing%20page"
+  ]
+ },
+ {
+  "path": "/page/program-participants-0",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 5,
+  "top_anchor": "http://www.healthcheck.org/page/program-participants-0",
+  "crawl_file": "page/program-participants-0.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/program-participants-0"
+  ]
+ },
+ {
+  "path": "/tips_tools",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 1,
+  "max_dr": 1,
+  "top_anchor": "website",
+  "crawl_file": "tips_tools.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/tips_tools"
+  ]
+ },
+ {
+  "path": "/restosearch?tid=970&keys=",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 6,
+  "dofollow": 6,
+  "max_dr": 0,
+  "top_anchor": "",
+  "crawl_file": "restosearch.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/restosearch?tid=970&keys="
+  ]
+ },
+ {
+  "path": "/instylecontest/enter",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 3,
+  "dofollow": 3,
+  "max_dr": 0,
+  "top_anchor": "win a trip to The Heart Truth Fashion Show or one of ten $1,000 grocery gift car",
+  "crawl_file": "instylecontest/enter.html",
+  "action": "redirect-home",
+  "raw_targets": [
+   "http://www.healthcheck.org/instylecontest/enter"
+  ]
+ },
+ {
+  "path": "/images/index_logo.jpg",
+  "tier": 2,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 2,
+  "max_dr": 0,
+  "top_anchor": "",
+  "crawl_file": "",
+  "action": "recover-image-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/images/index_logo.jpg"
+  ]
+ },
+ {
+  "path": "/rhubarb-diet",
+  "tier": 3,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 0,
+  "max_dr": 36,
+  "top_anchor": "This weight loss plan",
+  "crawl_file": "",
+  "action": "recover-page-from-wayback",
+  "raw_targets": [
+   "https://www.healthcheck.org/rhubarb-diet/"
+  ]
+ },
+ {
+  "path": "/story/health-check-exitl",
+  "tier": 3,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 0,
+  "max_dr": 31,
+  "top_anchor": "cancelled",
+  "crawl_file": "",
+  "action": "recover-page-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/story/health-check-exitl"
+  ]
+ },
+ {
+  "path": "/page/function-nutrients",
+  "tier": 3,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 0,
+  "max_dr": 28,
+  "top_anchor": "http://www.healthcheck.org/page/function-nutrients",
+  "crawl_file": "page/function-nutrients.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/function-nutrients%20",
+   "https://www.healthcheck.org/page/function-nutrients%20"
+  ]
+ },
+ {
+  "path": "/page/nutrients-women>",
+  "tier": 3,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 0,
+  "max_dr": 10,
+  "top_anchor": "http://www.healthcheck.org/page/nutrients-women>",
+  "crawl_file": "page/nutrients-women.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/nutrients-women%3E",
+   "https://www.healthcheck.org/page/nutrients-women%3E"
+  ]
+ },
+ {
+  "path": "/page/products-overview",
+  "tier": 3,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 0,
+  "max_dr": 8,
+  "top_anchor": "http://www.healthcheck.org/page/products-overview",
+  "crawl_file": "page/products-overview.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "http://www.healthcheck.org/page/products-overview"
+  ]
+ },
+ {
+  "path": "/restosearch_page_1",
+  "tier": 3,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 0,
+  "max_dr": 7,
+  "top_anchor": "Eating Out | Heart& Health Check Program",
+  "crawl_file": "restosearch_page_1.html",
+  "action": "restore-page",
+  "raw_targets": [
+   "https://www.healthcheck.org/restosearch_page_1/"
+  ]
+ },
+ {
+  "path": "/en/about-health-check/restaurants.html",
+  "tier": 3,
+  "referring_domains": 1,
+  "links": 1,
+  "dofollow": 0,
+  "max_dr": 7,
+  "top_anchor": "Healthcheck",
+  "crawl_file": "en/about-health-check/restaurants.html",
+  "action": "redirect-to-english-equivalent",
+  "raw_targets": [
+   "http://www.healthcheck.org/en/about-health-check/restaurants.html"
+  ]
+ },
+ {
+  "path": "/en/join-health-check/nutrient-criteria-restaurant",
+  "tier": 3,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 0,
+  "max_dr": 7,
+  "top_anchor": "Healthcheck - Nutrient Criteria (Restaurant)",
+  "crawl_file": "en/join-health-check/nutrient-criteria-restaurant.html",
+  "action": "redirect-to-english-equivalent",
+  "raw_targets": [
+   "http://www.healthcheck.org/en/join-health-check/nutrient-criteria-restaurant/"
+  ]
+ },
+ {
+  "path": "/english/documents/33040412_EatOut-FastFood04.25.05.pdf",
+  "tier": 3,
+  "referring_domains": 1,
+  "links": 2,
+  "dofollow": 0,
+  "max_dr": 0,
+  "top_anchor": "http://www.healthcheck.org/english/documents/33040412_EatOut-FastFood04.25.05.pd",
+  "crawl_file": "",
+  "action": "recover-pdf-from-wayback",
+  "raw_targets": [
+   "http://www.healthcheck.org/english/documents/33040412_EatOut-FastFood04.25.05.pdf"
+  ]
+ }
+]

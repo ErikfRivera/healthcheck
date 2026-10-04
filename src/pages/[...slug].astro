@@ -1,0 +1,169 @@
+---
+/**
+ * Archived pages from the former Health Check nutrition program site, served
+ * at their original URLs (see legacy/README.md). Only the paths in the
+ * `legacy` collection are generated, and getLegacyEntries() refuses any that
+ * would shadow a marketplace route.
+ */
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { archive, legacyNotice } from '../data/site';
+import {
+  getLegacyEntries,
+  legacyMdPath,
+  legacyMeta,
+  legacySlug,
+  sectionLabel,
+} from '../utils/legacy';
+
+export const getStaticPaths = (async () =>
+  (await getLegacyEntries()).map((entry) => ({
+    params: { slug: legacySlug(entry) },
+    props: { entry },
+  }))) satisfies GetStaticPaths;
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const meta = legacyMeta(entry);
+---
+
+<Base
+  title={`${entry.data.title} — ${archive.titleSuffix}`}
+  description={entry.data.description}
+  mdPath={encodeURI(legacyMdPath(entry))}
+>
+  <meta slot="head" name="robots" content="index,follow" />
+  <Nav />
+
+  <main id="main">
+    <div class="page">
+      <article class="legacy">
+        <header class="legacy-header">
+          <span class="kicker">{sectionLabel(entry.data.section)}</span>
+          <h1 class="legacy-headline">{entry.data.heading}</h1>
+          <p class="legacy-notice">{legacyNotice}</p>
+          {meta && <p class="legacy-meta tnum">{meta}</p>}
+        </header>
+
+        <div class="legacy-body">
+          <Content />
+        </div>
+      </article>
+
+      <hr class="rule" />
+
+      <SiteFooter />
+    </div>
+  </main>
+</Base>
+
+<style>
+  .legacy {
+    padding: 84px 0 70px;
+    max-width: 68ch;
+  }
+
+  .legacy-headline {
+    font-size: 32px;
+    line-height: 42px;
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+
+  .legacy-notice,
+  .legacy-meta {
+    font-size: 13px;
+    line-height: 24px;
+    color: var(--ink-70);
+    margin: var(--space-3) 0 0;
+  }
+
+  .legacy-meta {
+    margin-top: 0;
+  }
+
+  .legacy-body {
+    margin-top: 42px;
+    font-size: 15.5px;
+    line-height: 28px;
+    color: var(--ink-78);
+  }
+
+  /* The body is rendered Markdown, so its elements need :global(). */
+  .legacy-body :global(:is(p, ul, ol, table, img)) {
+    margin: 0 0 var(--space-4);
+  }
+
+  .legacy-body :global(:is(h2, h3, h4)) {
+    color: var(--color-text);
+    margin: var(--space-8) 0 var(--space-3);
+  }
+
+  .legacy-body :global(h2) {
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -0.01em;
+  }
+
+  .legacy-body :global(h3) {
+    font-size: 19px;
+    line-height: 26px;
+    letter-spacing: 0;
+  }
+
+  .legacy-body :global(h4) {
+    font-size: 15.5px;
+    line-height: 26px;
+    letter-spacing: 0;
+  }
+
+  .legacy-body :global(:is(ul, ol)) {
+    padding-left: 20px;
+  }
+
+  .legacy-body :global(:is(ul, ol) :is(ul, ol)) {
+    margin: 0;
+  }
+
+  .legacy-body :global(strong) {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  /* Photography is always desaturated (BRAND.md §5). */
+  .legacy-body :global(img) {
+    height: auto;
+    filter: grayscale(1) contrast(1.08);
+  }
+
+  /* Tables are ruled like the rest of the system: lines, not fills. */
+  .legacy-body :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: var(--rule) solid var(--color-divider);
+    font-size: 15px;
+    line-height: 24px;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .legacy-body :global(:is(th, td)) {
+    text-align: left;
+    vertical-align: top;
+    padding: var(--space-2) var(--space-3) var(--space-2) 0;
+    border-bottom: var(--rule) solid var(--color-divider);
+  }
+
+  .legacy-body :global(th) {
+    font-family: var(--font-heading);
+    font-weight: var(--font-heading-weight);
+    color: var(--color-text);
+  }
+
+  .legacy-body :global(td img) {
+    margin: 0 0 var(--space-1);
+  }
+</style>

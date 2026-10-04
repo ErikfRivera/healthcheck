@@ -3,9 +3,11 @@
 //
 //   npm run build && node legacy/scripts/serve-dist.mjs [port]
 //
-// Redirect sources are matched against both the raw and the decoded request
-// path; `:name*` matches zero or more trailing segments, as on Vercel.
+// Redirect sources are compiled with path-to-regexp in strict mode, as Vercel
+// does: ( ) : * + ? are syntax unless escaped, and a trailing slash must be
+// spelled out. They are tested against the raw and the decoded request path.
 import { createServer } from 'node:http';
+import { pathToRegexp } from 'path-to-regexp';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -15,13 +17,7 @@ const dist = join(root, 'dist');
 const port = Number(process.argv[2] ?? 4321);
 const { redirects = [] } = JSON.parse(await readFile(join(root, 'vercel.json'), 'utf8'));
 
-const escape = (s) => s.replace(/[.+?^${}()|[\]\\]/g, '\\$&');
-const rules = redirects.map((r) => ({
-  ...r,
-  re: new RegExp(
-    '^' + escape(r.source).replace(/\/:\w+\*/g, '(?:/.*)?').replace(/:\w+/g, '[^/]+') + '/?$',
-  ),
-}));
+const rules = redirects.map((r) => ({ ...r, re: pathToRegexp(r.source, [], { strict: true }) }));
 
 const types = {
   '.html': 'text/html; charset=utf-8', '.md': 'text/markdown; charset=utf-8',

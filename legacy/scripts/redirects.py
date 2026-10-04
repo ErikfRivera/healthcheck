@@ -91,16 +91,28 @@ def in_campaign_folder(path: str) -> bool:
     return any(path == f or path.startswith(f + '/') for f in CAMPAIGN_FOLDERS)
 
 
+def escape_source(path: str) -> str:
+    """Vercel compiles `source` with path-to-regexp, where ( ) : * + ? { } are
+    syntax. Literal paths like `…retail_2009(2)_0.pdf` must escape them."""
+    return re.sub(r'([():*+?{}])', r'\\\1', path)
+
+
 def spellings(path: str) -> list[str]:
-    raw = path
+    """Every spelling of a literal path a request may arrive as: raw and
+    percent-encoded (upper- and lower-case hex for non-ASCII), each with and
+    without a trailing slash, since Vercel matches redirects strictly."""
     enc = quote(path, safe="/-._~!$&'()*+,;=:@")
-    if raw == enc:
-        return [raw]
+    forms = [path, enc, re.sub(r'%[0-9A-F]{2}', lambda m: m.group(0).lower(), enc)]
     # A raw trailing space could be trimmed somewhere upstream and turn the rule
     # into a self-redirect on a live page; only the encoded form is safe.
-    if raw != raw.rstrip():
-        return [enc]
-    return [raw, enc]
+    if path != path.rstrip():
+        forms = [enc]
+    out: list[str] = []
+    for f in forms:
+        for s in (f, f if f.endswith('/') else f + '/'):
+            if s not in out:
+                out.append(s)
+    return [escape_source(s) for s in out]
 
 
 def main() -> int:
@@ -158,8 +170,10 @@ def main() -> int:
                     rules_dest = next((d for s, d, _ in rules if s == path), '/')
                 rules.append((p, rules_dest or canonical, 'trailing-space variant'))
 
+    wildcards = []
     for folder in CAMPAIGN_FOLDERS:
-        rules.append((folder + '/:path*', '/', 'campaign microsite / French site'))
+        rules.append((folder, '/', 'campaign microsite / French site'))
+        wildcards += [f + '/:path*' for f in dict.fromkeys([folder, quote(folder)])]
 
     # Every destination must be a 200: the homepage or a restored page.
     for src, dest, why in rules:
@@ -173,6 +187,9 @@ def main() -> int:
                 continue
             seen.add(s)
             redirects.append({'source': s, 'destination': quote(dest, safe='/'), 'statusCode': 301})
+    # `:path*` matches the folder's contents; the folder itself is a literal rule above.
+    for w in wildcards:
+        redirects.append({'source': escape_source(w).replace('\\:path\\*', ':path*'), 'destination': '/', 'statusCode': 301})
 
     config = {
         '$schema': 'https://openapi.vercel.sh/vercel.json',

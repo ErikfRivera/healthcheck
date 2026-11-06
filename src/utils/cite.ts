@@ -25,9 +25,21 @@ export function citedIds(scan: Scan): Set<string> {
   const scanText = (text: string) => {
     for (const m of text.matchAll(TOKEN)) ids.add(m[1]);
   };
-  [scan.radiation, scan.cost, scan.whoForSummary, ...scan.accuracy, ...scan.limits, ...scan.notFor].forEach(
-    scanText,
-  );
+  [
+    scan.answer,
+    scan.radiation,
+    scan.cost,
+    scan.whoForSummary,
+    scan.results.note ?? '',
+    ...Object.values(scan.facts),
+    ...scan.takeaways,
+    ...scan.accuracy,
+    ...scan.limits,
+    ...scan.notFor,
+    ...scan.procedure,
+    ...scan.prep,
+    ...scan.detects.map((d) => d.note ?? ''),
+  ].forEach(scanText);
   scan.faqs.forEach((f) => {
     scanText(f.a);
     f.sourceIds?.forEach((id) => ids.add(id));

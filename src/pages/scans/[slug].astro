@@ -516,8 +516,11 @@ const updated = new Date(scan.updated).toLocaleDateString('en-US', {
     overflow-x: auto;
     margin: 8px 0 0;
   }
+  /* Tables keep a readable column width and scroll inside .table-wrap on
+     narrow screens rather than squeezing into four slivers. */
   table {
     width: 100%;
+    min-width: 600px;
     border-collapse: collapse;
     font-size: 14.5px;
     line-height: 22px;

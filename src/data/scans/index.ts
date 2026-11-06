@@ -1,17 +1,33 @@
-// TEMPORARY smoke-test stub; replaced by the twelve real scan files.
+/**
+ * The twelve scans, in display order. Each file holds one scan's full,
+ * sourced content; see types.ts for the shape and the writing rules.
+ * Keep the total divisible by 4 (BRAND.md §7).
+ */
 import type { Scan } from './types';
-const stub = (num: string, slug: string, title: string): Scan => ({
-  num, slug, title, noun: `a ${title.toLowerCase()}`, aka: ['x'], modality: 'CT',
-  price: 'From $1 · 1 minute', avg: '$2', copy: 'Copy.', metaDescription: 'Meta.', updated: '2026-11-06',
-  answer: 'Answer.', takeaways: ['T [src:a]'],
-  facts: { duration: '1', radiation: 'none', contrast: 'none', prep: 'none', results: '1', bestFor: 'x' },
-  detects: [{ item: 'X', note: 'n [src:a]' }], limits: ['l'],
-  guidelines: [{ body: 'B', year: '2020', position: 'p', sourceId: 'a' }], whoForSummary: 's', notFor: ['n'],
-  radiation: 'r', procedure: ['p'], prep: ['p'], accuracy: ['a'],
-  results: { title: 't', columns: ['a','b'], rows: [['1','2']], sourceId: 'a' },
-  stats: [{ value: '1', label: 'l', sourceId: 'a' }], quotes: [{ text: 'q', speaker: 's', role: 'r', sourceId: 'a' }],
-  cost: 'c', faqs: [{ q: 'q?', a: 'a' }], related: ['brain-mri'],
-  sources: [{ id: 'a', title: 'T', publisher: 'P', url: 'https://example.com', date: '2020' }],
-  schema: { type: 'ImagingTest', imagingTechnique: 'CT', bodyLocation: ['chest'], usedToDiagnose: ['x'] },
-});
-export const scans: Scan[] = [stub('01','full-body-mri','Full-body MRI'), stub('02','brain-mri','Brain MRI')];
+import { fullBodyMri } from './full-body-mri';
+import { brainMri } from './brain-mri';
+import { coronaryCalciumCt } from './coronary-calcium-ct';
+import { lowDoseLungCt } from './low-dose-lung-ct';
+import { cardiacMri } from './cardiac-mri';
+import { ctAngiography } from './ct-angiography';
+import { dexaScan } from './dexa-scan';
+import { abdominalUltrasound } from './abdominal-ultrasound';
+import { thyroidUltrasound } from './thyroid-ultrasound';
+import { skinCancerScreening } from './skin-cancer-screening';
+import { comprehensiveBloodPanel } from './comprehensive-blood-panel';
+import { multiCancerBloodTest } from './multi-cancer-blood-test';
+
+export const scans: Scan[] = [
+  fullBodyMri,
+  brainMri,
+  coronaryCalciumCt,
+  lowDoseLungCt,
+  cardiacMri,
+  ctAngiography,
+  dexaScan,
+  abdominalUltrasound,
+  thyroidUltrasound,
+  skinCancerScreening,
+  comprehensiveBloodPanel,
+  multiCancerBloodTest,
+];

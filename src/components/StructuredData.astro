@@ -8,10 +8,12 @@
  * before-launch checklist in the README). Emitting structured pricing on
  * placeholder data risks indexing misinformation.
  */
-import { site, faqs, footer } from '../data/site';
+import { site, faqs, footer, scans, scansIndex } from '../data/site';
 import { siteSummary } from '../utils/markdown';
+import { stripCites } from '../utils/cite';
 
 const origin = Astro.site?.href ?? '/';
+const scanUrl = (slug: string) => new URL(`/scans/${slug}/`, origin).href;
 
 const graph = {
   '@context': 'https://schema.org',
@@ -31,6 +33,37 @@ const graph = {
       name: site.name,
       url: origin,
       publisher: { '@id': new URL('#organization', origin).href },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': new URL('#webpage', origin).href,
+      url: origin,
+      name: site.name,
+      description: siteSummary,
+      inLanguage: 'en-US',
+      isPartOf: { '@id': new URL('#website', origin).href },
+      dateModified: scans.map((s) => s.updated).sort().at(-1),
+    },
+    {
+      /* The twelve scans, each pointing at the test entity its own page defines. */
+      '@type': 'ItemList',
+      '@id': new URL('#scans', origin).href,
+      name: scansIndex.title,
+      url: new URL(scansIndex.path, origin).href,
+      numberOfItems: scans.length,
+      itemListElement: scans.map((scan, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: scanUrl(scan.slug),
+        item: {
+          '@type': scan.schema.type,
+          '@id': `${scanUrl(scan.slug)}#test`,
+          name: scan.title,
+          alternateName: scan.aka,
+          description: stripCites(scan.copy),
+          url: scanUrl(scan.slug),
+        },
+      })),
     },
     {
       '@type': 'FAQPage',

@@ -1,0 +1,222 @@
+---
+/**
+ * The /scans/ hub: one comparison table across all twelve scans, built from
+ * the same data objects as the individual pages. Answers "which scan should
+ * I get" before linking out to each scan's own page.
+ */
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { scans, site, scansIndex, scanPage, footer } from '../../data/site';
+import { siteSummary } from '../../utils/markdown';
+import { stripCites } from '../../utils/cite';
+
+const origin = Astro.site?.href ?? '/';
+const pageUrl = new URL(scansIndex.path, origin).href;
+const newest = scans.map((s) => s.updated).sort().at(-1)!;
+const updated = new Date(newest).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': new URL('#organization', origin).href,
+      name: site.name,
+      url: origin,
+      logo: new URL('/favicon.svg', origin).href,
+      description: siteSummary,
+      disambiguatingDescription: footer.disclaimer,
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: `${scansIndex.title} — ${site.name}`,
+      description: scansIndex.metaDescription,
+      inLanguage: 'en-US',
+      dateModified: newest,
+      isPartOf: { '@id': new URL('#website', origin).href },
+      publisher: { '@id': new URL('#organization', origin).href },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: scanPage.breadcrumb.home, item: origin },
+          { '@type': 'ListItem', position: 2, name: scanPage.breadcrumb.scans, item: pageUrl },
+        ],
+      },
+      mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: scans.length,
+        itemListElement: scans.map((s, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: s.title,
+          url: new URL(`/scans/${s.slug}/`, origin).href,
+        })),
+      },
+    },
+  ],
+};
+---
+
+<Base
+  title={`${scansIndex.title} — ${site.name}`}
+  description={scansIndex.metaDescription}
+  mdPath="/scans/index.md"
+  modified={newest}
+>
+  <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(graph)} />
+  <Nav />
+
+  <main id="main">
+    <div class="page">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">{scanPage.breadcrumb.home}</a></li>
+          <li aria-current="page">{scanPage.breadcrumb.scans}</li>
+        </ol>
+      </nav>
+
+      <article class="index">
+        <header>
+          <span class="kicker">{scansIndex.kicker}</span>
+          <h1 class="headline">{scansIndex.headline}</h1>
+          <p class="meta tnum"><time datetime={newest}>{scansIndex.updatedLabel} {updated}</time></p>
+          <p class="answer">{scansIndex.answer}</p>
+        </header>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                {scansIndex.columns.map((c) => <th scope="col">{c}</th>)}
+              </tr>
+            </thead>
+            <tbody>
+              {
+                scans.map((s) => (
+                  <tr>
+                    <th scope="row">
+                      <a href={`/scans/${s.slug}/`}>{s.title}</a>
+                      <span class="modality">{s.modality}</span>
+                    </th>
+                    <td>{stripCites(s.copy)}</td>
+                    <td>{stripCites(s.facts.radiation)}</td>
+                    <td class="tnum">{stripCites(s.facts.duration)}</td>
+                    <td>{stripCites(s.facts.bestFor)}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <hr class="rule" />
+      <SiteFooter />
+    </div>
+  </main>
+</Base>
+
+<style>
+  .crumbs {
+    padding: 28px 0 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--ink-70);
+  }
+  .crumbs ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0 8px;
+  }
+  .crumbs li + li::before {
+    content: '/';
+    margin-right: 8px;
+    color: var(--ink-64);
+  }
+  .crumbs a {
+    color: inherit;
+  }
+
+  .index {
+    padding: 56px 0 70px;
+  }
+  .headline {
+    font-size: clamp(34px, 4.6vw, 56px);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    margin: 12px 0 0 -0.058em;
+    max-width: 20ch;
+  }
+  .meta {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--ink-70);
+    margin: 16px 0 0;
+  }
+  .answer {
+    font-size: 17px;
+    line-height: 28px;
+    max-width: 68ch;
+    margin: 20px 0 40px;
+    color: var(--ink-78);
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+    line-height: 22px;
+    border-top: var(--rule) solid var(--color-divider);
+    border-bottom: var(--rule) solid var(--color-divider);
+    min-width: 720px;
+  }
+  th,
+  td {
+    text-align: left;
+    vertical-align: top;
+    padding: 12px 14px 12px 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  thead th {
+    font-size: 12.5px;
+    line-height: 16px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--ink-70);
+  }
+  tbody th {
+    font-weight: 800;
+    min-width: 160px;
+  }
+  tbody th a {
+    text-decoration: none;
+  }
+  .modality {
+    display: block;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--ink-70);
+  }
+  tbody td {
+    color: var(--ink-78);
+  }
+  tbody tr:last-child th,
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+</style>

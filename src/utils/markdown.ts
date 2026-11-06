@@ -12,6 +12,8 @@ import {
   hero,
   stats,
   scans,
+  scanPage,
+  scansIndex,
   steps,
   why,
   guarantees,
@@ -19,6 +21,7 @@ import {
   footer,
   type Scan,
 } from '../data/site';
+import { citeMd, sourceIndex, stripCites } from './cite';
 import {
   getLegacyEntries,
   legacyHref,
@@ -50,11 +53,17 @@ export const pages: readonly Page[] = [
     title: 'Home',
     blurb: 'Scans offered, pricing model, how it works, guarantees, and FAQ.',
   },
+  {
+    path: scansIndex.path,
+    mdPath: '/scans/index.md',
+    title: scansIndex.title,
+    blurb: scansIndex.metaDescription,
+  },
   ...scans.map((scan) => ({
     path: `/scans/${scan.slug}/`,
     mdPath: `/scans/${scan.slug}.md`,
     title: scan.title,
-    blurb: scan.copy,
+    blurb: stripCites(scan.copy),
   })),
 ];
 
@@ -76,18 +85,26 @@ export async function getPages(): Promise<Page[]> {
   return [...pages, ...(await getLegacyPages())];
 }
 
-function scanBody(scan: Scan): string {
-  const lines: string[] = [];
-  if (site.showPricing) {
-    lines.push(`${scan.price} — est. national average ~~${scan.avg}~~`, '');
-  }
-  lines.push(scan.copy);
-  return lines.join('\n');
+function priceLine(scan: Scan): string[] {
+  return site.showPricing ? [`${scan.price} — ${scanPage.avgLabel.toLowerCase()} ~~${scan.avg}~~`, ''] : [];
 }
 
+/** The homepage's per-scan summary, linking to the full page. */
 function scanSection(scan: Scan): string {
-  return `### ${scan.title}\n\n${scanBody(scan)}`;
+  return [
+    `### [${scan.title}](/scans/${scan.slug}.md)`,
+    '',
+    ...priceLine(scan),
+    stripCites(scan.copy),
+  ].join('\n');
 }
+
+const mdTable = (columns: readonly string[], rows: readonly (readonly string[])[]) =>
+  [
+    `| ${columns.join(' | ')} |`,
+    `| ${columns.map(() => '---').join(' | ')} |`,
+    ...rows.map((r) => `| ${r.map((c) => c.replace(/\|/g, '\\|')).join(' | ')} |`),
+  ].join('\n');
 
 export function renderHomeMarkdown(): string {
   return [
@@ -131,25 +148,130 @@ export function renderHomeMarkdown(): string {
 }
 
 export function renderScanMarkdown(scan: Scan): string {
+  const n = sourceIndex(scan);
+  const c = (text: string) => citeMd(text, n);
+  const h = scanPage.headings;
+  const noun = scan.noun;
+  const facts = (Object.keys(scanPage.factLabels) as (keyof Scan['facts'])[]).map((key) => [
+    scanPage.factLabels[key],
+    c(scan.facts[key]),
+  ]);
+
   return [
-    `# ${scan.title} — ${site.name}`,
+    `# ${scan.title}`,
     '',
-    scanBody(scan),
+    `*${scanPage.alsoCalled}: ${scan.aka.join(', ')}. ${scanPage.updatedLabel} ${scan.updated}.*`,
     '',
-    '## How it works',
+    ...priceLine(scan),
+    scan.answer,
     '',
-    steps.map((s) => `- **${s.title}.** ${s.copy}`).join('\n'),
+    `## ${scanPage.takeawaysLabel}`,
     '',
-    '## Guarantees',
+    scan.takeaways.map((t) => `- ${c(t)}`).join('\n'),
     '',
-    guarantees.map((g) => `- **${g.title}** ${g.copy}`).join('\n'),
+    `## ${scanPage.factsLabel}`,
     '',
-    '## All scans',
+    mdTable(['', ''], facts),
     '',
-    scans
-      .filter((s) => s.slug !== scan.slug)
-      .map((s) => `- [${s.title}](/scans/${s.slug}.md)`)
+    `## ${h.detects(noun)}`,
+    '',
+    scan.detects.map((d) => `- **${d.item}.** ${d.note ? c(d.note) : ''}`.trimEnd()).join('\n'),
+    '',
+    `## ${h.limits(noun)}`,
+    '',
+    scan.limits.map((l) => `- ${c(l)}`).join('\n'),
+    '',
+    `## ${h.whoFor(noun)}`,
+    '',
+    c(scan.whoForSummary),
+    '',
+    mdTable(
+      [...scanPage.guidelineColumns, 'Source'],
+      scan.guidelines.map((g) => [g.body, g.year, g.position, g.grade ?? '—', `[${n(g.sourceId)}]`]),
+    ),
+    '',
+    `## ${h.notFor(noun)}`,
+    '',
+    scan.notFor.map((l) => `- ${c(l)}`).join('\n'),
+    '',
+    `## ${h.radiation(noun)}`,
+    '',
+    c(scan.radiation),
+    '',
+    `## ${h.procedure(noun)}`,
+    '',
+    scan.procedure.map((l, i) => `${i + 1}. ${c(l)}`).join('\n'),
+    '',
+    `## ${h.prep(noun)}`,
+    '',
+    scan.prep.map((l) => `- ${c(l)}`).join('\n'),
+    '',
+    `## ${h.accuracy(noun)}`,
+    '',
+    scan.accuracy.map(c).join('\n\n'),
+    '',
+    `## ${h.results(noun)}`,
+    '',
+    `**${scan.results.title}** [${n(scan.results.sourceId)}]`,
+    '',
+    mdTable(scan.results.columns, scan.results.rows),
+    ...(scan.results.note ? ['', c(scan.results.note)] : []),
+    '',
+    `## ${h.stats(noun)}`,
+    '',
+    scan.stats.map((st) => `- **${st.value}** — ${st.label} [${n(st.sourceId)}]`).join('\n'),
+    '',
+    `## ${h.quotes}`,
+    '',
+    scan.quotes
+      .map((q) => `> "${q.text}"\n>\n> — ${q.speaker}, ${q.role} [${n(q.sourceId)}]`)
+      .join('\n\n'),
+    '',
+    `## ${h.cost(noun)}`,
+    '',
+    c(scan.cost),
+    ...(site.showPricing ? ['', scanPage.costNote] : []),
+    '',
+    `## ${h.faq(noun)}`,
+    '',
+    scan.faqs.map((f) => `### ${f.q}\n\n${c(f.a)}`).join('\n\n'),
+    '',
+    `## ${h.related}`,
+    '',
+    scan.related
+      .map((slug) => scans.find((s) => s.slug === slug))
+      .filter((s): s is Scan => Boolean(s))
+      .map((s) => `- [${s.title}](/scans/${s.slug}.md): ${stripCites(s.copy)}`)
       .join('\n'),
+    `- [${scansIndex.title}](/scans/index.md)`,
+    '',
+    `## ${h.sources}`,
+    '',
+    scan.sources.map((s, i) => `${i + 1}. [${s.title}](${s.url}). ${s.publisher}, ${s.date}.`).join('\n'),
+    '',
+    '---',
+    '',
+    footer.disclaimer,
+    '',
+  ].join('\n');
+}
+
+export function renderScansIndexMarkdown(): string {
+  return [
+    `# ${scansIndex.headline}`,
+    '',
+    scansIndex.answer,
+    '',
+    mdTable(
+      scansIndex.columns,
+      scans.map((s) => [
+        `[${s.title}](/scans/${s.slug}.md)`,
+        stripCites(s.copy),
+        stripCites(s.facts.radiation),
+        stripCites(s.facts.duration),
+        stripCites(s.facts.bestFor),
+      ]),
+    ),
     '',
     '---',
     '',

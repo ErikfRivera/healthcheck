@@ -25,22 +25,54 @@ npm run dev      # http://localhost:4321
 
 ```
 src/
-  data/site.ts          All copy and configuration — edit content here
+  data/site.ts          All site copy and configuration — edit content here
+  data/scans/<slug>.ts  One file per scan: the full, sourced page content
+  data/scans/types.ts   The scan content model, with the writing rules
   layouts/Base.astro    Document shell, fonts, metadata, social/OG tags
   components/           One component per page section
-  pages/                index, per-scan pages, and the SEO/agent endpoints
+  pages/                index, /scans/ hub, per-scan pages, SEO/agent endpoints
   scripts/finder.ts     Hero search → scan-grid filter
   styles/tokens.css     Design tokens — the source of truth for the look
   styles/global.css     Base elements and shared classes
-  utils/markdown.ts     Renders site.ts copy to Markdown for the agent routes
+  utils/markdown.ts     Renders site data to Markdown for the agent routes
+  utils/cite.ts         Inline `[src:id]` citations → numbered footnotes
 public/                 Static assets
 BRAND.md                Brand and design guide — read before changing styles
 ```
 
-**All copy lives in `src/data/site.ts`.** Text should not be edited inside
-component markup. This extends to the Markdown mirrors: `src/utils/markdown.ts`
-renders the same constants the components do, so the HTML and Markdown versions
-of a page cannot drift apart.
+**All copy lives in `src/data/`.** Site-wide copy is in `site.ts`; each scan's
+page content is in `scans/<slug>.ts`. Text should not be edited inside component
+markup. This extends to the Markdown mirrors: `src/utils/markdown.ts` renders
+the same constants the components do, so the HTML and Markdown versions of a
+page cannot drift apart.
+
+## Scan pages
+
+Each scan page is built from one data object (`src/data/scans/types.ts`) so the
+HTML, the Markdown twin, the JSON-LD and the row on `/scans/` always agree. The
+pages are written to be quoted by search engines and AI answer engines:
+
+- **Answer first.** The page opens with a two-sentence definition, a key
+  takeaways box and an at-a-glance table. Every section leads with its answer.
+- **Question-shaped H2s** that name the scan ("Who should get a DEXA scan?"),
+  templated in `scanPage.headings` from each scan's `noun`.
+- **Every figure is cited.** Prose references a source with `[src:id]`, which
+  renders as a numbered superscript linked to the Sources list. The build fails
+  on an unknown id or an uncited source (`src/utils/cite.ts`).
+- **Quotes are verbatim** from guideline bodies and named experts, with the
+  source linked. Never paraphrase inside a quote.
+- **Guideline table** per scan: body, year, position and grade, so "who is this
+  for" is answered from USPSTF, ACC/AHA, ACR and others rather than asserted.
+- **Results table** explaining how findings are scored (Agatston bands,
+  Lung-RADS, T-scores, TI-RADS, CAD-RADS).
+- **`updated`** is the date of the last substantive content review. It drives
+  the visible date, `dateModified`, `article:modified_time` and the sitemap
+  `lastmod`. Change it when the content changes, not on every deploy.
+
+JSON-LD per scan page (`src/components/ScanStructuredData.astro`):
+MedicalWebPage with citations, the test itself (ImagingTest, BloodTest or
+MedicalProcedure with `usedToDiagnose`), BreadcrumbList and FAQPage, sharing
+`@id`s with the homepage Organization and WebSite.
 
 ## Crawlers and agents
 
@@ -51,10 +83,11 @@ Routes for search engines and AI agents, all generated at build time:
 
 | Route | Source |
 | --- | --- |
-| `/sitemap-index.xml` | `@astrojs/sitemap` — picks up every HTML page automatically |
-| `/robots.txt` | `src/pages/robots.txt.ts` — points at the sitemap |
+| `/sitemap-index.xml` | `@astrojs/sitemap` — every HTML page, with `lastmod` on the home, `/scans/` and scan pages |
+| `/robots.txt` | `src/pages/robots.txt.ts` — allows AI search and training crawlers by name, points at the sitemap |
 | `/llms.txt` | `src/pages/llms.txt.ts` — index of the Markdown mirrors |
 | `/index.md`, `/index.html.md` | Markdown mirror of the homepage |
+| `/scans/`, `/scans/index.md` | Comparison table of all scans, and its Markdown twin |
 | `/scans/<slug>.md` | Markdown mirror of each scan page |
 
 Each HTML page links its Markdown twin via
@@ -91,7 +124,14 @@ Every number on the site is a placeholder, marked `PLACEHOLDER` in
 - [ ] Legal review of the medical disclaimer in the footer
 - [ ] Add Offer/price structured data once real prices land (see the
       `TODO(launch)` in `src/components/StructuredData.astro`)
+- [ ] Add a named medical reviewer (MD or board-certified radiologist) to the
+      scan pages, with a bio page, and set `reviewedBy` in the JSON-LD; the
+      content is written to be reviewed, not to replace review
 - [ ] Submit `sitemap-index.xml` in Google Search Console after deploy
+- [ ] Verify the site in Bing Webmaster Tools, submit the sitemap and turn on
+      IndexNow; Copilot and ChatGPT search retrieve through Bing
+- [ ] Re-check every scan page's statistics and guideline positions annually
+      and bump each scan's `updated` date when its content changes
 
 The footer disclaimer is load-bearing: HealthCheck is a marketplace, not a
 medical provider.

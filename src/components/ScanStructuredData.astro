@@ -1,0 +1,121 @@
+---
+/**
+ * JSON-LD for one scan page, built entirely from the scan's data object so
+ * the markup can never say something the visible page does not.
+ *
+ * Graph: Organization and WebSite (shared @ids with the homepage), the
+ * MedicalWebPage, the test itself (ImagingTest / BloodTest / MedicalTest /
+ * MedicalProcedure), a BreadcrumbList and a FAQPage. Citations are the
+ * page's own numbered sources.
+ *
+ * TODO(launch): no Offer/price markup until the PLACEHOLDER prices in
+ * src/data are replaced with real network numbers (see README).
+ */
+import { site, footer, scanPage, scansIndex, type Scan } from '../data/site';
+import { siteSummary } from '../utils/markdown';
+
+interface Props {
+  scan: Scan;
+}
+
+const { scan } = Astro.props;
+const origin = Astro.site?.href ?? '/';
+const pageUrl = new URL(`/scans/${scan.slug}/`, origin).href;
+const orgId = new URL('#organization', origin).href;
+const siteId = new URL('#website', origin).href;
+const testId = `${pageUrl}#test`;
+const pageId = `${pageUrl}#webpage`;
+
+const conditions = scan.schema.usedToDiagnose.map((name) => ({
+  '@type': 'MedicalCondition',
+  name,
+}));
+
+const test: Record<string, unknown> = {
+  '@type': scan.schema.type,
+  '@id': testId,
+  name: scan.title,
+  alternateName: scan.aka,
+  description: scan.answer,
+  url: pageUrl,
+  ...(scan.schema.imagingTechnique && { imagingTechnique: scan.schema.imagingTechnique }),
+  ...(scan.schema.type === 'MedicalProcedure'
+    ? { bodyLocation: scan.schema.bodyLocation.join(', '), procedureType: 'PhysicalExam' }
+    : { usedToDiagnose: conditions }),
+  ...(scan.schema.sameAs?.length && { sameAs: scan.schema.sameAs }),
+};
+
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': orgId,
+      name: site.name,
+      url: origin,
+      logo: new URL('/favicon.svg', origin).href,
+      description: siteSummary,
+      disambiguatingDescription: footer.disclaimer,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': siteId,
+      name: site.name,
+      url: origin,
+      publisher: { '@id': orgId },
+    },
+    {
+      '@type': 'MedicalWebPage',
+      '@id': pageId,
+      url: pageUrl,
+      name: `${scan.title} — ${site.name}`,
+      headline: scan.title,
+      description: scan.metaDescription,
+      inLanguage: 'en-US',
+      isPartOf: { '@id': siteId },
+      publisher: { '@id': orgId },
+      about: { '@id': testId },
+      mainEntity: { '@id': testId },
+      dateModified: scan.updated,
+      lastReviewed: scan.updated,
+      audience: { '@type': 'MedicalAudience', audienceType: 'Patient' },
+      medicalAudience: { '@type': 'MedicalAudience', audienceType: 'Patient' },
+      specialty: 'https://schema.org/Radiography',
+      citation: scan.sources.map((s) => ({
+        '@type': 'CreativeWork',
+        name: s.title,
+        publisher: { '@type': 'Organization', name: s.publisher },
+        url: s.url,
+        datePublished: s.date,
+      })),
+      breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+    },
+    test,
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: scanPage.breadcrumb.home, item: origin },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: scanPage.breadcrumb.scans,
+          item: new URL(scansIndex.path, origin).href,
+        },
+        { '@type': 'ListItem', position: 3, name: scan.title, item: pageUrl },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${pageUrl}#faq`,
+      mainEntity: scan.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: { '@type': 'Answer', text: faq.a },
+      })),
+    },
+  ],
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(graph)} />

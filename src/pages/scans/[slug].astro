@@ -1,9 +1,17 @@
 ---
+/**
+ * One page per scan, rendered from src/data/scans/<slug>.ts. Every section
+ * leads with the direct answer, every H2 is a question that names the scan,
+ * every figure carries a numbered citation, and the FAQ, breadcrumb and test
+ * are mirrored in JSON-LD by ScanStructuredData.
+ */
 import type { GetStaticPaths } from 'astro';
 import Base from '../../layouts/Base.astro';
 import Nav from '../../components/Nav.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
-import { scans, site, steps, guarantees } from '../../data/site';
+import ScanStructuredData from '../../components/ScanStructuredData.astro';
+import { scans, site, steps, guarantees, scanPage, scansIndex } from '../../data/site';
+import { citeHtml, sourceIndex, uncitedSources } from '../../utils/cite';
 
 export const getStaticPaths = (() =>
   scans.map((scan) => ({
@@ -12,41 +20,300 @@ export const getStaticPaths = (() =>
   }))) satisfies GetStaticPaths;
 
 const { scan } = Astro.props;
-const others = scans.filter((s) => s.slug !== scan.slug);
+const n = sourceIndex(scan);
+const cite = (text: string) => citeHtml(text, n);
 
-/* Deep link into the homepage scan finder, pre-filtered to this scan. */
+const unused = uncitedSources(scan);
+if (unused.length) {
+  throw new Error(`Scan "${scan.slug}" lists sources nothing cites: ${unused.map((s) => s.id).join(', ')}`);
+}
+
+const related = scan.related
+  .map((slug) => scans.find((s) => s.slug === slug))
+  .filter((s): s is NonNullable<typeof s> => Boolean(s));
+
+const h = scanPage.headings;
+const noun = scan.noun;
 const findHref = `/?scan=${scan.num}#scans`;
+const updated = new Date(scan.updated).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
 ---
 
 <Base
-  title={`${scan.title} — ${site.name}`}
-  description={scan.copy}
+  title={`${scan.title}: what it detects, who it's for, accuracy and cost — ${site.name}`}
+  description={scan.metaDescription}
   mdPath={`/scans/${scan.slug}.md`}
+  modified={scan.updated}
 >
+  <ScanStructuredData slot="head" scan={scan} />
   <Nav />
 
   <main id="main">
     <div class="page">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">{scanPage.breadcrumb.home}</a></li>
+          <li><a href={scansIndex.path}>{scanPage.breadcrumb.scans}</a></li>
+          <li aria-current="page">{scan.title}</li>
+        </ol>
+      </nav>
+
       <article class="scan-page">
-        <span class="kicker">Preventive scan · {scan.num}</span>
-        <h1 class="scan-headline">{scan.title}</h1>
+        <header class="scan-header">
+          <span class="kicker tnum">{scanPage.kicker} · {scan.num} · {scan.modality}</span>
+          <h1 class="scan-headline">{scan.title}</h1>
+          <p class="scan-aka">
+            {scanPage.alsoCalled}: {scan.aka.join(', ')}.
+          </p>
+          <p class="scan-meta tnum">
+            <time datetime={scan.updated}>{scanPage.updatedLabel} {updated}</time>
+            <span aria-hidden="true"> · </span>
+            <a href="#sources">{scan.sources.length} {scanPage.reviewLabel.toLowerCase()}</a>
+          </p>
 
-        {
-          site.showPricing && (
-            <>
-              <p class="scan-price tnum">{scan.price}</p>
-              <p class="scan-avg tnum">
-                Est. national average <s>{scan.avg}</s>
+          {
+            site.showPricing && (
+              <p class="scan-price tnum">
+                {scan.price}
+                <span class="scan-avg">
+                  {' '}
+                  · {scanPage.avgLabel} <s>{scan.avg}</s>
+                </span>
               </p>
-            </>
-          )
-        }
+            )
+          }
 
-        <p class="scan-copy">{scan.copy}</p>
+          <p class="scan-answer">{scan.answer}</p>
 
-        <div class="scan-actions">
-          <a class="btn btn-primary" href={findHref}>Compare prices near you</a>
-        </div>
+          <div class="scan-actions">
+            <a class="btn btn-primary" href={findHref}>{scanPage.ctaLabel}</a>
+          </div>
+        </header>
+
+        <section class="takeaways" aria-labelledby="takeaways">
+          <h2 id="takeaways" class="kicker">{scanPage.takeawaysLabel}</h2>
+          <ul>
+            {scan.takeaways.map((t) => <li set:html={cite(t)} />)}
+          </ul>
+        </section>
+
+        <section class="facts" aria-labelledby="facts">
+          <h2 id="facts" class="kicker">{scanPage.factsLabel}</h2>
+          <dl class="facts-grid">
+            {
+              (Object.keys(scanPage.factLabels) as (keyof typeof scan.facts)[]).map((key) => (
+                <div>
+                  <dt>{scanPage.factLabels[key]}</dt>
+                  <dd set:html={cite(scan.facts[key])} />
+                </div>
+              ))
+            }
+          </dl>
+        </section>
+
+        <section class="sec">
+          <h2>{h.detects(noun)}</h2>
+          <ul class="detects">
+            {
+              scan.detects.map((d) => (
+                <li>
+                  <strong>{d.item}.</strong> {d.note && <span set:html={cite(d.note)} />}
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section class="sec">
+          <h2>{h.limits(noun)}</h2>
+          <ul class="prose-list">
+            {scan.limits.map((l) => <li set:html={cite(l)} />)}
+          </ul>
+        </section>
+
+        <section class="sec">
+          <h2>{h.whoFor(noun)}</h2>
+          <p set:html={cite(scan.whoForSummary)} />
+          <div class="table-wrap">
+            <table class="guidelines">
+              <thead>
+                <tr>
+                  {scanPage.guidelineColumns.map((c) => <th scope="col">{c}</th>)}
+                  <th scope="col"><span class="visually-hidden">Source</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  scan.guidelines.map((g) => (
+                    <tr>
+                      <th scope="row">{g.body}</th>
+                      <td class="tnum">{g.year}</td>
+                      <td>{g.position}</td>
+                      <td>{g.grade ?? '—'}</td>
+                      <td class="tnum">
+                        <a href={`#src-${n(g.sourceId)}`} aria-label={`Source ${n(g.sourceId)}`}>
+                          [{n(g.sourceId)}]
+                        </a>
+                      </td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="sec">
+          <h2>{h.notFor(noun)}</h2>
+          <ul class="prose-list">
+            {scan.notFor.map((l) => <li set:html={cite(l)} />)}
+          </ul>
+        </section>
+
+        <section class="sec">
+          <h2>{h.radiation(noun)}</h2>
+          <p set:html={cite(scan.radiation)} />
+        </section>
+
+        <section class="sec">
+          <h2>{h.procedure(noun)}</h2>
+          <ol class="prose-list">
+            {scan.procedure.map((l) => <li set:html={cite(l)} />)}
+          </ol>
+        </section>
+
+        <section class="sec">
+          <h2>{h.prep(noun)}</h2>
+          <ul class="prose-list">
+            {scan.prep.map((l) => <li set:html={cite(l)} />)}
+          </ul>
+        </section>
+
+        <section class="sec">
+          <h2>{h.accuracy(noun)}</h2>
+          {scan.accuracy.map((p) => <p set:html={cite(p)} />)}
+        </section>
+
+        <section class="sec">
+          <h2>{h.results(noun)}</h2>
+          <div class="table-wrap">
+            <table class="results">
+              <caption>
+                {scan.results.title}
+                <a href={`#src-${n(scan.results.sourceId)}`} class="tnum"> [{n(scan.results.sourceId)}]</a>
+              </caption>
+              <thead>
+                <tr>
+                  {scan.results.columns.map((c) => <th scope="col">{c}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  scan.results.rows.map((row) => (
+                    <tr>
+                      {row.map((cell, i) =>
+                        i === 0 ? <th scope="row">{cell}</th> : <td class="tnum">{cell}</td>,
+                      )}
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+          {scan.results.note && <p class="table-note" set:html={cite(scan.results.note)} />}
+        </section>
+
+        <section class="sec">
+          <h2>{h.stats(noun)}</h2>
+          <dl class="stat-grid">
+            {
+              scan.stats.map((s) => (
+                <div>
+                  <dt class="tnum">
+                    {s.value}
+                    <sup class="cite">
+                      <a href={`#src-${n(s.sourceId)}`}>{n(s.sourceId)}</a>
+                    </sup>
+                  </dt>
+                  <dd>{s.label}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </section>
+
+        <section class="sec">
+          <h2>{h.quotes}</h2>
+          {
+            scan.quotes.map((q) => (
+              <figure class="quote">
+                <blockquote>
+                  <p>“{q.text}”</p>
+                </blockquote>
+                <figcaption>
+                  <strong>{q.speaker}</strong>, {q.role}
+                  <sup class="cite">
+                    <a href={`#src-${n(q.sourceId)}`}>{n(q.sourceId)}</a>
+                  </sup>
+                </figcaption>
+              </figure>
+            ))
+          }
+        </section>
+
+        <section class="sec">
+          <h2>{h.cost(noun)}</h2>
+          <p set:html={cite(scan.cost)} />
+          {site.showPricing && <p class="table-note">{scanPage.costNote}</p>}
+        </section>
+
+        <section class="sec">
+          <h2>{h.faq(noun)}</h2>
+          <div class="faq-list">
+            {
+              scan.faqs.map((f) => (
+                <div>
+                  <h3>{f.q}</h3>
+                  <p set:html={cite(f.a)} />
+                </div>
+              ))
+            }
+          </div>
+        </section>
+
+        <section class="sec">
+          <h2>{h.related}</h2>
+          <ul class="related">
+            {
+              related.map((s) => (
+                <li>
+                  <a href={`/scans/${s.slug}/`}>{s.title}</a>
+                  <span>{s.copy}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="table-note">
+            <a href={scansIndex.path}>{scansIndex.title}</a>
+          </p>
+        </section>
+
+        <section class="sec" id="sources">
+          <h2>{h.sources}</h2>
+          <ol class="sources">
+            {
+              scan.sources.map((s, i) => (
+                <li id={`src-${i + 1}`}>
+                  <a href={s.url} rel="noopener">{s.title}</a>. {s.publisher}, <span class="tnum">{s.date}</span>.
+                </li>
+              ))
+            }
+          </ol>
+        </section>
       </article>
 
       <hr class="rule" />
@@ -62,6 +329,9 @@ const findHref = `/?scan=${scan.num}#scans`;
             ))
           }
         </ol>
+        <div class="scan-actions">
+          <a class="btn btn-primary" href={findHref}>{scanPage.ctaLabel}</a>
+        </div>
       </section>
 
       <hr class="rule" />
@@ -79,38 +349,62 @@ const findHref = `/?scan=${scan.num}#scans`;
         </ul>
       </section>
 
-      <hr class="rule" />
-
-      <section class="scan-section">
-        <span class="kicker">More scans</span>
-        <ul class="more-scans">
-          {
-            others.map((s) => (
-              <li>
-                <a href={`/scans/${s.slug}/`}>{s.title}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-
       <SiteFooter />
     </div>
   </main>
 </Base>
 
 <style>
+  .crumbs {
+    padding: 28px 0 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--ink-70);
+  }
+  .crumbs ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 8px;
+  }
+  .crumbs li + li::before {
+    content: '/';
+    margin-right: 8px;
+    color: var(--ink-64);
+  }
+  .crumbs a {
+    color: inherit;
+  }
+
   .scan-page {
-    padding: 96px 0 70px;
+    padding: 56px 0 70px;
+    max-width: 72ch;
   }
 
   .scan-headline {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: clamp(38px, 5.4vw, 72px);
+    font-size: clamp(38px, 5.4vw, 64px);
     line-height: 1.06;
     letter-spacing: -0.02em;
     margin: 12px 0 0 -0.058em;
+  }
+
+  .scan-aka {
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--ink-70);
+    margin: 16px 0 0;
+  }
+
+  .scan-meta {
+    font-size: 13px;
+    line-height: 18px;
+    color: var(--ink-70);
+    margin: 8px 0 0;
+  }
+  .scan-meta a {
+    color: inherit;
   }
 
   .scan-price {
@@ -119,69 +413,295 @@ const findHref = `/?scan=${scan.num}#scans`;
     color: var(--color-accent-700);
     margin: 24px 0 0;
   }
-
   .scan-avg {
     font-size: 14px;
-    line-height: 20px;
     color: var(--ink-64);
-    margin: 4px 0 0;
   }
 
-  .scan-copy {
-    font-size: 17px;
-    line-height: 28px;
-    max-width: 58ch;
+  .scan-answer {
+    font-size: 19px;
+    line-height: 30px;
     margin: 24px 0 0;
-    color: var(--ink-78);
+    max-width: 60ch;
   }
 
   .scan-actions {
-    margin-top: 36px;
+    margin-top: 32px;
+  }
+
+  /* Key takeaways: a ruled box, no fill. */
+  .takeaways {
+    margin-top: 56px;
+    padding: 24px 0;
+    border-top: var(--rule) solid var(--color-divider);
+    border-bottom: var(--rule) solid var(--color-divider);
+  }
+  .takeaways ul {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 10px;
+  }
+  .takeaways li {
+    font-size: 15.5px;
+    line-height: 26px;
+  }
+
+  .facts {
+    padding: 40px 0 0;
+  }
+  .facts-grid {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px;
+    background: var(--color-divider);
+    border: 1px solid var(--color-divider);
+  }
+  .facts-grid > div {
+    background: var(--color-bg);
+    padding: 14px 16px 16px;
+  }
+  .facts-grid dt {
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-70);
+  }
+  .facts-grid dd {
+    margin: 6px 0 0;
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .sec {
+    padding: 48px 0 0;
+  }
+  .sec h2 {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.015em;
+    margin: 0 0 16px;
+  }
+  .sec h3 {
+    font-size: 19px;
+    line-height: 26px;
+    margin: 0;
+  }
+  .sec p,
+  .prose-list li,
+  .detects li {
+    font-size: 15.5px;
+    line-height: 27px;
+    color: var(--ink-78);
+  }
+  .sec p {
+    margin: 0 0 14px;
+    max-width: 68ch;
+  }
+  .prose-list,
+  .detects {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 10px;
+    max-width: 68ch;
+  }
+  .detects strong {
+    color: var(--color-text);
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin: 8px 0 0;
+  }
+  /* Tables keep a readable column width and scroll inside .table-wrap on
+     narrow screens rather than squeezing into four slivers. */
+  table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    font-size: 14.5px;
+    line-height: 22px;
+    border-top: var(--rule) solid var(--color-divider);
+    border-bottom: var(--rule) solid var(--color-divider);
+  }
+  caption {
+    text-align: left;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 15px;
+    padding: 0 0 10px;
+  }
+  th,
+  td {
+    text-align: left;
+    vertical-align: top;
+    padding: 10px 12px 10px 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  thead th {
+    font-size: 12.5px;
+    line-height: 16px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--ink-70);
+  }
+  tbody th {
+    font-weight: 800;
+    color: var(--color-text);
+  }
+  tbody td {
+    color: var(--ink-78);
+  }
+  tbody tr:last-child th,
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+  .table-note {
+    font-size: 14px !important;
+    line-height: 22px !important;
+    color: var(--ink-70) !important;
+    margin-top: 12px !important;
+  }
+
+  .stat-grid {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2px;
+    background: var(--color-divider);
+    border: 1px solid var(--color-divider);
+  }
+  .stat-grid > div {
+    background: var(--color-bg);
+    padding: 18px 16px 18px;
+  }
+  .stat-grid dt {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -0.015em;
+    color: var(--color-accent);
+  }
+  .stat-grid dd {
+    margin: 6px 0 0;
+    font-size: 14.5px;
+    line-height: 22px;
+    color: var(--ink-78);
+  }
+
+  .quote {
+    margin: 0 0 28px;
+    padding-left: 20px;
+    border-left: var(--rule) solid var(--color-divider);
+    max-width: 64ch;
+  }
+  .quote blockquote {
+    margin: 0;
+  }
+  .quote blockquote p {
+    font-size: 18px;
+    line-height: 29px;
+    color: var(--color-text);
+    margin: 0 0 8px;
+  }
+  .quote figcaption {
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--ink-70);
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 28px;
+    max-width: 68ch;
+  }
+  .faq-list p {
+    margin: 10px 0 0;
+  }
+
+  .related {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+    max-width: 68ch;
+  }
+  .related a {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 16px;
+  }
+  .related span {
+    display: block;
+    font-size: 14.5px;
+    line-height: 22px;
+    color: var(--ink-78);
+  }
+
+  .sources {
+    margin: 0;
+    padding-left: 24px;
+    display: grid;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--ink-78);
+    overflow-wrap: anywhere;
+  }
+  .sources li:target {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+
+  :global(.cite) {
+    font-size: 0.7em;
+    line-height: 0;
+    margin-left: 2px;
+  }
+  :global(.cite a) {
+    text-decoration: none;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 
   .scan-section {
     padding: 56px 0;
   }
-
   .steps,
-  .guarantee-list,
-  .more-scans {
+  .guarantee-list {
     margin: 20px 0 0;
     padding-left: 20px;
     display: grid;
     gap: 12px;
     max-width: 68ch;
   }
-
-  /* The step titles carry their own numbers ("1 — …"), so no list markers. */
   .steps {
     list-style: none;
     padding-left: 0;
   }
-
   .steps li,
   .guarantee-list li {
     font-size: 15.5px;
     line-height: 26px;
     color: var(--ink-78);
   }
-
   .steps strong,
   .guarantee-list strong {
     font-family: var(--font-heading);
     font-weight: 800;
     color: inherit;
-  }
-
-  .more-scans {
-    list-style: none;
-    padding-left: 0;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 8px 24px;
-  }
-
-  .more-scans a {
-    font-size: 15.5px;
-    line-height: 26px;
   }
 </style>

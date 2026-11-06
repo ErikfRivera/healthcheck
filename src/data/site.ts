@@ -40,117 +40,76 @@ export const stats = [
   { value: '72hr', label: 'Radiologist-read results' },
 ] as const;
 
-export interface Scan {
-  /** Two-digit index, shown on the card and used as the filter key. */
-  num: string;
-  /** URL segment for the scan's page (`/scans/<slug>`). Stable — do not rename. */
-  slug: string;
-  title: string;
-  /** PLACEHOLDER price and duration. */
-  price: string;
-  /** PLACEHOLDER estimated national average, shown struck through. */
-  avg: string;
-  copy: string;
-}
+/**
+ * The twelve scans. Each one's full content — the answer-first summary,
+ * guideline table, sourced statistics, verbatim quotes, FAQ and sources —
+ * lives in its own file under src/data/scans/ because a single entry runs to
+ * several hundred lines. The shape is documented in src/data/scans/types.ts.
+ * Keep the total divisible by 4 (see BRAND.md §7).
+ */
+export type { Scan } from './scans/types';
+export { scans } from './scans';
 
-export const scans: Scan[] = [
-  {
-    num: '01',
-    slug: 'full-body-mri',
-    title: 'Full-body MRI',
-    price: 'From $1,950 · 60 minutes',
-    avg: '$3,200',
-    copy: 'A head-to-pelvis MRI screening for tumors, aneurysms, and abnormalities across the major organs. No radiation, no contrast for standard protocols.',
+/**
+ * Shared copy for the scan pages. Section headings are question-shaped and
+ * templated on each scan's `noun` ("a DEXA scan") so every H2 names the
+ * entity and matches how people actually ask.
+ */
+export const scanPage = {
+  kicker: 'Preventive scan',
+  breadcrumb: { home: 'Home', scans: 'Scans' },
+  alsoCalled: 'Also called',
+  updatedLabel: 'Updated',
+  reviewLabel: 'Sources reviewed',
+  takeawaysLabel: 'Key takeaways',
+  factsLabel: 'At a glance',
+  factLabels: {
+    duration: 'Time in the scanner',
+    radiation: 'Radiation',
+    contrast: 'Contrast',
+    prep: 'Preparation',
+    results: 'Results',
+    bestFor: 'Guideline-backed for',
   },
-  {
-    num: '02',
-    slug: 'brain-mri',
-    title: 'Brain MRI',
-    price: 'From $650 · 30 minutes',
-    avg: '$1,600',
-    copy: 'A dedicated look at the brain: aneurysms, tumors, and early signs of neurodegenerative change. A standalone baseline or a follow-up focus.',
+  headings: {
+    detects: (noun: string) => `What does ${noun} detect?`,
+    limits: (noun: string) => `What does ${noun} not detect?`,
+    whoFor: (noun: string) => `Who should get ${noun}?`,
+    notFor: (noun: string) => `Who should not get ${noun}?`,
+    radiation: (noun: string) => `How much radiation does ${noun} involve?`,
+    procedure: (noun: string) => `What happens during ${noun}?`,
+    prep: (noun: string) => `How do you prepare for ${noun}?`,
+    accuracy: (noun: string) => `How accurate is ${noun}?`,
+    results: (noun: string) => `How are the results of ${noun} reported?`,
+    stats: (noun: string) => `Key statistics on ${noun.replace(/^(a|an) /, '')} screening`,
+    quotes: 'What the guidelines and experts say',
+    cost: (noun: string) => `How much does ${noun} cost?`,
+    faq: (noun: string) => `Common questions about ${noun}`,
+    related: 'Related scans',
+    sources: 'Sources',
   },
-  {
-    num: '03',
-    slug: 'coronary-calcium-ct',
-    title: 'Coronary calcium CT',
-    price: 'From $149 · 15 minutes',
-    avg: '$450',
-    copy: 'A fast, low-dose CT that measures calcified plaque in your coronary arteries — the strongest predictor of future heart attack risk.',
-  },
-  {
-    num: '04',
-    slug: 'low-dose-lung-ct',
-    title: 'Low-dose lung CT',
-    price: 'From $299 · 15 minutes',
-    avg: '$650',
-    copy: 'Screening for current and former smokers, and for people with family history or exposure. Catches lung cancer at stage one, when it is most treatable.',
-  },
-  {
-    num: '05',
-    slug: 'cardiac-mri',
-    title: 'Cardiac MRI',
-    price: 'From $850 · 45 minutes',
-    avg: '$2,100',
-    copy: 'Detailed imaging of heart structure and function: chamber size, valve performance, and scarring — without radiation.',
-  },
-  {
-    num: '06',
-    slug: 'ct-angiography',
-    title: 'CT angiography',
-    price: 'From $750 · 30 minutes',
-    avg: '$1,800',
-    copy: 'Contrast CT that maps soft plaque and narrowing in the coronary arteries — the step beyond a calcium score when risk runs in the family.',
-  },
-  {
-    num: '07',
-    slug: 'dexa-scan',
-    title: 'DEXA scan',
-    price: 'From $99 · 20 minutes',
-    avg: '$225',
-    copy: 'The gold standard for bone density and body composition: lean mass, fat distribution, and osteoporosis risk in one low-dose scan.',
-  },
-  {
-    num: '08',
-    slug: 'abdominal-ultrasound',
-    title: 'Abdominal ultrasound',
-    price: 'From $199 · 30 minutes',
-    avg: '$400',
-    copy: 'Radiation-free imaging of the liver, kidneys, gallbladder, pancreas and aorta — including aortic aneurysm screening.',
-  },
-  {
-    num: '09',
-    slug: 'thyroid-ultrasound',
-    title: 'Thyroid ultrasound',
-    price: 'From $149 · 20 minutes',
-    avg: '$375',
-    copy: 'A quick, radiation-free check for nodules and enlargement in a gland that quietly drives energy, weight and mood.',
-  },
-  {
-    num: '10',
-    slug: 'skin-cancer-screening',
-    title: 'Skin cancer screening',
-    price: 'From $129 · 20 minutes',
-    avg: '$240',
-    copy: 'Full-body dermatologic exam with dermoscopy. Melanoma found early is highly curable; found late, it is not.',
-  },
-  {
-    num: '11',
-    slug: 'comprehensive-blood-panel',
-    title: 'Comprehensive blood panel',
-    price: 'From $199 · Results in 3 days',
-    avg: '$460',
-    copy: 'Over 60 biomarkers covering heart, hormones, metabolic health, inflammation, and key cancer markers — tracked over time.',
-  },
-  {
-    num: '12',
-    slug: 'multi-cancer-blood-test',
-    title: 'Multi-cancer blood test',
-    price: 'From $749 · Results in 2 weeks',
-    avg: '$949',
-    copy: 'A single blood draw screened for signals from dozens of cancer types — an early-detection layer alongside imaging.',
-  },
-];
+  guidelineColumns: ['Body', 'Year', 'Position', 'Grade'],
+  /** Line under the cost paragraph, pointing at the network price above it. */
+  costNote:
+    'HealthCheck prices are "from" prices for the scan and the radiologist read at partner imaging centers, and vary by center and location.',
+  ctaLabel: 'Compare prices near you',
+  /** Shown when `site.showPricing` is on; the figures are placeholders. */
+  avgLabel: 'Est. national average',
+} as const;
+
+/** The /scans/ comparison page. */
+export const scansIndex = {
+  path: '/scans/',
+  title: 'Preventive scans compared',
+  metaDescription:
+    'Compare the 12 preventive scans and screening tests on HealthCheck.org: what each one detects, radiation dose, time, preparation, and which guidelines recommend it.',
+  kicker: 'The scans',
+  headline: 'Which preventive scan is right for you?',
+  answer:
+    'The preventive scan with the strongest evidence depends on your age, sex and risk factors, not on which scan sees the most. Guideline bodies recommend low-dose lung CT for heavy current and former smokers aged 50 to 80, bone density testing for women 65 and older, an abdominal aortic ultrasound for men 65 to 75 who have ever smoked, and a coronary calcium scan when a statin decision is uncertain. Whole-body MRI and multi-cancer blood tests are not recommended by any major guideline body for people without symptoms, although they are sold to them. The table compares all twelve.',
+  columns: ['Scan', 'Looks for', 'Radiation', 'Time', 'Guideline-backed for'],
+  updatedLabel: 'Updated',
+} as const;
 
 export const steps = [
   {

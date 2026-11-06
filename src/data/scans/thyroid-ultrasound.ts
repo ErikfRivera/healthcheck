@@ -1,0 +1,151 @@
+import type { Scan } from './types';
+
+export const thyroidUltrasound: Scan = {
+  num: '09',
+  slug: 'thyroid-ultrasound',
+  title: 'Thyroid ultrasound',
+  noun: 'a thyroid ultrasound',
+  aka: ['thyroid sonogram', 'neck ultrasound', 'thyroid nodule ultrasound', 'TI-RADS ultrasound'],
+  modality: 'Ultrasound',
+  price: 'From $149 · 20 minutes',
+  avg: '$375',
+  copy: 'A radiation-free look at the thyroid for nodules, cysts and goiter, graded by the ACR TI-RADS system. Best used to evaluate a known lump or abnormal blood test rather than as routine screening, which the USPSTF advises against.',
+  metaDescription:
+    'Thyroid ultrasound: what it finds, why the USPSTF advises against screening without symptoms, how TI-RADS sets biopsy thresholds, prep and cost.',
+  updated: '2026-11-06',
+
+  answer:
+    'A thyroid ultrasound is a painless, radiation-free imaging test that uses sound waves to picture the thyroid gland and nearby neck tissue, mainly to find and characterize thyroid nodules. It takes about 30 minutes, needs no preparation, and grades each nodule with the ACR TI-RADS system to decide whether a biopsy is needed. It is a follow-up test for a neck lump, an abnormal thyroid blood test or a nodule spotted on other imaging. The U.S. Preventive Services Task Force recommends against using it to screen adults without symptoms.',
+  takeaways: [
+    'The U.S. Preventive Services Task Force recommends against thyroid cancer screening in asymptomatic adults (Grade D), because overdiagnosis and overtreatment are "likely consequences of screening". [src:uspstf]',
+    'Nodules are extremely common: high-resolution ultrasound finds them in 19% to 68% of randomly selected adults, and only 7% to 15% of nodules that get evaluated are cancer. [src:ata]',
+    'A thyroid ultrasound cannot diagnose cancer or measure thyroid function. It estimates risk; a fine-needle biopsy confirms, and a blood test measures hormone levels. [src:cleveland]',
+    'ACR TI-RADS scores five features and assigns levels TR1 to TR5, with cancer risk of 2% or less for TR1 and TR2, about 5% for TR3, 5% to 20% for TR4 and at least 20% for TR5. Biopsy thresholds are 2.5 cm, 1.5 cm and 1 cm for TR3, TR4 and TR5. [src:tirads]',
+    'U.S. thyroid cancer diagnoses tripled from 4.9 to 15.3 per 100,000 between 1975 and 2013 while deaths stayed flat at 0.5 per 100,000, the signature of overdiagnosis. [src:uspstf]',
+    'No radiation, no contrast, no prep, no known side effects. [src:radiologyinfo]',
+  ],
+
+  facts: {
+    duration: 'About 30 minutes [src:cleveland]',
+    radiation: 'None [src:radiologyinfo]',
+    contrast: 'None',
+    prep: 'None; remove necklaces [src:cleveland]',
+    results: 'Radiologist report with TI-RADS level per nodule, typically within a few days [src:healthline]',
+    bestFor: 'Evaluating a known neck lump, abnormal thyroid labs or a nodule seen on other imaging; not recommended as routine screening (USPSTF Grade D) [src:uspstf]',
+  },
+
+  detects: [
+    { item: 'Thyroid nodules and cysts', note: 'Their number, size, composition (solid, cystic or mixed), brightness, shape, margins and calcifications, the five features ACR TI-RADS scores to estimate cancer risk. [src:tirads]' },
+    { item: 'Whether a neck lump is thyroid', note: 'Ultrasound shows whether a palpable lump arises from the thyroid or from a nearby lymph node, salivary gland or other structure. [src:radiologyinfo]' },
+    { item: 'Goiter and thyroiditis', note: 'Enlargement of the whole gland and the textural changes of inflammation such as Hashimoto’s thyroiditis. [src:cleveland]' },
+    { item: 'Enlarged neck lymph nodes', note: 'Cervical lymphadenopathy, including nodes with features that suggest spread from a thyroid cancer. [src:cleveland]' },
+    { item: 'Growth over time', note: 'Repeat scans show whether a known nodule has substantially grown, and ultrasound guidance makes fine-needle biopsy more accurate. [src:radiologyinfo]' },
+  ],
+
+  limits: [
+    'Cancer. "A thyroid ultrasound can’t diagnose cancer." It estimates the probability from a nodule’s appearance; fine-needle aspiration biopsy makes the diagnosis. [src:cleveland]',
+    'Thyroid function. Ultrasound cannot tell whether the gland is overactive or underactive; that takes a blood test for TSH and thyroid hormones, or a radioactive iodine uptake scan. [src:radiologyinfo]',
+    'Specificity as a screening test. In the Korean screening study the Task Force cites, ultrasound was 94.3% sensitive but only 55.0% specific, so nearly half of healthy people screened would be flagged. [src:uspstf]',
+    'Measurement. Ultrasound over-measures nodules: in 205 papillary cancers, mean diameter was 2.65 cm on ultrasound and 1.97 cm on pathology, one reason ACR set higher biopsy thresholds than earlier systems. [src:tirads]',
+    'Blood flow. Color Doppler "has not been shown to reliably discriminate between benign and malignant nodules" and is not part of the TI-RADS score. [src:tirads]',
+    'Tiny nodules. ACR TI-RADS does not recommend biopsy of nodules under 1 cm even when highly suspicious, because small papillary cancers rarely cause harm and "diagnosing every thyroid malignancy should not be our goal." [src:tirads]',
+  ],
+
+  guidelines: [
+    { body: 'U.S. Preventive Services Task Force', year: '2017', position: 'Recommends against screening for thyroid cancer in asymptomatic adults. Does not apply to people with a neck lump, hoarseness, swallowing difficulty or pain, or to those at increased risk from prior radiation exposure, inherited syndromes or family history.', grade: 'Grade D', sourceId: 'uspstf' },
+    { body: 'American Thyroid Association', year: '2015', position: 'Ultrasound is for evaluating known or suspected nodules, not population screening. Generally only nodules larger than 1 cm need evaluation. Biopsy nodules 1 cm or larger with high- or intermediate-suspicion patterns, 1.5 cm or larger with low suspicion, and consider 2 cm or larger with very low suspicion; purely cystic nodules need no biopsy.', grade: 'Strong to weak recommendations', sourceId: 'ata' },
+    { body: 'American College of Radiology', year: '2017', position: 'Score nodules with TI-RADS and biopsy TR3 nodules at 2.5 cm or larger, TR4 at 1.5 cm or larger and TR5 at 1 cm or larger. Follow smaller nodules with ultrasound at defined intervals and report no more than four nodules.', sourceId: 'tirads' },
+    { body: 'Cleveland Clinic', year: '2025', position: 'Most of the time a thyroid ultrasound is ordered as a follow-up test after a nodule is felt or seen on CT, after abnormal thyroid blood tests, or for symptoms.', sourceId: 'cleveland' },
+  ],
+  whoForSummary:
+    'A thyroid ultrasound is for people who already have a reason to look: a lump or swelling in the neck, abnormal thyroid blood tests, a nodule noticed on a CT or carotid study, hoarseness or trouble swallowing, or a history of neck radiation or a familial thyroid cancer syndrome. [src:cleveland] It is not a recommended screening test for everyone else. The U.S. Preventive Services Task Force concluded "with moderate certainty" that the harms of screening asymptomatic adults outweigh benefits that are "no greater than small", and graded it D. [src:uspstf] The reason is arithmetic: nodules are found in up to two thirds of adults, most are harmless, and the biopsies and surgeries that follow carry real risks while the death rate from thyroid cancer has not moved in 40 years. [src:ata]',
+  notFor: [
+    'Adults with no symptoms, no neck lump and no risk factors should not have a thyroid ultrasound as a screening test; the Task Force gives this a Grade D. [src:uspstf]',
+    'There is no medical contraindication. "There are no risks or side effects of having a thyroid ultrasound", and it is safe in pregnancy. [src:cleveland]',
+    'Anyone whose question is whether the thyroid is over- or underactive needs a blood test, not an ultrasound. [src:radiologyinfo]',
+  ],
+  radiation:
+    'A thyroid ultrasound uses no ionizing radiation and no contrast agent. The probe sends high-frequency sound waves into the neck and listens for the echoes, and "Standard diagnostic ultrasound has no known harmful effects on humans." [src:radiologyinfo] This matters for the thyroid in particular, since the gland is sensitive to radiation and childhood neck irradiation is itself a risk factor for thyroid cancer. [src:uspstf]',
+  procedure: [
+    'You lie on your back on an exam table with a pillow under the shoulders so the neck extends and the thyroid comes forward. [src:radiologyinfo]',
+    'The sonographer applies warm gel to the front of the neck and moves a small handheld transducer across both lobes of the thyroid and the surrounding lymph node chains. [src:radiologyinfo]',
+    'You may be asked to swallow or turn your head. The exam is noninvasive, with no needles or injections, and should not hurt. [src:radiologyinfo]',
+    'The whole appointment takes about 30 minutes. [src:cleveland]',
+    'A radiologist measures each nodule, assigns an ACR TI-RADS level, and recommends biopsy, follow-up ultrasound or nothing further. Results usually come back within a few days. [src:healthline]',
+  ],
+  prep: [
+    'None. You can eat, drink and take medication as usual. [src:cleveland]',
+    'Wear a top that leaves the neck clear and leave necklaces at home. [src:radiologyinfo]',
+    'Bring prior ultrasound reports if you have them, since growth over time is part of the assessment. [src:radiologyinfo]',
+  ],
+  accuracy: [
+    'As a test for finding nodules, ultrasound is far more sensitive than a doctor’s hands: 94.3% versus 11.6% for palpation in the studies the Task Force reviewed. That sensitivity is the problem. High-resolution ultrasound detects nodules in 19% to 68% of randomly selected adults, and in one series of 635 adults attending a preventive check-up, 68% had nodules, 53% of those nodules were under 5 mm, and none was cancer. [src:guth2009] Roughly 5% of women and 1% of men have a nodule large enough to feel. [src:ata]',
+    'As a test for cancer, ultrasound estimates rather than decides. Across more than 3,000 biopsy-proven nodules, ACR TI-RADS levels carried cancer risks of no more than 2% for TR1 and TR2, 5% for TR3, 5% to 20% for TR4 and at least 20% for TR5. [src:tirads] Overall, 7% to 15% of nodules that reach evaluation turn out malignant, and Cleveland Clinic puts the figure at 4.0% to 6.5%. [src:ata]',
+    'The downstream harm is overdiagnosis. U.S. thyroid cancer incidence rose from 4.9 to 15.3 per 100,000 between 1975 and 2013 while mortality stayed at 0.5 per 100,000, and after South Korea added thyroid ultrasound to national screening, diagnoses reached 15 times the 1993 rate with no change in deaths. [src:uspstf] An umbrella review of incidental findings found about a quarter of thyroid incidentalomas that are worked up prove malignant, most of them small papillary cancers with an excellent prognosis whether or not they are found. [src:osullivan2018]',
+  ],
+  results: {
+    title: 'ACR TI-RADS levels: cancer risk and what the radiologist recommends',
+    columns: ['Level', 'Points', 'Meaning', 'Cancer risk', 'Biopsy if', 'Follow with ultrasound if'],
+    rows: [
+      ['TR1', '0', 'Benign', '≤2%', 'No biopsy', 'No follow-up'],
+      ['TR2', '2', 'Not suspicious', '≤2%', 'No biopsy', 'No follow-up'],
+      ['TR3', '3', 'Mildly suspicious', '~5%', '≥2.5 cm', '≥1.5 cm, at 1, 3 and 5 years'],
+      ['TR4', '4 to 6', 'Moderately suspicious', '5 to 20%', '≥1.5 cm', '≥1 cm, at 1, 2, 3 and 5 years'],
+      ['TR5', '7 or more', 'Highly suspicious', '≥20%', '≥1 cm', '≥0.5 cm, yearly for 5 years'],
+    ],
+    note: 'Points are summed from five features: composition (0 to 2), echogenicity (0 to 3), shape (0 or 3 for taller-than-wide), margin (0 to 3) and echogenic foci (0 to 3). A nodule stable for 5 years can stop being followed. The American Thyroid Association uses pattern-based thresholds of 1 cm for high and intermediate suspicion, 1.5 cm for low and 2 cm for very low suspicion. [src:ata]',
+    sourceId: 'tirads',
+  },
+  stats: [
+    { value: '19 to 68%', label: 'of randomly selected adults have thyroid nodules on high-resolution ultrasound', sourceId: 'ata' },
+    { value: '68%', label: 'of 635 adults at a preventive check-up had nodules on 13 MHz ultrasound; none had cancer', sourceId: 'guth2009' },
+    { value: '7 to 15%', label: 'of nodules that are evaluated turn out to be cancer', sourceId: 'ata' },
+    { value: '94.3% / 55.0%', label: 'sensitivity and specificity of ultrasound as a thyroid cancer screening test in the study the USPSTF cites', sourceId: 'uspstf' },
+    { value: '3×', label: 'rise in U.S. thyroid cancer incidence, from 4.9 to 15.3 per 100,000 between 1975 and 2013, with mortality unchanged at 0.5 per 100,000', sourceId: 'uspstf' },
+    { value: '15×', label: 'the 1993 rate of thyroid cancer diagnosis in South Korea by 2011 after ultrasound screening spread, with no change in deaths', sourceId: 'uspstf' },
+    { value: '≥20%', label: 'cancer risk for a TR5 nodule, versus 2% or less for TR1 and TR2', sourceId: 'tirads' },
+    { value: '0.68 cm', label: 'average over-measurement of papillary cancers by ultrasound compared with pathology (2.65 vs 1.97 cm)', sourceId: 'tirads' },
+  ],
+  quotes: [
+    { text: 'The USPSTF recommends against screening for thyroid cancer in asymptomatic adults.', speaker: 'U.S. Preventive Services Task Force', role: 'final recommendation statement, May 2017', sourceId: 'uspstf' },
+    { text: 'Evidence is inadequate to estimate the accuracy of neck palpation or ultrasound of the thyroid as screening tests.', speaker: 'U.S. Preventive Services Task Force', role: 'final recommendation statement, May 2017', sourceId: 'uspstf' },
+    { text: 'diagnosing every thyroid malignancy should not be our goal.', speaker: 'Franklin N. Tessler, MD, and the ACR TI-RADS Committee', role: 'Journal of the American College of Radiology, 2017', sourceId: 'tirads' },
+    { text: 'high-resolution ultrasound (US) can detect thyroid nodules in 19%–68% of randomly selected individuals.', speaker: 'American Thyroid Association guidelines task force', role: 'Thyroid, 2016', sourceId: 'ata' },
+    { text: 'A thyroid ultrasound can’t diagnose cancer.', speaker: 'Cleveland Clinic', role: 'medically reviewed May 2025', sourceId: 'cleveland' },
+    { text: 'In some age groups, nodules are seen on ultrasound in as many as 70 percent of adults.', speaker: 'RadiologyInfo.org', role: 'Radiological Society of North America and American College of Radiology', sourceId: 'radiologyinfo' },
+  ],
+  cost: 'Published self-pay prices for a thyroid ultrasound in the United States run from $116 to $495 on the MDsave marketplace, where it is listed as a head and neck ultrasound, with a $220 average against an estimated $401 national average. [src:mdsave] Healthline reports provider charges from $100 to $1,000 plus an office-visit copay. [src:healthline] Do not confuse these with a "thyroid scan", which is a nuclear medicine test using radioactive iodine and is priced separately. [src:mdsave]',
+  faqs: [
+    { q: 'Will a thyroid ultrasound show cancer?', a: 'Not directly. Ultrasound shows features that raise or lower the probability of cancer, summarized as a TI-RADS level, and measures size. Cancer is confirmed or excluded by fine-needle aspiration biopsy, which is recommended for TR3 nodules at 2.5 cm, TR4 at 1.5 cm and TR5 at 1 cm. [src:tirads]' },
+    { q: 'Should I get a thyroid ultrasound as a routine screening?', a: 'No. The U.S. Preventive Services Task Force recommends against screening adults without symptoms (Grade D) because nodules are found in most people scanned, few are dangerous, and the biopsies and surgeries that follow do more harm than good. See a doctor if you notice a neck lump, hoarseness or trouble swallowing. [src:uspstf]' },
+    { q: 'How common are thyroid nodules?', a: 'Very. High-resolution ultrasound finds nodules in 19% to 68% of randomly chosen adults, and in one preventive-check-up series 68% of 635 adults had them, more than half under 5 mm. About 5% of women and 1% of men have a nodule big enough to feel. [src:ata]' },
+    { q: 'What percentage of thyroid nodules are cancer?', a: 'Of nodules that are evaluated, 7% to 15% per the American Thyroid Association, or 4.0% to 6.5% per Cleveland Clinic; more than 90% are benign. Among incidental nodules in older studies the mean malignancy rate was 3.9%. [src:ata]' },
+    { q: 'What does TI-RADS 3 mean?', a: 'Mildly suspicious, with roughly a 5% chance of cancer. ACR recommends biopsy only if the nodule is 2.5 cm or larger, and follow-up ultrasound at 1, 3 and 5 years if it is 1.5 cm or larger. Smaller TR3 nodules need nothing further. [src:tirads]' },
+    { q: 'Do I need a biopsy for a TI-RADS 4 nodule?', a: 'Only if it measures 1.5 cm or more under ACR TI-RADS, which puts TR4 cancer risk at 5% to 20%. Between 1 and 1.5 cm it is followed with ultrasound at 1, 2, 3 and 5 years. The American Thyroid Association uses a 1 cm threshold for intermediate-suspicion patterns, so recommendations can differ between radiologists. [src:tirads]' },
+    { q: 'Why wait a year and rescan instead of biopsying a nodule?', a: 'Because nodules below the biopsy size threshold are very unlikely to cause harm, ultrasound over-measures them, and a nodule that is stable for five years can be considered benign in behavior. Surveillance avoids biopsies that mostly find nothing. [src:tirads]' },
+    { q: 'How long does a thyroid ultrasound take?', a: 'About 30 minutes from start to finish. You lie on your back with your neck extended while a sonographer moves a gel-covered probe over the front of your neck. [src:cleveland]' },
+    { q: 'Do you need to fast or prepare for a thyroid ultrasound?', a: 'No. There is no special preparation; eat, drink and take medication as normal, and remove necklaces before the exam. [src:cleveland]' },
+    { q: 'Can a thyroid ultrasound tell if my thyroid is overactive or underactive?', a: 'No. Ultrasound shows structure, not function. Hypothyroidism and hyperthyroidism are diagnosed with blood tests for TSH and thyroid hormones, and sometimes a radioactive iodine uptake scan. [src:radiologyinfo]' },
+    { q: 'Is there radiation in a thyroid ultrasound?', a: 'None. Ultrasound uses sound waves and has no known harmful effects, which is why it can be repeated yearly to follow a nodule. [src:radiologyinfo]' },
+    { q: 'Why did thyroid cancer rates rise so much?', a: 'Mostly because of detection, not disease. U.S. incidence tripled from 4.9 to 15.3 per 100,000 between 1975 and 2013 while deaths stayed at 0.5 per 100,000, and in South Korea diagnoses rose 15-fold after ultrasound screening spread with no change in mortality. The extra cases are small papillary cancers that would never have caused harm. [src:uspstf]' },
+  ],
+  related: ['comprehensive-blood-panel', 'abdominal-ultrasound', 'full-body-mri'],
+  sources: [
+    { id: 'radiologyinfo', title: 'Thyroid Ultrasound', publisher: 'RadiologyInfo.org, Radiological Society of North America and American College of Radiology', url: 'https://www.radiologyinfo.org/en/info/us-thyroid', date: '2023-05-01' },
+    { id: 'cleveland', title: 'Thyroid Ultrasound', publisher: 'Cleveland Clinic', url: 'https://my.clevelandclinic.org/health/diagnostics/thyroid-ultrasound', date: '2025-05-06' },
+    { id: 'uspstf', title: 'Thyroid Cancer: Screening. Final Recommendation Statement', publisher: 'U.S. Preventive Services Task Force', url: 'https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/thyroid-cancer-screening', date: '2017-05-09' },
+    { id: 'tirads', title: 'ACR Thyroid Imaging, Reporting and Data System (TI-RADS): White Paper of the ACR TI-RADS Committee', publisher: 'Tessler FN, Middleton WD, Grant EG et al. Journal of the American College of Radiology 14(5):587', url: 'https://doi.org/10.1016/j.jacr.2017.01.046', date: '2017' },
+    { id: 'ata', title: '2015 American Thyroid Association Management Guidelines for Adult Patients with Thyroid Nodules and Differentiated Thyroid Cancer', publisher: 'Haugen BR et al. Thyroid 26(1):1', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4739132/', date: '2016' },
+    { id: 'guth2009', title: 'Very high prevalence of thyroid nodules detected by high frequency (13 MHz) ultrasound examination', publisher: 'Guth S, Theune U, Aberle J, Galach A, Bamberger CM. European Journal of Clinical Investigation 39(8):699', url: 'https://doi.org/10.1111/j.1365-2362.2009.02162.x', date: '2009' },
+    { id: 'osullivan2018', title: 'Prevalence and outcomes of incidental imaging findings: umbrella review', publisher: 'O’Sullivan JW, Muntinga T, Grigg S, Ioannidis JPA. BMJ 361:k2387', url: 'https://doi.org/10.1136/bmj.k2387', date: '2018' },
+    { id: 'healthline', title: 'Thyroid Ultrasound: Purpose, Procedure, and Results', publisher: 'Healthline', url: 'https://www.healthline.com/health/thyroid-ultrasound', date: '2020-02-27' },
+    { id: 'mdsave', title: 'Ultrasound cost (Thyroid, Head/Neck)', publisher: 'MDsave', url: 'https://www.mdsave.com/procedures/ultrasound/d781f5ca', date: '2026-10' },
+  ],
+  schema: {
+    type: 'ImagingTest',
+    imagingTechnique: 'Ultrasound',
+    bodyLocation: ['Thyroid gland', 'Neck'],
+    usedToDiagnose: ['Thyroid nodule', 'Goiter', 'Thyroiditis', 'Thyroid cancer', 'Cervical lymphadenopathy'],
+    sameAs: ['https://www.wikidata.org/wiki/Q7799902'],
+  },
+};

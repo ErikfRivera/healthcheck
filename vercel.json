@@ -7,7 +7,17 @@
       "statusCode": 301
     },
     {
+      "source": "/sites/default/files/mmallet/GroceryNutrientCriteria_Sept11.pdf/",
+      "destination": "/page/nutrient-criteria-grocery-0",
+      "statusCode": 301
+    },
+    {
       "source": "/en/home/home.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/home/home.html/",
       "destination": "/",
       "statusCode": 301
     },
@@ -17,7 +27,27 @@
       "statusCode": 301
     },
     {
+      "source": "/content/st-patrick’s-day-healthy-way-think-green/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/content/st-patrick%E2%80%99s-day-healthy-way-think-green",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/content/st-patrick%E2%80%99s-day-healthy-way-think-green/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/content/st-patrick%e2%80%99s-day-healthy-way-think-green",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/content/st-patrick%e2%80%99s-day-healthy-way-think-green/",
       "destination": "/",
       "statusCode": 301
     },
@@ -27,7 +57,17 @@
       "statusCode": 301
     },
     {
+      "source": "/en/healthy-recipes/recipes.html/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/page/program-criteria",
+      "destination": "/page/program-criteria-3",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/program-criteria/",
       "destination": "/page/program-criteria-3",
       "statusCode": 301
     },
@@ -37,7 +77,17 @@
       "statusCode": 301
     },
     {
+      "source": "/Timetostartcontest/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/en/about-health-check/meat-alternatives.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/about-health-check/meat-alternatives.html/",
       "destination": "/",
       "statusCode": 301
     },
@@ -47,7 +97,17 @@
       "statusCode": 301
     },
     {
+      "source": "/english/e_home.html/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/sites/default/files/editor/HSF_Calendar2012_Eng_OnlineVersion.pdf",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sites/default/files/editor/HSF_Calendar2012_Eng_OnlineVersion.pdf/",
       "destination": "/",
       "statusCode": 301
     },
@@ -57,7 +117,17 @@
       "statusCode": 301
     },
     {
+      "source": "/en/nutritional-information/nutrient-criteria-grocery.html/",
+      "destination": "/page/nutrient-criteria-grocery",
+      "statusCode": 301
+    },
+    {
       "source": "/product/original-non-hydrogenated-margarine-7-g-foodservice-item",
+      "destination": "/page/products-overview",
+      "statusCode": 301
+    },
+    {
+      "source": "/product/original-non-hydrogenated-margarine-7-g-foodservice-item/",
       "destination": "/page/products-overview",
       "statusCode": 301
     },
@@ -67,7 +137,17 @@
       "statusCode": 301
     },
     {
+      "source": "/images/stories/hc_icon_eng.gif/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/sites/default/files/editor/HC10_Nutrient Criteriapdf_changes_Aug10.pdf",
+      "destination": "/page/nutrient-criteria-grocery-0",
+      "statusCode": 301
+    },
+    {
+      "source": "/sites/default/files/editor/HC10_Nutrient Criteriapdf_changes_Aug10.pdf/",
       "destination": "/page/nutrient-criteria-grocery-0",
       "statusCode": 301
     },
@@ -77,12 +157,27 @@
       "statusCode": 301
     },
     {
-      "source": "/sites/default/files/editor/HealthCheck_Nutrient criteria_retail_2009(2)_0.pdf",
+      "source": "/sites/default/files/editor/HC10_Nutrient%20Criteriapdf_changes_Aug10.pdf/",
       "destination": "/page/nutrient-criteria-grocery-0",
       "statusCode": 301
     },
     {
-      "source": "/sites/default/files/editor/HealthCheck_Nutrient%20criteria_retail_2009(2)_0.pdf",
+      "source": "/sites/default/files/editor/HealthCheck_Nutrient criteria_retail_2009\\(2\\)_0.pdf",
+      "destination": "/page/nutrient-criteria-grocery-0",
+      "statusCode": 301
+    },
+    {
+      "source": "/sites/default/files/editor/HealthCheck_Nutrient criteria_retail_2009\\(2\\)_0.pdf/",
+      "destination": "/page/nutrient-criteria-grocery-0",
+      "statusCode": 301
+    },
+    {
+      "source": "/sites/default/files/editor/HealthCheck_Nutrient%20criteria_retail_2009\\(2\\)_0.pdf",
+      "destination": "/page/nutrient-criteria-grocery-0",
+      "statusCode": 301
+    },
+    {
+      "source": "/sites/default/files/editor/HealthCheck_Nutrient%20criteria_retail_2009\\(2\\)_0.pdf/",
       "destination": "/page/nutrient-criteria-grocery-0",
       "statusCode": 301
     },
@@ -92,7 +187,17 @@
       "statusCode": 301
     },
     {
+      "source": "/sites/default/files/editor/HealthCheck_NutrientCriteria_Retail_October09.pdf/",
+      "destination": "/page/nutrient-criteria-grocery-0",
+      "statusCode": 301
+    },
+    {
       "source": "/prodsearch",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/prodsearch/",
       "destination": "/",
       "statusCode": 301
     },
@@ -102,7 +207,17 @@
       "statusCode": 301
     },
     {
+      "source": "/story/caseys-grill-launches-health-check-items/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/sites/default/files/editor/Nutrient Criteria_Foodservice.March 2010.EN_.pdf",
+      "destination": "/page/nutrient-criteria-restaurants",
+      "statusCode": 301
+    },
+    {
+      "source": "/sites/default/files/editor/Nutrient Criteria_Foodservice.March 2010.EN_.pdf/",
       "destination": "/page/nutrient-criteria-restaurants",
       "statusCode": 301
     },
@@ -112,7 +227,17 @@
       "statusCode": 301
     },
     {
+      "source": "/sites/default/files/editor/Nutrient%20Criteria_Foodservice.March%202010.EN_.pdf/",
+      "destination": "/page/nutrient-criteria-restaurants",
+      "statusCode": 301
+    },
+    {
       "source": "/sites/default/files/mmallet/HC13_NutrientCriteria_foodservice_ october 2013_English.pdf",
+      "destination": "/page/nutrient-criteria-restaurants",
+      "statusCode": 301
+    },
+    {
+      "source": "/sites/default/files/mmallet/HC13_NutrientCriteria_foodservice_ october 2013_English.pdf/",
       "destination": "/page/nutrient-criteria-restaurants",
       "statusCode": 301
     },
@@ -122,7 +247,17 @@
       "statusCode": 301
     },
     {
+      "source": "/sites/default/files/mmallet/HC13_NutrientCriteria_foodservice_%20october%202013_English.pdf/",
+      "destination": "/page/nutrient-criteria-restaurants",
+      "statusCode": 301
+    },
+    {
       "source": "/images/pdf/HSFSobeysBooklet_P8 Nutrition Information.pdf",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/images/pdf/HSFSobeysBooklet_P8 Nutrition Information.pdf/",
       "destination": "/",
       "statusCode": 301
     },
@@ -132,7 +267,17 @@
       "statusCode": 301
     },
     {
+      "source": "/images/pdf/HSFSobeysBooklet_P8%20Nutrition%20Information.pdf/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/sites/default/files/pfletcher/Restaurant NutrientCriteria_RevNov2010.pdf",
+      "destination": "/page/nutrient-criteria-restaurants",
+      "statusCode": 301
+    },
+    {
+      "source": "/sites/default/files/pfletcher/Restaurant NutrientCriteria_RevNov2010.pdf/",
       "destination": "/page/nutrient-criteria-restaurants",
       "statusCode": 301
     },
@@ -142,7 +287,17 @@
       "statusCode": 301
     },
     {
+      "source": "/sites/default/files/pfletcher/Restaurant%20NutrientCriteria_RevNov2010.pdf/",
+      "destination": "/page/nutrient-criteria-restaurants",
+      "statusCode": 301
+    },
+    {
       "source": "/en/join-health-check/nutrient-criteria-grocery.html",
+      "destination": "/page/nutrient-criteria-grocery",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/join-health-check/nutrient-criteria-grocery.html/",
       "destination": "/page/nutrient-criteria-grocery",
       "statusCode": 301
     },
@@ -152,7 +307,17 @@
       "statusCode": 301
     },
     {
+      "source": "/sites/default/files/pfletcher/Grocery Nutrient Criteria pdf_Jan11.pdf/",
+      "destination": "/page/nutrient-criteria-grocery-0",
+      "statusCode": 301
+    },
+    {
       "source": "/sites/default/files/pfletcher/Grocery%20Nutrient%20Criteria%20pdf_Jan11.pdf",
+      "destination": "/page/nutrient-criteria-grocery-0",
+      "statusCode": 301
+    },
+    {
+      "source": "/sites/default/files/pfletcher/Grocery%20Nutrient%20Criteria%20pdf_Jan11.pdf/",
       "destination": "/page/nutrient-criteria-grocery-0",
       "statusCode": 301
     },
@@ -162,7 +327,17 @@
       "statusCode": 301
     },
     {
+      "source": "/sites/default/files/admin/HealthCheck_Nutrient criteria_foodservice_2009.pdf/",
+      "destination": "/page/nutrient-criteria-restaurants",
+      "statusCode": 301
+    },
+    {
       "source": "/sites/default/files/admin/HealthCheck_Nutrient%20criteria_foodservice_2009.pdf",
+      "destination": "/page/nutrient-criteria-restaurants",
+      "statusCode": 301
+    },
+    {
+      "source": "/sites/default/files/admin/HealthCheck_Nutrient%20criteria_foodservice_2009.pdf/",
       "destination": "/page/nutrient-criteria-restaurants",
       "statusCode": 301
     },
@@ -172,7 +347,17 @@
       "statusCode": 301
     },
     {
+      "source": "/e-cigs-vs-cigarettes/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/AIR MILES/landing page",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/AIR MILES/landing page/",
       "destination": "/",
       "statusCode": 301
     },
@@ -182,7 +367,17 @@
       "statusCode": 301
     },
     {
+      "source": "/AIR%20MILES/landing%20page/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/restosearch",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/restosearch/",
       "destination": "/",
       "statusCode": 301
     },
@@ -192,7 +387,17 @@
       "statusCode": 301
     },
     {
+      "source": "/images/index_logo.jpg/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/rhubarb-diet",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/rhubarb-diet/",
       "destination": "/",
       "statusCode": 301
     },
@@ -202,7 +407,17 @@
       "statusCode": 301
     },
     {
+      "source": "/story/health-check-exitl/",
+      "destination": "/story/health-check-exit",
+      "statusCode": 301
+    },
+    {
       "source": "/page/nutrients-women>",
+      "destination": "/page/nutrients-women",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/nutrients-women>/",
       "destination": "/page/nutrients-women",
       "statusCode": 301
     },
@@ -212,7 +427,27 @@
       "statusCode": 301
     },
     {
+      "source": "/page/nutrients-women%3E/",
+      "destination": "/page/nutrients-women",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/nutrients-women%3e",
+      "destination": "/page/nutrients-women",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/nutrients-women%3e/",
+      "destination": "/page/nutrients-women",
+      "statusCode": 301
+    },
+    {
       "source": "/en/about-health-check/restaurants.html",
+      "destination": "/page/restaurant-overview",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/about-health-check/restaurants.html/",
       "destination": "/page/restaurant-overview",
       "statusCode": 301
     },
@@ -222,7 +457,17 @@
       "statusCode": 301
     },
     {
+      "source": "/en/join-health-check/nutrient-criteria-restaurant/",
+      "destination": "/page/nutrient-criteria-restaurants",
+      "statusCode": 301
+    },
+    {
       "source": "/english/documents/33040412_EatOut-FastFood04.25.05.pdf",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/english/documents/33040412_EatOut-FastFood04.25.05.pdf/",
       "destination": "/",
       "statusCode": 301
     },
@@ -232,13 +477,128 @@
       "statusCode": 301
     },
     {
+      "source": "/story/health-check-exit%20/",
+      "destination": "/story/health-check-exit",
+      "statusCode": 301
+    },
+    {
       "source": "/page/helping-you-eat-well%20",
+      "destination": "/page/helping-you-eat-well",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/helping-you-eat-well%20/",
       "destination": "/page/helping-you-eat-well",
       "statusCode": 301
     },
     {
       "source": "/page/function-nutrients%20",
       "destination": "/page/function-nutrients",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/function-nutrients%20/",
+      "destination": "/page/function-nutrients",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/french",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/french/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2013",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2013/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contest",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contest/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/instylecontest",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/instylecontest/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/timetostartcontest",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/timetostartcontest/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/backtoschool",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/backtoschool/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/healthybeat14",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/healthybeat14/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/AIR MILES",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/AIR MILES/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/AIR%20MILES",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/AIR%20MILES/",
+      "destination": "/",
       "statusCode": 301
     },
     {

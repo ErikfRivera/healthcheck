@@ -111,6 +111,63 @@ export const scansIndex = {
   updatedLabel: 'Updated',
 } as const;
 
+/**
+ * Shared copy for the "MRI in <city>, Florida" pages at /fl/mri/<slug>/.
+ * Headings are question-shaped and name the city, so each passage matches
+ * how people ask ("How much does an MRI cost in Tampa?") and stands alone
+ * when an answer engine quotes it. Each city's own content lives in
+ * src/data/locations/<slug>.ts.
+ */
+export const mriCityPage = {
+  kicker: 'MRI in Florida',
+  breadcrumb: { home: 'Home', hub: 'MRI in Florida' },
+  title: (city: string) => `MRI in ${city}, Florida`,
+  /** <title>: the page's question in the words people search with. */
+  docTitle: (city: string) => `MRI in ${city}, FL: prices, imaging centers and open MRI — ${site.name}`,
+  alsoCovers: 'Also covers',
+  updatedLabel: 'Updated',
+  sourcesLabel: 'sources',
+  takeawaysLabel: 'Key takeaways',
+  headings: {
+    cost: (city: string) => `How much does an MRI cost in ${city}?`,
+    where: (city: string) => `Where can you get an MRI in ${city}?`,
+    hospitals: (city: string) => `Which hospitals in ${city} offer MRI?`,
+    open: (city: string) => `Where can you get an open or wide-bore MRI in ${city}?`,
+    fullBody: (city: string) => `Can you get a full-body MRI in ${city}?`,
+    referral: (city: string) => `Do you need a referral for an MRI in ${city}?`,
+    payLess: (city: string) => `How can you pay less for an MRI in ${city}?`,
+    quotes: 'What local experts say',
+    faq: (city: string) => `Common questions about getting an MRI in ${city}`,
+    otherCities: 'MRI in other Florida cities',
+    scans: 'MRI scans explained',
+    sources: 'Sources',
+  },
+  priceColumns: ['What the price covers', 'Published price', 'Source'],
+  providerColumns: ['Imaging center', 'Type', 'Location', 'MRI equipment and services', 'Published self-pay price'],
+  noPrice: 'Not published',
+  /** Shown under the provider table. HealthCheck has no partners here yet. */
+  providerNote:
+    'Listed from each center’s own published pages, in no particular order. HealthCheck is not affiliated with these centers and does not rank them. Call ahead to confirm equipment, hours and the current self-pay price.',
+  fullBodyLink: 'What a full-body MRI finds, and what the guidelines say',
+  ctaLabel: 'Compare preventive MRI scans',
+  ctaHref: '/scans/',
+  /** Scan pages linked from every city page. */
+  relatedScans: ['full-body-mri', 'brain-mri', 'cardiac-mri'],
+} as const;
+
+/** The /fl/mri/ hub. Its statewide content lives in src/data/locations/florida.ts. */
+export const mriFloridaHub = {
+  path: '/fl/mri/',
+  title: 'MRI in Florida',
+  docTitle: `MRI in Florida: prices by city, referrals and your price rights — ${site.name}`,
+  kicker: 'MRI in Florida',
+  cityColumns: ['City', 'County', 'Published MRI prices', 'Imaging centers listed'],
+  cityTableCaption: 'Florida cities with an MRI guide',
+  quotesHeading: 'What experts say about shopping for an MRI',
+  /** Sitewide footer link to the hub. */
+  footerLink: 'MRI in Florida',
+} as const;
+
 export const steps = [
   {
     title: '1 — Choose your scan',

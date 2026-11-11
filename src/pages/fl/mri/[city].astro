@@ -1,0 +1,274 @@
+---
+/**
+ * One "MRI in <city>, Florida" page, rendered from
+ * src/data/locations/cities/<slug>.ts. The page leads with the answer
+ * (where, and what it costs), then shows the city's own data as real HTML
+ * tables (published prices, named imaging centers, hospitals) so crawlers
+ * that do not run JavaScript see all of it. Every figure carries a numbered
+ * citation, and the FAQ, breadcrumb and provider list are mirrored in
+ * JSON-LD by CityStructuredData.
+ */
+import type { GetStaticPaths } from 'astro';
+import Base from '../../../layouts/Base.astro';
+import Nav from '../../../components/Nav.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import CityStructuredData from '../../../components/CityStructuredData.astro';
+import { scans, mriCityPage as p, mriFloridaHub } from '../../../data/site';
+import { cities, citySources, cityPath, cityMdPath, sharedPassages } from '../../../data/locations';
+import { citeHtml, sourceIndex } from '../../../utils/cite';
+import '../../../styles/doc.css';
+
+export const getStaticPaths = (() =>
+  cities.map((city) => ({ params: { city: city.slug }, props: { city } }))) satisfies GetStaticPaths;
+
+const { city } = Astro.props;
+const sources = citySources(city);
+const n = sourceIndex({ sources, slug: city.slug });
+const cite = (text: string) => citeHtml(text, n);
+const shared = sharedPassages(city);
+const h = p.headings;
+const name = city.city;
+
+const others = cities.filter((c) => c.slug !== city.slug);
+const related = p.relatedScans
+  .map((slug) => scans.find((s) => s.slug === slug))
+  .filter((s): s is NonNullable<typeof s> => Boolean(s));
+
+const updated = new Date(city.updated).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<Base title={p.docTitle(name)} description={city.metaDescription} mdPath={cityMdPath(city)} modified={city.updated}>
+  <CityStructuredData slot="head" city={city} sources={sources} />
+  <Nav />
+
+  <main id="main">
+    <div class="page doc">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">{p.breadcrumb.home}</a></li>
+          <li><a href={mriFloridaHub.path}>{p.breadcrumb.hub}</a></li>
+          <li aria-current="page">{name}</li>
+        </ol>
+      </nav>
+
+      <article class="doc-body wide">
+        <header>
+          <span class="kicker">{p.kicker} · {city.county}</span>
+          <h1 class="doc-headline">{p.title(name)}</h1>
+          {
+            city.nearby.length > 0 && (
+              <p class="doc-aka">
+                {p.alsoCovers}: {city.nearby.join(', ')}.
+              </p>
+            )
+          }
+          <p class="doc-meta tnum">
+            <time datetime={city.updated}>{p.updatedLabel} {updated}</time>
+            <span aria-hidden="true"> · </span>
+            <a href="#sources">{sources.length} {p.sourcesLabel}</a>
+            <span aria-hidden="true"> · </span>
+            <span set:html={cite(city.population)} />
+          </p>
+
+          <p class="doc-answer" set:html={cite(city.answer)} />
+
+          <div class="doc-actions">
+            <a class="btn btn-primary" href={p.ctaHref}>{p.ctaLabel}</a>
+          </div>
+        </header>
+
+        <section class="takeaways" aria-labelledby="takeaways">
+          <h2 id="takeaways" class="kicker">{p.takeawaysLabel}</h2>
+          <ul>
+            {city.takeaways.map((t) => <li set:html={cite(t)} />)}
+          </ul>
+        </section>
+
+        <section class="sec">
+          <h2>{h.cost(name)}</h2>
+          <p set:html={cite(city.priceSummary)} />
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  {p.priceColumns.map((c) => <th scope="col">{c}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  city.prices.map((row) => (
+                    <tr>
+                      <th scope="row">{row.what}</th>
+                      <td class="tnum">{row.value}</td>
+                      <td class="tnum">
+                        <a href={`#src-${n(row.sourceId)}`}>[{n(row.sourceId)}]</a>
+                      </td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="sec">
+          <h2>{h.where(name)}</h2>
+          <p set:html={cite(city.providersSummary)} />
+          <div class="table-wrap">
+            <table class="wide">
+              <thead>
+                <tr>
+                  {p.providerColumns.map((c) => <th scope="col">{c}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  city.providers.map((pr) => (
+                    <tr>
+                      <th scope="row">
+                        {pr.name}
+                        <sup class="cite">
+                          <a href={`#src-${n(pr.sourceId)}`}>{n(pr.sourceId)}</a>
+                        </sup>
+                      </th>
+                      <td>{pr.type}</td>
+                      <td>{pr.location}</td>
+                      <td>{pr.features}</td>
+                      <td class="tnum">{pr.selfPayPrice ?? p.noPrice}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">{p.providerNote}</p>
+        </section>
+
+        <section class="sec">
+          <h2>{h.hospitals(name)}</h2>
+          <ul class="prose-list">
+            {
+              city.hospitals.map((ho) => (
+                <li>
+                  <strong>{ho.name}.</strong> <span set:html={cite(ho.note)} />
+                  <sup class="cite">
+                    <a href={`#src-${n(ho.sourceId)}`}>{n(ho.sourceId)}</a>
+                  </sup>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        {
+          city.openMri && (
+            <section class="sec">
+              <h2>{h.open(name)}</h2>
+              <p set:html={cite(city.openMri)} />
+            </section>
+          )
+        }
+
+        <section class="sec">
+          <h2>{h.fullBody(name)}</h2>
+          <p set:html={cite(city.fullBody)} />
+          <p><a href="/scans/full-body-mri/">{p.fullBodyLink}</a></p>
+        </section>
+
+        <section class="sec">
+          <h2>{h.referral(name)}</h2>
+          <p set:html={cite(shared.referral)} />
+        </section>
+
+        <section class="sec">
+          <h2>{h.payLess(name)}</h2>
+          <p set:html={cite(shared.payLess)} />
+        </section>
+
+        {
+          city.quotes.length > 0 && (
+            <section class="sec">
+              <h2>{h.quotes}</h2>
+              {city.quotes.map((q) => (
+                <figure class="quote">
+                  <blockquote>
+                    <p>“{q.text}”</p>
+                  </blockquote>
+                  <figcaption>
+                    <strong>{q.speaker}</strong>, {q.role}
+                    <sup class="cite">
+                      <a href={`#src-${n(q.sourceId)}`}>{n(q.sourceId)}</a>
+                    </sup>
+                  </figcaption>
+                </figure>
+              ))}
+            </section>
+          )
+        }
+
+        <section class="sec">
+          <h2>{h.faq(name)}</h2>
+          <div class="faq-list">
+            {
+              city.faqs.map((f) => (
+                <div>
+                  <h3>{f.q}</h3>
+                  <p set:html={cite(f.a)} />
+                </div>
+              ))
+            }
+          </div>
+        </section>
+
+        <section class="sec">
+          <h2>{h.otherCities}</h2>
+          <ul class="link-grid">
+            {
+              others.map((c) => (
+                <li>
+                  <a href={cityPath(c)}>{c.city}</a>
+                  <span>{c.county}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="table-note"><a href={mriFloridaHub.path}>{mriFloridaHub.title}</a></p>
+        </section>
+
+        <section class="sec">
+          <h2>{h.scans}</h2>
+          <ul class="link-grid">
+            {
+              related.map((s) => (
+                <li>
+                  <a href={`/scans/${s.slug}/`}>{s.title}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section class="sec" id="sources">
+          <h2>{h.sources}</h2>
+          <ol class="sources">
+            {
+              sources.map((s, i) => (
+                <li id={`src-${i + 1}`}>
+                  <a href={s.url} rel="noopener">{s.title}</a>. {s.publisher}, <span class="tnum">{s.date}</span>.
+                </li>
+              ))
+            }
+          </ol>
+        </section>
+      </article>
+
+      <hr class="rule" />
+      <SiteFooter />
+    </div>
+  </main>
+</Base>

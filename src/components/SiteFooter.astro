@@ -1,9 +1,11 @@
 ---
-import { archive, footer } from '../data/site';
+import { archive, footer, mriFloridaHub } from '../data/site';
 ---
 
 <footer class="site-footer">
-  {footer.disclaimer} {footer.copyright}{' · '}<a href={archive.index.path}>{archive.footerLink}</a>
+  {footer.disclaimer} {footer.copyright}{' · '}<a href={mriFloridaHub.path}>{mriFloridaHub.footerLink}</a>{' · '}<a
+    href={archive.index.path}>{archive.footerLink}</a
+  >
 </footer>
 
 <style>

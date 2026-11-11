@@ -1,0 +1,288 @@
+/*
+ * Long-form, sourced document pages: the /fl/mri/ hub and the city pages.
+ * Every rule is scoped under `.doc` so nothing here can leak into the
+ * homepage or the legacy archive. The values are the scan pages' values
+ * (src/pages/scans/[slug].astro); change both together. Tokens only — see
+ * BRAND.md.
+ */
+
+.doc .crumbs {
+  padding: 28px 0 0;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--ink-70);
+}
+.doc .crumbs ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 8px;
+}
+.doc .crumbs li + li::before {
+  content: '/';
+  margin-right: 8px;
+  color: var(--ink-64);
+}
+.doc .crumbs a {
+  color: inherit;
+}
+
+.doc .doc-body {
+  padding: 56px 0 70px;
+  max-width: 72ch;
+}
+.doc .doc-body.wide {
+  max-width: none;
+}
+
+.doc .doc-headline {
+  font-size: clamp(38px, 5.4vw, 64px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  margin: 12px 0 0 -0.058em;
+  max-width: 20ch;
+}
+
+.doc .doc-aka,
+.doc .doc-meta {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--ink-70);
+  margin: 8px 0 0;
+}
+.doc .doc-aka {
+  font-size: 15px;
+  line-height: 24px;
+  margin-top: 16px;
+}
+.doc .doc-meta a {
+  color: inherit;
+}
+
+.doc .doc-answer {
+  font-size: 19px;
+  line-height: 30px;
+  margin: 24px 0 0;
+  max-width: 60ch;
+}
+
+.doc .doc-actions {
+  margin-top: 32px;
+}
+
+/* Key takeaways: a ruled box, no fill. */
+.doc .takeaways {
+  margin-top: 56px;
+  padding: 24px 0;
+  border-top: var(--rule) solid var(--color-divider);
+  border-bottom: var(--rule) solid var(--color-divider);
+  max-width: 72ch;
+}
+.doc .takeaways ul {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+}
+.doc .takeaways li {
+  font-size: 15.5px;
+  line-height: 26px;
+}
+
+.doc .sec {
+  padding: 48px 0 0;
+}
+.doc .sec h2 {
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.015em;
+  margin: 0 0 16px;
+  max-width: 30ch;
+}
+.doc .sec h3 {
+  font-size: 19px;
+  line-height: 26px;
+  margin: 0;
+}
+.doc .sec p,
+.doc .prose-list li {
+  font-size: 15.5px;
+  line-height: 27px;
+  color: var(--ink-78);
+}
+.doc .sec p {
+  margin: 0 0 14px;
+  max-width: 68ch;
+}
+.doc .prose-list {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+  max-width: 68ch;
+}
+.doc .prose-list strong {
+  color: var(--color-text);
+}
+
+.doc .table-wrap {
+  overflow-x: auto;
+  margin: 8px 0 0;
+}
+/* Tables keep a readable column width and scroll inside .table-wrap on
+   narrow screens rather than squeezing into slivers. */
+.doc table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  font-size: 14.5px;
+  line-height: 22px;
+  border-top: var(--rule) solid var(--color-divider);
+  border-bottom: var(--rule) solid var(--color-divider);
+}
+.doc table:not(.wide) {
+  max-width: 880px;
+}
+.doc table.wide {
+  min-width: 760px;
+}
+.doc caption {
+  text-align: left;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 15px;
+  padding: 0 0 10px;
+}
+.doc th,
+.doc td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 12px 10px 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+.doc thead th {
+  font-size: 12.5px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--ink-70);
+}
+.doc tbody th {
+  font-weight: 800;
+  color: var(--color-text);
+}
+.doc tbody td {
+  color: var(--ink-78);
+}
+.doc tbody tr:last-child th,
+.doc tbody tr:last-child td {
+  border-bottom: 0;
+}
+.doc .cell-sub {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--ink-70);
+}
+.doc .table-note {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--ink-70);
+  margin-top: 12px;
+}
+
+.doc .quote {
+  margin: 0 0 28px;
+  padding-left: 20px;
+  border-left: var(--rule) solid var(--color-divider);
+  max-width: 64ch;
+}
+.doc .quote blockquote {
+  margin: 0;
+}
+.doc .quote blockquote p {
+  font-size: 18px;
+  line-height: 29px;
+  color: var(--color-text);
+  margin: 0 0 8px;
+}
+.doc .quote figcaption {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--ink-70);
+}
+
+.doc .faq-list {
+  display: grid;
+  gap: 28px;
+  max-width: 68ch;
+}
+.doc .faq-list p {
+  margin: 10px 0 0;
+}
+
+.doc .link-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2px;
+  background: var(--color-divider);
+  border: 1px solid var(--color-divider);
+}
+.doc .link-grid li {
+  background: var(--color-bg);
+  padding: 14px 16px;
+}
+.doc .link-grid a {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 16px;
+}
+.doc .link-grid span {
+  display: block;
+  font-size: 13.5px;
+  line-height: 20px;
+  color: var(--ink-70);
+  margin-top: 4px;
+}
+
+.doc .sources {
+  margin: 0;
+  padding-left: 24px;
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--ink-78);
+  overflow-wrap: anywhere;
+  max-width: 72ch;
+}
+.doc .sources li:target {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.doc .cite {
+  font-size: 0.7em;
+  line-height: 0;
+  margin-left: 2px;
+}
+.doc .cite a {
+  text-decoration: none;
+}
+
+.doc .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

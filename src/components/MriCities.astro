@@ -1,0 +1,110 @@
+---
+/**
+ * Homepage links to the Florida city MRI pages (/fl/mri/<city>/). A ruled
+ * grid like the scan cards: twelve cells at a 280px floor resolve to 1, 2, 3
+ * or 4 columns in the 1200px frame, all of which divide twelve evenly
+ * (BRAND.md §7). Keep the city count divisible by 4.
+ */
+import { homeMriCities as copy, mriFloridaHub } from '../data/site';
+import { cities, cityPath } from '../data/locations';
+import { stripCites } from '../utils/cite';
+---
+
+<section class="mri-cities" id="florida-mri" aria-labelledby="florida-mri-title">
+  <span class="kicker">{copy.kicker}</span>
+  <h2 class="mri-title" id="florida-mri-title">{copy.headline}</h2>
+  <p class="mri-body">{copy.body}</p>
+
+  <ul class="city-grid">
+    {
+      cities.map((c) => (
+        <li class="city-cell">
+          <a class="city-name" href={cityPath(c)}>
+            {c.city}
+          </a>
+          <span class="city-county">
+            {c.county}
+            {c.nearby.length > 0 && ` · ${copy.alsoCovers} ${c.nearby.join(', ')}`}
+          </span>
+          <span class="city-price tnum">{stripCites(c.priceRange)}</span>
+        </li>
+      ))
+    }
+  </ul>
+
+  <p class="mri-hub">
+    <a href={mriFloridaHub.path}>{copy.hubLink}</a>
+  </p>
+</section>
+
+<style>
+  .mri-cities {
+    padding: 84px 0 70px;
+  }
+
+  .mri-title {
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin: 14px 0 0;
+    max-width: 24ch;
+  }
+
+  .mri-body {
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--ink-78);
+    margin: 14px 0 32px;
+    max-width: 60ch;
+  }
+
+  /* The 2px gap over a divider-colored ground draws the rules between
+     cells, as in the scan grid. */
+  .city-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--rule);
+    background: var(--color-divider);
+    border: var(--rule) solid var(--color-divider);
+  }
+
+  .city-cell {
+    background: var(--color-bg);
+    padding: 20px 24px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .city-name {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 26px;
+    text-decoration: none;
+  }
+  .city-name:hover {
+    text-decoration: underline;
+  }
+
+  .city-county {
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--ink-70);
+  }
+
+  .city-price {
+    font-size: 14.5px;
+    line-height: 22px;
+    color: var(--color-accent-700);
+  }
+
+  .mri-hub {
+    margin: 24px 0 0;
+    font-size: 15px;
+    line-height: 24px;
+  }
+</style>

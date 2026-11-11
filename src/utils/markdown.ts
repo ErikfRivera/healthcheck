@@ -21,6 +21,7 @@ import {
   footer,
   mriCityPage,
   mriFloridaHub,
+  homeMriCities,
   type Scan,
 } from '../data/site';
 import {
@@ -148,6 +149,15 @@ export function renderHomeMarkdown(): string {
     'Prices are "from" prices and vary by imaging center and location.',
     '',
     scans.map(scanSection).join('\n\n'),
+    '',
+    `## ${homeMriCities.headline}`,
+    '',
+    homeMriCities.body,
+    '',
+    cities
+      .map((c) => `- [${mriCityPage.title(c.city)}](${cityMdPath(c)}): ${stripCites(c.priceRange)}`)
+      .join('\n'),
+    `- [${homeMriCities.hubLink}](/fl/mri/index.md)`,
     '',
     '## How it works',
     '',

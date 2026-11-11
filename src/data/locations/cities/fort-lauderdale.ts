@@ -33,7 +33,7 @@ export const fortLauderdale: CityMri = {
   ],
 
   providersSummary:
-    'Fort Lauderdale has two MRI centers that publish high-field equipment besides Holy Cross Health: Akumin’s North Federal Highway center, with 3T wide-bore MRI, and MRI Scan & Imaging Center on East Commercial Boulevard, with a GE 3.0 Tesla system. [src:akumin-ftl] [src:mri-scan-center] Three other Fort Lauderdale centers, Windsor Imaging, Akumin Ft Lauderdale West and Total MD, publish self-pay prices on MDsave but not their equipment. [src:mdsave-windsor] [src:mdsave-miami-region-wo] [src:mdsave-miami-region-wwo]',
+    'Three Fort Lauderdale MRI providers publish their equipment: Holy Cross Health, with a Siemens 3T and a 70cm open-bore 1.5T scanner; Akumin’s North Federal Highway center, with 3T wide-bore MRI; and MRI Scan & Imaging Center on East Commercial Boulevard, which describes a GE 3.0 Tesla system on a page dated 2022. [src:holy-cross-mri] [src:akumin-ftl] [src:mri-scan-center] Three other Fort Lauderdale centers, Windsor Imaging, Akumin Ft Lauderdale West and Total MD, publish self-pay prices on MDsave but not their equipment. [src:mdsave-windsor] [src:mdsave-miami-region-wo] [src:mdsave-miami-region-wwo]',
   providers: [
     { name: 'Akumin Fort Lauderdale', type: 'Independent imaging center', location: '4461 N. Federal Hwy, Fort Lauderdale, FL 33308', features: '3T wide-bore MRI; prostate MRI', sourceId: 'akumin-ftl' },
     { name: 'MRI Scan & Imaging Center', type: 'Independent imaging center', location: '3122 East Commercial Boulevard, Fort Lauderdale, FL 33308', features: 'GE Discovery MR750 3.0T MRI (equipment page dated 2022)', sourceId: 'mri-scan-center' },
@@ -50,7 +50,7 @@ export const fortLauderdale: CityMri = {
   ],
 
   openMri:
-    'Fort Lauderdale has no published upright or stand-up MRI among the centers listed here, but it has two scanners with a larger opening. Holy Cross Health offers a 1.5 Tesla MRI with a “70cm open bore design”, and Akumin Fort Lauderdale, 4461 N. Federal Highway, lists 3T wide-bore MRI. [src:holy-cross-mri] [src:akumin-ftl] Both are closed designs with more room than a standard tunnel.',
+    'None of the Fort Lauderdale centers listed here publishes upright or stand-up MRI. Two describe a larger bore: Holy Cross Health offers a 1.5 Tesla MRI with a “70cm open bore design”, and Akumin Fort Lauderdale, 4461 N. Federal Highway, lists 3T wide-bore MRI. [src:holy-cross-mri] [src:akumin-ftl]',
   fullBody:
     'Ezra, part of Function Health, lists a Fort Lauderdale full-body MRI site at 4461 N. Federal Highway, the same address as Akumin Fort Lauderdale, and prices its Annual MRI at $999, or $899 with a Function membership, and its MRI with Spine at $1,699. [src:ezra-florida-south] [src:ezra-pricing] None of the other Fort Lauderdale centers listed here publishes a full-body MRI; Akumin Fort Lauderdale lists prostate MRI, a targeted scan. [src:akumin-ftl]',
 

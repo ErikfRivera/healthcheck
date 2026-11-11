@@ -4,10 +4,13 @@
  */
 import type { CityMri } from '../types';
 import { fortMyers } from './fort-myers';
+import { orlando } from './orlando';
+import { tampa } from './tampa';
+import { stPetersburg } from './st-petersburg';
 import { jacksonville } from './jacksonville';
 import { tallahassee } from './tallahassee';
 import { westPalmBeach } from './west-palm-beach';
 import { naples } from './naples';
 import { sarasota } from './sarasota';
 
-export const cities: CityMri[] = [jacksonville, westPalmBeach, fortMyers, tallahassee, sarasota, naples];
+export const cities: CityMri[] = [orlando, tampa, jacksonville, stPetersburg, westPalmBeach, fortMyers, tallahassee, sarasota, naples];

@@ -168,6 +168,15 @@ export const mriFloridaHub = {
   footerLink: 'MRI in Florida',
 } as const;
 
+/** The homepage section linking to the Florida city MRI pages. */
+export const homeMriCities = {
+  kicker: 'MRI in Florida',
+  headline: 'What an MRI costs in your Florida city',
+  body: 'Published cash prices, named imaging centers, hospital price ranges and open MRI options for twelve Florida cities, every figure sourced.',
+  hubLink: 'MRI prices, referrals and your price rights across Florida',
+  alsoCovers: 'also covers',
+} as const;
+
 export const steps = [
   {
     title: '1 — Choose your scan',

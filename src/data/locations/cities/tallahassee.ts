@@ -7,7 +7,7 @@ export const tallahassee: CityMri = {
   nearby: [],
   updated: '2026-11-11',
   metaDescription:
-    'MRI in Tallahassee, FL: published cash prices from $421, wide-bore 3T and 1.5T scanners, stand-up MRI, and who now runs TMH’s outpatient imaging.',
+    'MRI in Tallahassee, FL: published cash prices from $421, wide-bore 3T and 1.5T scanners, and who now runs TMH’s outpatient imaging.',
   population: '196,169 residents (2020 Census) [src:census-tlh]',
 
   answer:

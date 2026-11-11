@@ -7,7 +7,7 @@ export const orlando: CityMri = {
   nearby: [],
   updated: '2026-11-11',
   metaDescription:
-    'MRI in Orlando, FL: published cash prices from $396, 3T wide-bore and open MRI centers, a stand-up MRI center, and SimonMed whole-body MRI prices.',
+    'MRI in Orlando, FL: published cash prices from $396, 3T wide-bore and open MRI centers, Orlando Regional’s open MRI, and SimonMed whole-body MRI prices.',
   population: '334,854 residents (July 2024 Census estimate); 307,573 at the 2020 Census [src:census-qf-orlando]',
 
   answer:

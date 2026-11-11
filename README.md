@@ -74,6 +74,32 @@ MedicalWebPage with citations, the test itself (ImagingTest, BloodTest or
 MedicalProcedure with `usedToDiagnose`), BreadcrumbList and FAQPage, sharing
 `@id`s with the homepage Organization and WebSite.
 
+## Florida MRI pages
+
+`/fl/mri/` is a statewide hub and `/fl/mri/<city>/` holds one page per city
+(Miami, Orlando, Tampa, Jacksonville, Fort Lauderdale, St. Petersburg, West
+Palm Beach, Boca Raton, Fort Myers, Tallahassee, Sarasota, Naples), chosen
+from Ahrefs local search volume ("mri miami", "mri fort myers", "open mri
+orlando" and so on). Statewide content is in `src/data/locations/florida.ts`,
+each city in `src/data/locations/cities/<slug>.ts`, the shape and rules in
+`src/data/locations/types.ts`, and the shared page copy in `site.ts`
+(`mriCityPage`, `mriFloridaHub`).
+
+- **Each city earns its page with its own data:** published self-pay prices,
+  named imaging centers with their stated equipment, hospitals and full-body
+  MRI clinics, all as server-rendered tables. Google treats city pages that
+  differ only in the place name as scaled content abuse; do not add a city
+  without that research.
+- **Referral rules and price rights are written once** in `florida.ts`. City
+  pages carry two short templated passages from it, citing the statewide
+  sources (all `fl-` ids).
+- **No affiliation.** HealthCheck has no partners in these cities. Listed
+  centers come from their own pages and are not ranked.
+- **Prices move.** MDsave and provider prices change often; re-check every
+  city's figures before bumping its `updated` date. New Choice Health is used
+  only for city medians and hospital-specific ranges, never its body-part
+  ranges, which repeat across cities.
+
 ## Crawlers and agents
 
 Each scan in `site.ts` has a stable `slug` and gets its own page at
@@ -130,6 +156,11 @@ Every number on the site is a placeholder, marked `PLACEHOLDER` in
 - [ ] Submit `sitemap-index.xml` in Google Search Console after deploy
 - [ ] Verify the site in Bing Webmaster Tools, submit the sitemap and turn on
       IndexNow; Copilot and ChatGPT search retrieve through Bing
+- [ ] Spot-check the Florida MRI pages before launch: the city population
+      figures (several came from search snippets because census.gov blocked
+      fetching), every provider's equipment and published price, and the
+      statewide referral passage, which rests on the ACR practice standard
+      and insurer rules rather than a Florida statute (none was found)
 - [ ] Re-check every scan page's statistics and guideline positions annually
       and bump each scan's `updated` date when its content changes
 

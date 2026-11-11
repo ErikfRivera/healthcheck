@@ -29,11 +29,8 @@ export const florida: FloridaMri = {
     { what: 'MRI with and without contrast, Florida, bundled cash price', value: '$406 to $1,271', sourceId: 'fl-mdsave-wwo' },
     { what: 'Brain MRI, Florida, average cash price', value: '$852', sourceId: 'fl-sidecar-brain' },
     { what: 'MRI, Miami, median of 150 providers', value: '$1,024', sourceId: 'fl-nch-miami' },
-    { what: 'Brain MRI, Miami', value: '$775 to $2,025', sourceId: 'fl-nch-miami' },
     { what: 'MRI, Orlando, median of 52 providers', value: '$1,041', sourceId: 'fl-nch-orlando' },
-    { what: 'MRI of the foot, ankle, leg or hip, Orlando', value: '$410 to $1,100', sourceId: 'fl-nch-orlando' },
     { what: 'MRI, Tampa, median of 70 providers', value: '$853', sourceId: 'fl-nch-tampa' },
-    { what: 'Brain MRI, Tampa', value: '$700 to $1,850', sourceId: 'fl-nch-tampa' },
   ],
   sections: [
     {

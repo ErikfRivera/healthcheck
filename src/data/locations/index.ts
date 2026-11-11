@@ -5,7 +5,7 @@
 import type { CityMri, Source } from './types';
 import { idsIn } from '../../utils/cite';
 import { florida } from './florida';
-import { cities } from './cities';
+import { cities } from './cities/index';
 
 export { florida, cities };
 export type { CityMri, FloridaMri, Provider, PricePoint, Hospital, ProviderType } from './types';

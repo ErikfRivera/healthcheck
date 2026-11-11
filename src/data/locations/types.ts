@@ -26,7 +26,11 @@ import type { Faq, Quote, Source } from '../scans/types';
 
 export type { Faq, Quote, Source };
 
-export type ProviderType = 'Hospital outpatient' | 'Independent imaging center' | 'Full-body screening clinic';
+export type ProviderType =
+  | 'Hospital outpatient'
+  | 'Independent imaging center'
+  | 'Physician-group imaging center'
+  | 'Full-body screening clinic';
 
 export interface Provider {
   name: string;

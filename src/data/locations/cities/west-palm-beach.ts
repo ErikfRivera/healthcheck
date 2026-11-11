@@ -22,7 +22,7 @@ export const westPalmBeach: CityMri = {
 
   priceRange: '$346 to $622 without contrast; $406 to $976 with and without contrast [src:mdsave-wpb-wo] [src:mdsave-wpb-wwo]',
   priceSummary:
-    'MRI prices in West Palm Beach are lowest at freestanding centers that sell bundled cash prices on MDsave: $346 to $622 for an MRI without contrast, averaging $470. [src:mdsave-wpb-wo] Within the city, Next Generation MRI lists $391, The Imaging Centers $496 and The Open MRI Guys of Palm Beach $546 for the same scan. [src:mdsave-nextgen] [src:mdsave-imaging-centers] [src:mdsave-open-mri-guys] New Choice Health’s average across 150 West Palm Beach providers, hospitals included, is $1,024. [src:nch-wpb-mri] MDsave’s ranges cover centers near West Palm Beach, so some may sit outside the city.',
+    'MRI prices in West Palm Beach are lowest at freestanding centers that sell bundled cash prices on MDsave: $346 to $622 for an MRI without contrast, averaging $470. [src:mdsave-wpb-wo] Within the city, Next Generation MRI lists $391, The Imaging Centers $496 and The Open MRI Guys of Palm Beach $546 for the same scan. [src:mdsave-nextgen] [src:mdsave-imaging-centers] [src:mdsave-open-mri-guys] New Choice Health’s average across 150 West Palm Beach providers is $1,024. [src:nch-wpb-mri] MDsave’s ranges cover centers near West Palm Beach, so some may sit outside the city.',
   prices: [
     { what: 'MRI without contrast, one body part, centers near West Palm Beach', value: '$470 average; $346 to $622 range; estimated national average $900', sourceId: 'mdsave-wpb-wo' },
     { what: 'MRI with and without contrast, one body part, centers near West Palm Beach', value: '$406 to $976 range', sourceId: 'mdsave-wpb-wwo' },
@@ -44,7 +44,7 @@ export const westPalmBeach: CityMri = {
 
   hospitals: [
     { name: 'HCA Florida JFK North Hospital, West Palm Beach', note: 'At 2201 45th Street, JFK North lists MRI among its imaging services, used to view injuries and detect disease.', sourceId: 'hca-jfk-north-imaging' },
-    { name: 'St. Mary’s Medical Center, West Palm Beach', note: 'In July 2023 it became the first hospital in Florida to adopt the Swoop portable MRI, a 64-millitesla unit for bedside brain imaging of ICU patients.', sourceId: 'sfhn-st-marys' },
+    { name: 'St. Mary’s Medical Center', note: 'In July 2023 it became the first hospital in Florida to adopt the Swoop portable MRI, a 64-millitesla unit for bedside brain imaging of ICU patients.', sourceId: 'sfhn-st-marys' },
   ],
 
   openMri:
@@ -64,7 +64,7 @@ export const westPalmBeach: CityMri = {
     { q: 'How much does an MRI cost in West Palm Beach without insurance?', a: 'Bundled cash prices near West Palm Beach run $346 to $622 for an MRI without contrast, averaging $470, and $406 to $976 with and without contrast. Next Generation MRI lists $391 without contrast. [src:mdsave-wpb-wo] [src:mdsave-wpb-wwo] [src:mdsave-nextgen]' },
     { q: 'Where can I get an open or wide-bore MRI in West Palm Beach?', a: 'RAYUS Radiology, 1572 Palm Beach Lakes Boulevard, runs a wide-bore MRI with an 80 cm opening. The Open MRI Guys of Palm Beach is at 1441 Forest Hill Boulevard. [src:rayus-freemax-2022] [src:mdsave-open-mri-guys]' },
     { q: 'How much is a breast MRI in West Palm Beach?', a: 'Instalab lists a breast MRI without and with contrast at RAYUS Radiology West Palm Beach at $699, including the physician order, scheduling and reviewed results. [src:instalab-rayus-wpb]' },
-    { q: 'Is a hospital MRI in West Palm Beach more expensive?', a: 'New Choice Health’s average across 150 West Palm Beach providers, hospitals included, is $1,024, about twice MDsave’s $470 average for an MRI without contrast at freestanding centers. [src:nch-wpb-mri] [src:mdsave-wpb-wo]' },
+    { q: 'Is an MRI cheaper at an independent center in West Palm Beach?', a: 'Often. Freestanding centers near West Palm Beach average $470 on MDsave for an MRI without contrast, while New Choice Health’s average across 150 West Palm Beach providers is $1,024. [src:nch-wpb-mri] [src:mdsave-wpb-wo]' },
     { q: 'Can I get a full-body MRI in West Palm Beach?', a: 'Not in the city itself. The nearest full-body MRI clinics are in Boca Raton: Prenuvo at 201 Plaza Real, and an Instalab partner location from $2,299. [src:prenuvo-locations] [src:instalab-fl-full-body]' },
   ],
   sources: [

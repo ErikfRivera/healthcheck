@@ -14,7 +14,7 @@ export const jacksonville: CityMri = {
     'An MRI in Jacksonville costs $396 to $621 without contrast at the imaging centers that publish bundled cash prices on MDsave, and $496 to $821 with and without contrast. [src:mdsave-jax-wo] [src:mdsave-jax-wwo] Akumin’s Northside and Riverside centers and Global Diagnostic Imaging Centers on Beach Boulevard list $396 without contrast, and SimonMed on Kennerly Road lists $478. [src:mdsave-jax-wo] Baptist Health runs 3T MRI at Baptist Jacksonville and Baptist South, and a high-field open MRI on Prudential Drive. [src:baptist-mri-locations]',
   takeaways: [
     'Bundled cash prices for an MRI without contrast in the Jacksonville region run $396 to $621 on MDsave; with and without contrast they run $496 to $821. [src:mdsave-jax-wo] [src:mdsave-jax-wwo]',
-    'Across 35 Jacksonville providers, hospitals included, New Choice Health puts the median MRI at $978. [src:nch-jax-mri]',
+    'Across 35 Jacksonville providers, New Choice Health puts the median MRI at $978. [src:nch-jax-mri]',
     'Advanced Diagnostic Group on University Boulevard West lists an MRI with and without contrast at $646, including the radiologist’s read, against an estimated national average of $1,334. [src:mdsave-adg-jax-wwo]',
     'Baptist Health lists 11 MRI locations in the Jacksonville region, with 3T scanners at Baptist Jacksonville, Baptist South and Baptist MD Anderson Cancer Center. [src:baptist-mri-locations]',
     'Baptist’s Premier Open site, 1660 Prudential Drive, runs a Hitachi Oasis XP high-field open MRI. [src:baptist-mri-locations]',
@@ -22,7 +22,7 @@ export const jacksonville: CityMri = {
 
   priceRange: '$396 to $621 without contrast; $496 to $821 with and without contrast [src:mdsave-jax-wo] [src:mdsave-jax-wwo]',
   priceSummary:
-    'MRI prices in Jacksonville depend mostly on where the scan is done. Freestanding centers that sell bundled cash prices on MDsave charge $396 to $621 for an MRI without contrast, and their bundles include the facility fee and the radiologist’s interpretation. [src:mdsave-jax-wo] [src:mdsave-adg-jax-wwo] New Choice Health’s Jacksonville median, which takes in hospital prices across 35 providers, sits higher at $978. [src:nch-jax-mri] At the top of the market, Instalab lists a self-pay breast MRI at Mayo Clinic Florida at $6,195, a price that includes Instalab’s $99 fee. [src:instalab-mayo-florida]',
+    'MRI prices in Jacksonville depend mostly on where the scan is done. Freestanding centers that sell bundled cash prices on MDsave charge $396 to $621 for an MRI without contrast, and their bundles include the facility fee and the radiologist’s interpretation. [src:mdsave-jax-wo] [src:mdsave-adg-jax-wwo] New Choice Health’s Jacksonville median, across 35 providers, sits higher at $978. [src:nch-jax-mri] At the top of the market, Instalab lists a self-pay breast MRI at Mayo Clinic Florida at $6,195, a price that includes Instalab’s $99 fee. [src:instalab-mayo-florida]',
   prices: [
     { what: 'MRI without contrast, one body part, Jacksonville region', value: '$396 to $621 range', sourceId: 'mdsave-jax-wo' },
     { what: 'MRI with and without contrast, one body part, Jacksonville region', value: '$496 to $821 range', sourceId: 'mdsave-jax-wwo' },
@@ -60,7 +60,7 @@ export const jacksonville: CityMri = {
     { q: 'How much does an MRI cost in Jacksonville without insurance?', a: 'Bundled cash prices in the Jacksonville region run $396 to $621 for an MRI without contrast and $496 to $821 with and without contrast. Akumin’s Northside and Riverside centers list $396 without contrast. [src:mdsave-jax-wo] [src:mdsave-jax-wwo]' },
     { q: 'Where can I get an open MRI in Jacksonville?', a: 'Baptist Health’s Premier Open site, 1660 Prudential Drive, Suite 102, runs a Hitachi Oasis XP high-field open MRI. [src:baptist-mri-locations]' },
     { q: 'Where can I get a 3T MRI in Jacksonville?', a: 'Baptist Health lists 3T MRI at Baptist Jacksonville, 800 Prudential Drive, at Baptist South, 14550 Old St Augustine Road, and at Baptist MD Anderson Cancer Center. [src:baptist-mri-locations]' },
-    { q: 'Is an MRI in Jacksonville cheaper at an independent center?', a: 'Usually. Independent centers on MDsave sell an MRI without contrast for $396 to $621, while New Choice Health’s median across 35 Jacksonville providers, hospitals included, is $978. [src:mdsave-jax-wo] [src:nch-jax-mri]' },
+    { q: 'Is an MRI in Jacksonville cheaper at an independent center?', a: 'Usually. Independent centers on MDsave sell an MRI without contrast for $396 to $621, while New Choice Health’s median across 35 Jacksonville providers is $978. [src:mdsave-jax-wo] [src:nch-jax-mri]' },
     { q: 'Can I get a full-body MRI in Jacksonville?', a: 'We found no full-body MRI clinic that publishes a Jacksonville location. Instalab lists a self-pay breast MRI at Mayo Clinic Florida at $6,195, including its $99 fee. [src:instalab-mayo-florida]' },
   ],
   sources: [

@@ -31,7 +31,7 @@ export const stPetersburg: CityMri = {
   ],
 
   providersSummary:
-    'St. Petersburg’s outpatient MRI centers that publish cash prices are Elite Imaging, part of Akumin, at two sites, and Alexander Medical Group, all on MDsave. [src:mdsave-stp-wo] [src:mdsave-alexander] BayCare runs outpatient imaging at Carillon in St. Petersburg and at the Carlisle Imaging Center on the Morton Plant campus in Clearwater, both ACR accredited in all modalities. [src:baycare-carillon] [src:baycare-carlisle] None of these centers states its scanner’s field strength.',
+    'St. Petersburg’s outpatient MRI centers that publish cash prices are Elite Imaging, at 66th Street North and at 4th Street North (listed there as Elite Imaging Dba Akumin), and Alexander Medical Group, all on MDsave. [src:mdsave-stp-wo] [src:mdsave-alexander] BayCare runs outpatient imaging at Carillon in St. Petersburg and at the Carlisle Imaging Center on the Morton Plant campus in Clearwater, both ACR accredited in all modalities. [src:baycare-carillon] [src:baycare-carlisle] None of these centers states its scanner’s field strength.',
   providers: [
     { name: 'Elite Imaging, 66th St N', type: 'Independent imaging center', location: '3451 66th St N, St. Petersburg, FL 33710', features: 'MRI; scanner type not stated', selfPayPrice: '$396 without contrast (MDsave)', sourceId: 'mdsave-stp-wo' },
     { name: 'Elite Imaging (Akumin), 4th Street N', type: 'Independent imaging center', location: '4551 4th St N, St. Petersburg, FL 33703', features: 'MRI; scanner type not stated', selfPayPrice: '$396 without contrast (MDsave)', sourceId: 'mdsave-stp-wo' },
@@ -51,7 +51,7 @@ export const stPetersburg: CityMri = {
   openMri:
     'For a roomier MRI in St. Petersburg, HCA Florida Northside Hospital announced in March 2025 a new scanner with “a wider opening and revolutionary lightweight comfort technology that wraps around patients like a blanket”; the announcement does not state its field strength. [src:hca-northside-mri] None of the outpatient centers listed here describes an open, upright or wide-bore scanner in St. Petersburg or Clearwater.',
   fullBody:
-    'Two full-body MRI clinics have St. Petersburg addresses. Prenuvo’s clinic is at 139 2nd Avenue North, Suite C201, and Prenuvo’s US pricing page lists its whole-body scan at $2,499, a national price rather than one set for this location. [src:prenuvo-locations] [src:prenuvo-pricing] TrueScan MRI opened at 5015 4th Street North, Suite B, in January 2025, according to the local site I Love the Burg; we found no published price. [src:ilovetheburg-truescan]',
+    'Two full-body MRI clinics have St. Petersburg addresses. Prenuvo’s clinic is at 139 2nd Avenue North, Suite C201, and Prenuvo’s US pricing page lists its whole-body scan at $2,499, a national price rather than one set for this location. [src:prenuvo-locations] [src:prenuvo-pricing] In January 2025 the local site I Love the Burg reported TrueScan MRI’s arrival at 5015 4th Street North, Suite B; we found no published price for it. [src:ilovetheburg-truescan]',
 
   quotes: [
     {
@@ -66,7 +66,7 @@ export const stPetersburg: CityMri = {
     { q: 'Where can I get an MRI with a wider opening in St. Petersburg?', a: 'HCA Florida Northside Hospital announced a new MRI with a wider opening in March 2025. None of the outpatient centers listed here describes an open or wide-bore scanner. [src:hca-northside-mri]' },
     { q: 'Is a hospital MRI in St. Petersburg more expensive?', a: 'It can be. BayCare says imaging at St. Anthony’s Hospital is billed as a hospital department, where higher copays and deductibles may apply, while freestanding centers near the city sell an MRI without contrast for $396 to $646 on MDsave. [src:baycare-st-anthonys] [src:mdsave-stp-wo]' },
     { q: 'Where can I get an MRI in Clearwater?', a: 'Elite Imaging, 501 South Lincoln Avenue, lists an MRI without contrast at $396 on MDsave, and BayCare’s Carlisle Imaging Center and Morton Plant Hospital on Pinellas Street both list MRI. [src:mdsave-stp-wo] [src:baycare-carlisle] [src:baycare-morton-plant]' },
-    { q: 'Can I get a full-body MRI in St. Petersburg?', a: 'Prenuvo has a clinic at 139 2nd Avenue North and lists its whole-body scan at $2,499 nationally. TrueScan MRI opened at 5015 4th Street North in January 2025. [src:prenuvo-locations] [src:prenuvo-pricing] [src:ilovetheburg-truescan]' },
+    { q: 'Can I get a full-body MRI in St. Petersburg?', a: 'Prenuvo has a clinic at 139 2nd Avenue North and lists its whole-body scan at $2,499 nationally. I Love the Burg reported TrueScan MRI’s arrival at 5015 4th Street North in January 2025. [src:prenuvo-locations] [src:prenuvo-pricing] [src:ilovetheburg-truescan]' },
   ],
   sources: [
     { id: 'census-qf-stpete', title: 'QuickFacts: St. Petersburg city, Florida', publisher: 'U.S. Census Bureau', url: 'https://www.census.gov/quickfacts/fact/table/stpetersburgcityflorida/POP060210', date: '2026' },

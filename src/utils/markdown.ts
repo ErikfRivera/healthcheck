@@ -19,8 +19,21 @@ import {
   guarantees,
   faqs,
   footer,
+  mriCityPage,
+  mriFloridaHub,
   type Scan,
 } from '../data/site';
+import {
+  florida,
+  cities,
+  cityPath,
+  cityMdPath,
+  citySources,
+  floridaSources,
+  floridaUpdated,
+  sharedPassages,
+  type CityMri,
+} from '../data/locations';
 import { citeMd, sourceIndex, stripCites } from './cite';
 import {
   getLegacyEntries,
@@ -64,6 +77,18 @@ export const pages: readonly Page[] = [
     mdPath: `/scans/${scan.slug}.md`,
     title: scan.title,
     blurb: stripCites(scan.copy),
+  })),
+  {
+    path: mriFloridaHub.path,
+    mdPath: '/fl/mri/index.md',
+    title: mriFloridaHub.title,
+    blurb: florida.metaDescription,
+  },
+  ...cities.map((city) => ({
+    path: cityPath(city),
+    mdPath: cityMdPath(city),
+    title: mriCityPage.title(city.city),
+    blurb: city.metaDescription,
   })),
 ];
 
@@ -272,6 +297,155 @@ export function renderScansIndexMarkdown(): string {
         stripCites(s.facts.bestFor),
       ]),
     ),
+    '',
+    '---',
+    '',
+    footer.disclaimer,
+    '',
+  ].join('\n');
+}
+
+const sourcesMd = (sources: readonly { title: string; url: string; publisher: string; date: string }[]) =>
+  sources.map((s, i) => `${i + 1}. [${s.title}](${s.url}). ${s.publisher}, ${s.date}.`).join('\n');
+
+const quotesMd = (
+  quotes: readonly { text: string; speaker: string; role: string; sourceId: string }[],
+  n: (id: string) => number,
+) => quotes.map((q) => `> "${q.text}"\n>\n> — ${q.speaker}, ${q.role} [${n(q.sourceId)}]`).join('\n\n');
+
+export function renderCityMarkdown(city: CityMri): string {
+  const sources = citySources(city);
+  const n = sourceIndex({ sources, slug: city.slug });
+  const c = (text: string) => citeMd(text, n);
+  const h = mriCityPage.headings;
+  const name = city.city;
+  const shared = sharedPassages(city);
+  return [
+    `# ${mriCityPage.title(name)}`,
+    '',
+    `*${city.county}.${city.nearby.length ? ` ${mriCityPage.alsoCovers}: ${city.nearby.join(', ')}.` : ''} ${mriCityPage.updatedLabel} ${city.updated}. ${c(city.population)}*`,
+    '',
+    c(city.answer),
+    '',
+    `## ${mriCityPage.takeawaysLabel}`,
+    '',
+    city.takeaways.map((t) => `- ${c(t)}`).join('\n'),
+    '',
+    `## ${h.cost(name)}`,
+    '',
+    c(city.priceSummary),
+    '',
+    mdTable(
+      mriCityPage.priceColumns,
+      city.prices.map((p) => [p.what, p.value, `[${n(p.sourceId)}]`]),
+    ),
+    '',
+    `## ${h.where(name)}`,
+    '',
+    c(city.providersSummary),
+    '',
+    mdTable(
+      [...mriCityPage.providerColumns, 'Source'],
+      city.providers.map((p) => [
+        p.name,
+        p.type,
+        p.location,
+        p.features,
+        p.selfPayPrice ?? mriCityPage.noPrice,
+        `[${n(p.sourceId)}]`,
+      ]),
+    ),
+    '',
+    mriCityPage.providerNote,
+    '',
+    `## ${h.hospitals(name)}`,
+    '',
+    city.hospitals.map((ho) => `- **${ho.name}.** ${c(ho.note)} [${n(ho.sourceId)}]`).join('\n'),
+    '',
+    ...(city.openMri ? [`## ${h.open(name)}`, '', c(city.openMri), ''] : []),
+    `## ${h.fullBody(name)}`,
+    '',
+    c(city.fullBody),
+    '',
+    `[${mriCityPage.fullBodyLink}](/scans/full-body-mri.md)`,
+    '',
+    `## ${h.referral(name)}`,
+    '',
+    c(shared.referral),
+    '',
+    `## ${h.payLess(name)}`,
+    '',
+    c(shared.payLess),
+    '',
+    ...(city.quotes.length ? [`## ${h.quotes}`, '', quotesMd(city.quotes, n), ''] : []),
+    `## ${h.faq(name)}`,
+    '',
+    city.faqs.map((f) => `### ${f.q}\n\n${c(f.a)}`).join('\n\n'),
+    '',
+    `## ${h.otherCities}`,
+    '',
+    cities
+      .filter((o) => o.slug !== city.slug)
+      .map((o) => `- [${mriCityPage.title(o.city)}](${cityMdPath(o)})`)
+      .join('\n'),
+    `- [${mriFloridaHub.title}](/fl/mri/index.md)`,
+    '',
+    `## ${h.sources}`,
+    '',
+    sourcesMd(sources),
+    '',
+    '---',
+    '',
+    footer.disclaimer,
+    '',
+  ].join('\n');
+}
+
+export function renderFloridaMarkdown(): string {
+  const sources = floridaSources();
+  const n = sourceIndex({ sources, slug: 'fl-mri' });
+  const c = (text: string) => citeMd(text, n);
+  return [
+    `# ${florida.headline}`,
+    '',
+    `*${mriCityPage.updatedLabel} ${floridaUpdated}.*`,
+    '',
+    c(florida.answer),
+    '',
+    `## ${mriCityPage.takeawaysLabel}`,
+    '',
+    florida.takeaways.map((t) => `- ${c(t)}`).join('\n'),
+    '',
+    `## ${mriFloridaHub.cityTableCaption}`,
+    '',
+    mdTable(
+      mriFloridaHub.cityColumns,
+      cities.map((city) => [
+        `[${mriCityPage.title(city.city)}](${cityMdPath(city)})`,
+        city.county,
+        stripCites(city.priceRange),
+        String(city.providers.length),
+      ]),
+    ),
+    '',
+    `## ${florida.priceHeading}`,
+    '',
+    c(florida.priceSummary),
+    '',
+    mdTable(
+      mriCityPage.priceColumns,
+      florida.prices.map((p) => [p.what, p.value, `[${n(p.sourceId)}]`]),
+    ),
+    '',
+    ...florida.sections.flatMap((s) => [`## ${s.heading}`, '', s.paragraphs.map(c).join('\n\n'), '']),
+    ...(florida.quotes.length ? [`## ${mriFloridaHub.quotesHeading}`, '', quotesMd(florida.quotes, n), ''] : []),
+    `## ${mriCityPage.headings.faq('Florida')}`,
+    '',
+    florida.faqs.map((f) => `### ${f.q}\n\n${c(f.a)}`).join('\n\n'),
+    '',
+    `## ${mriCityPage.headings.sources}`,
+    '',
+    sourcesMd(sources),
     '',
     '---',
     '',

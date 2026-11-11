@@ -9,14 +9,21 @@ import type { Scan, Source } from '../data/scans/types';
 
 const TOKEN = /\[src:([a-z0-9-]+)\]/g;
 
-export function sourceIndex(scan: Pick<Scan, 'sources' | 'slug'>) {
+export function sourceIndex(scan: { sources: Source[]; slug: string }) {
   const index = new Map<string, number>();
   scan.sources.forEach((s, i) => index.set(s.id, i + 1));
   return (id: string): number => {
     const n = index.get(id);
-    if (!n) throw new Error(`Scan "${scan.slug}" cites unknown source "${id}"`);
+    if (!n) throw new Error(`Page "${scan.slug}" cites unknown source "${id}"`);
     return n;
   };
+}
+
+/** Every `[src:id]` token in the given prose, plus any ids passed directly. */
+export function idsIn(texts: readonly string[], extraIds: readonly string[] = []): Set<string> {
+  const ids = new Set<string>(extraIds);
+  for (const text of texts) for (const m of text.matchAll(TOKEN)) ids.add(m[1]);
+  return ids;
 }
 
 /** Every source id referenced anywhere in the scan, for a build-time check. */

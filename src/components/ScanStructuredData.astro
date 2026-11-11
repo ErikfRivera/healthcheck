@@ -13,6 +13,7 @@
  */
 import { site, footer, scanPage, scansIndex, type Scan } from '../data/site';
 import { siteSummary } from '../utils/markdown';
+import { stripCites } from '../utils/cite';
 
 interface Props {
   scan: Scan;
@@ -36,7 +37,7 @@ const test: Record<string, unknown> = {
   '@id': testId,
   name: scan.title,
   alternateName: scan.aka,
-  description: scan.answer,
+  description: stripCites(scan.answer),
   url: pageUrl,
   ...(scan.schema.imagingTechnique && { imagingTechnique: scan.schema.imagingTechnique }),
   ...(scan.schema.type === 'MedicalProcedure'
@@ -111,7 +112,7 @@ const graph = {
       mainEntity: scan.faqs.map((faq) => ({
         '@type': 'Question',
         name: faq.q,
-        acceptedAnswer: { '@type': 'Answer', text: faq.a },
+        acceptedAnswer: { '@type': 'Answer', text: stripCites(faq.a) },
       })),
     },
   ],
